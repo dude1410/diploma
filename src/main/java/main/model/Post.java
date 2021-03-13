@@ -23,7 +23,7 @@ public class Post {
 
 	@ManyToOne()
 	@JoinColumn(nullable = false)
-	private User userId;
+	private User user;
 
 	@Column(nullable = false)
 	private Date time;
@@ -31,19 +31,19 @@ public class Post {
 	@Column(nullable = false)
 	private String title;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition = "text")
 	private String text;
 
 	@Column(nullable = false)
 	private int viewCount;
 
 	public Post(int id, boolean isActive, ModerationStatus moderationStatus, int moderatorId,
-				User userId, Date time, String title, String text, int viewCount){
+				User user, Date time, String title, String text, int viewCount){
 		this.id = id;
 		this.isActive = isActive;
 		this.moderationStatus = moderationStatus;
 		this.moderatorId = moderatorId;
-		this.userId = userId;
+		this.user = user;
 		this.time = time;
 		this.title = title;
 		this.text = text;
@@ -82,12 +82,12 @@ public class Post {
 		this.moderatorId = moderator_id;
 	}
 
-	public User getUser_id() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUser_id(User user_id) {
-		this.userId = user_id;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Date getTime() {

@@ -12,16 +12,16 @@ public class Tag2Post {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@Column(nullable = false)
-	private Post postId;
+	private Post post;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@Column(nullable = false)
-	private Tags tagId;
+	private Tags tag;
 
-	public Tag2Post (int id, Post postId, Tags tagId) {
+	public Tag2Post (int id, Post post, Tags tag) {
 		this.id = id;
-		this.postId = postId;
-		this.tagId = tagId;
+		this.post = post;
+		this.tag = tag;
 	}
 
 	public int getId() {
@@ -32,19 +32,19 @@ public class Tag2Post {
 		this.id = id;
 	}
 
-	public Post getPostId() {
-		return postId;
+	public Post getPost() {
+		return post;
 	}
 
-	public void setPostId(Post postId) {
-		this.postId = postId;
+	public void setPost(Post post) {
+		this.post = post;
 	}
 
-	public Tags getTagId() {
-		return tagId;
+	public Tags getTag() {
+		return tag;
 	}
 
-	public void setTagId(Tags tagId) {
-		this.tagId = tagId;
+	public void setTag(Tags tag) {
+		this.tag = tag;
 	}
 }

@@ -15,23 +15,23 @@ public class PostComments {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(nullable = false)
-	private Post postId;
+	private Post post;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(nullable = false)
-	private User userId;
+	private User user;
 
 	@Column(nullable = false)
 	private Date time;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition = "text")
 	private String text;
 
-	public PostComments(int id, int parentId, Post postId, User userId, Date time, String text) {
+	public PostComments(int id, int parentId, Post post, User user, Date time, String text) {
 		this.id = id;
 		this.parentId = parentId;
-		this.postId = postId;
-		this.userId = userId;
+		this.post = post;
+		this.user = user;
 		this.time = time;
 		this.text = text;
 	}
@@ -52,20 +52,20 @@ public class PostComments {
 		this.parentId = parentId;
 	}
 
-	public Post getPostId() {
-		return postId;
+	public Post getPost() {
+		return post;
 	}
 
-	public void setPostId(Post postId) {
-		this.postId = postId;
+	public void setPost(Post postId) {
+		this.post = post;
 	}
 
-	public User getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Date getTime() {

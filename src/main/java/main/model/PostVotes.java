@@ -13,11 +13,11 @@ public class PostVotes {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@Column(nullable = false)
-	private int userId;
+	private User user;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@Column(nullable = false)
-	private int postId;
+	private Post post;
 
 	@Column(nullable = false)
 	private Date time;
@@ -25,10 +25,10 @@ public class PostVotes {
 	@Column(nullable = false)
 	private int value;
 
-	public PostVotes(int id, int userId, int postId, Date time, int value){
+	public PostVotes(int id, User user, Post post, Date time, int value){
 		this.id = id;
-		this.userId = userId;
-		this.postId = postId;
+		this.user = user;
+		this.post = post;
 		this.time = time;
 		this.value = value;
 	}
@@ -41,20 +41,20 @@ public class PostVotes {
 		this.id = id;
 	}
 
-	public int getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public int getPostId() {
-		return postId;
+	public Post getPost() {
+		return post;
 	}
 
-	public void setPostId(int postId) {
-		this.postId = postId;
+	public void setPostId(Post post) {
+		this.post = post;
 	}
 
 	public Date getTime() {
