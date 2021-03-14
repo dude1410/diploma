@@ -7,16 +7,16 @@ public class GlobalSettings {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "code", columnDefinition = "VARCHAR(255)")
 	private String code;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "name", columnDefinition = "VARCHAR(255)")
 	private String name;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "value", columnDefinition = "VARCHAR(255)")
 	private String value;
 
 	public GlobalSettings (int id, String code, String name, String value) {

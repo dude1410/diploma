@@ -7,10 +7,10 @@ public class Tags {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "name", columnDefinition = "VARCHAR(255)")
 	private String name;
 
 	public Tags(int id, String name){

@@ -1,33 +1,34 @@
 package main.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Entity
 public class PostComments {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
+	@Column(name = "parent_id", columnDefinition = "INT")
 	private int parentId;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = false, name = "post_id", columnDefinition = "INT")
 	private Post post;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = false, name = "user_id", columnDefinition = "INT")
 	private User user;
 
-	@Column(nullable = false)
-	private Date time;
+	@Column(nullable = false, name = "time", columnDefinition = "DATETIME")
+	private Timestamp time;
 
-	@Column(nullable = false, columnDefinition = "text")
+	@Column(nullable = false, name = "text", columnDefinition = "TEXT")
 	private String text;
 
-	public PostComments(int id, int parentId, Post post, User user, Date time, String text) {
+	public PostComments(int id, int parentId, Post post, User user, Timestamp time, String text) {
 		this.id = id;
 		this.parentId = parentId;
 		this.post = post;
@@ -68,11 +69,11 @@ public class PostComments {
 		this.user = user;
 	}
 
-	public Date getTime() {
+	public Timestamp getTime() {
 		return time;
 	}
 
-	public void setTime(Date time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
 	}
 

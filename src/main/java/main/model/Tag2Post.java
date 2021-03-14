@@ -7,15 +7,15 @@ public class Tag2Post {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "post_id", columnDefinition = "INT")
 	private Post post;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "tag_id", columnDefinition = "INT")
 	private Tags tag;
 
 	public Tag2Post (int id, Post post, Tags tag) {

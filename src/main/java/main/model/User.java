@@ -1,40 +1,42 @@
 package main.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Entity
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
-	@Column(nullable = false)
-	private boolean isModerator;
+	@Column(nullable = false, name = "is_moderator", columnDefinition = "TINYINT")
+	private byte isModerator;
 
-	@Column(nullable = false)
-	private Date regTime;
+	@Column(nullable = false, name = "reg_time", columnDefinition = "DATETIME")
+	private Timestamp regTime;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "name", columnDefinition = "VARCHAR(255)")
 	private String name;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "email", columnDefinition = "VARCHAR(255)")
 	private String email;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "password", columnDefinition = "VARCHAR(255)")
 	private String password;
 
+	@Column(name = "code", columnDefinition = "VARCHAR(255)")
 	private String code;
 
+	@Column(name = "photo", columnDefinition = "TEXT") // LONGVARCHAR?
 	private String photo;
 
-	public User(int id, boolean isModerator, Date reg_time, String name,
+	public User(int id, byte isModerator, Timestamp regTime, String name,
 				String email, String password, String code, String photo) {
 		this.id = id;
 		this.isModerator = isModerator;
-		this.regTime = reg_time;
+		this.regTime = regTime;
 		this.name = name;
 		this.email = email;
 		this.password = password;
@@ -50,19 +52,19 @@ public class User {
 		this.id = id;
 	}
 
-	public boolean isIs_moderator() {
+	public byte isIs_moderator() {
 		return isModerator;
 	}
 
-	public void setIs_moderator(boolean is_moderator) {
+	public void setIs_moderator(byte is_moderator) {
 		this.isModerator = is_moderator;
 	}
 
-	public Date getReg_time() {
+	public Timestamp getReg_time() {
 		return regTime;
 	}
 
-	public void setReg_time(Date reg_time) {
+	public void setReg_time(Timestamp reg_time) {
 		this.regTime = reg_time;
 	}
 

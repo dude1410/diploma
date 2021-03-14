@@ -1,49 +1,301 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
+  - logicalFilePath: db/changelog/db.changelog-createTables.yaml
   - changeSet:
       id: 1
-      author: your_liquibase_username
+      author: dude
+      comment: "create table *USERS*"
       changes:
         - createTable:
             tableName: users
             columns:
               - column:
                   name: id
-                  type: BIGINT
+                  type: INTEGER
                   autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: username
-                  type: varchar(50)
+                  name: is_moderator
+                  type: BINARY
+                  constraints:
+                    nullable: false
+              - column:
+                name: reg_time
+                type: TIMESTAMP
+                constraints:
+                  nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
                   constraints:
                     unique: true
                     nullable: false
               - column:
                   name: password
-                  type: varchar(512)
+                  type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
-                  name: first_name
-                  type: varchar(50)
+                  name: code
+                  type: VARCHAR(255)
               - column:
-                  name: last_name
-                  type: varchar(50)
-              - column:
-                  name: email
-                  type: varchar(50)
+                  name: photo
+                  type: LONGVARCHAR
   - changeSet:
       id: 2
-      author: your_liquibase_username
+      author: dude
+      comment: "create table *POSTS*"
+      changes:
+        - createTable:
+            tableName: posts
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: is_active
+                  type: BINARY
+                  constraints:
+                    nullable: false
+              - column:
+                  name: moderation_status
+                  type: ENUM
+                  constraints:
+                    nullable: false
+              - column:
+                  name: moderator_id
+                  type: INTEGER
+              - column:
+                  name: user_id
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: text
+                  type: LONGVARCHAR
+                  constraints:
+                    nullable: false
+              - column:
+                  name: view_count
+                  type: INT
+                  constraints:
+                    nullable: false
+  - changeSet:
+        id: 3
+        author: dude
+        comment: "create table *POST_VOTES*"
+        changes:
+          - createTable:
+              tableName: post_votes
+              columns:
+                - column:
+                    name: id
+                    type: INTEGER
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: user_id
+                    type: INT
+                    constraints:
+                      nullable: false
+                - column:
+                    name: post_id
+                    type: INT
+                    constraints:
+                      nullable: false
+                - column:
+                    name: time
+                    type: TIMESTAMP
+                    constraints:
+                      nullable: false
+                - column:
+                    name: value
+                    type: BINARY
+                    constraints:
+                      nullable: false
+  - changeSet:
+      id: 4
+      author: dude
+      comment: "create table *TAGS*"
+      changes:
+        - createTable:
+            tableName: tags
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 5
+      author: dude
+      comment: "create table *TAG2POST*"
+      changes:
+        - createTable:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: post_id
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tag_id
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 6
+      author: dude
+      comment: "create table *POST_COMMENTS*"
+      changes:
+        - createTable:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: parent_id
+                  type: INTEGER
+              - column:
+                  name: post_id
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: text
+                  type: LONGVARCHAR
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 7
+      author: dude
+      comment: "create table *GLOBAL_SETTINGS*"
+      changes:
+        - createTable:
+            tableName: global_settings
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: value
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 8
+      author: dude
+      comment: "create table *CAPTCHA_CODES*"
+      changes:
+        - createTable:
+            tableName: captcha_codes
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: time
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: code
+                  type: TINYTEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: secret_code
+                  type: TINYTEXT
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 9
+      author: dude
       comment: "Create admin user"
       changes:
         - insert:
             tableName: users
             columns:
               - column:
-                  name: username
+                  name: is_moderator
+                  value: "1"
+              - column:
+                  name: reg_time
+                  value: "1111111"
+              - column:
+                  name: name
                   value: "admin"
               - column:
                   name: password
@@ -51,11 +303,23 @@ databaseChangeLog:
               - column:
                   name: email
                   value: "admin@server.com"
+              - column:
+                  name: code
+                  value: "admin"
+              - column:
+                  name: photo
+                  value: null
         - insert:
             tableName: users
             columns:
               - column:
-                  name: username
+                  name: is_moderator
+                  value: "0"
+              - column:
+                  name: reg_time
+                  value: "222222"
+              - column:
+                  name: name
                   value: "guest"
               - column:
                   name: password
@@ -63,7 +327,286 @@ databaseChangeLog:
               - column:
                   name: email
                   value: "guest@server.com"
+              - column:
+                  name: code
+                  value: "guest"
+              - column:
+                  name: photo
+                  value: null
       rollback:
         - delete:
             tableName: users
             where: username in ('admin', 'guest')
+  - changeSet:
+      id: 10
+      author: dude
+      comment: "Create post"
+      changes:
+        - insert:
+            tableName: posts
+            columns:
+              - column:
+                  name: is_active
+                  value: "1"
+              - column:
+                  name: moderation_status
+                  value: "NEW"
+              - column:
+                  name: moderator_id
+                  value: null
+              - column:
+                  name: user_id
+                  value: "0"
+              - column:
+                  name: time
+                  value: "111111"
+              - column:
+                  name: title
+                  value: "title1"
+              - column:
+                  name: text
+                  value: "text1text1text1"
+              - column:
+                  name: view_count
+                  value: "0"
+        - insert:
+            tableName: posts
+            columns:
+              - column:
+                  name: is_active
+                  value: "0"
+              - column:
+                  name: moderation_status
+                  value: "ACCEPTED"
+              - column:
+                  name: moderator_id
+                  value: "1"
+              - column:
+                  name: user_id
+                  value: "1"
+              - column:
+                  name: time
+                  value: "2322322"
+              - column:
+                  name: title
+                  value: "title2"
+              - column:
+                  name: text
+                  value: "text2text2text2"
+              - column:
+                  name: view_count
+                  value: "2"
+      rollback:
+        - delete:
+            tableName: posts
+            where: user_id in ('0', '1')
+  - changeSet:
+      id: 11
+      author: dude
+      comment: "Create post votes"
+      changes:
+        - insert:
+            tableName: post_votes
+            columns:
+              - column:
+                  name: user_id
+                  value: "0"
+              - column:
+                  name: post_id
+                  value: "0"
+              - column:
+                  name: time
+                  value: "1111111"
+              - column:
+                  name: value
+                  value: "comment1"
+        - insert:
+            tableName: posts_votes
+            columns:
+              - column:
+                  name: user_id
+                  value: "1"
+              - column:
+                  name: post_id
+                  value: "1"
+              - column:
+                  name: time
+                  value: "222222"
+              - column:
+                  name: value
+                  value: "comment2"
+      rollback:
+        - delete:
+            tableName: post_votes
+            where: user_id in ('0', '1')
+  - changeSet:
+      id: 12
+      author: dude
+      comment: "Create tags"
+      changes:
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "tag1"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "tag2"
+      rollback:
+        - delete:
+            tableName: tags
+            where: name in ('tag1', 'tag2')
+  - changeSet:
+      id: 13
+      author: dude
+      comment: "Create tag to post"
+      changes:
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "0"
+              - column:
+                  name: tag_id
+                  value: "0"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "1"
+              - column:
+                  name: tag_id
+                  value: "1"
+      rollback:
+        - delete:
+            tableName: tag2post
+            where: post_id in ('0', '1')
+  - changeSet:
+      id: 14
+      author: dude
+      comment: "Create post comments"
+      changes:
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: parent_id
+                  value: null
+              - column:
+                  name: post_id
+                  value: "0"
+              - column:
+                  name: user_id
+                  value: "0"
+              - column:
+                  name: time
+                  value: "111111111"
+              - column:
+                  name: text
+                  value: "text1text1"
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: parent_id
+                  value: "0"
+              - column:
+                  name: post_id
+                  value: "1"
+              - column:
+                  name: user_id
+                  value: "1"
+              - column:
+                  name: time
+                  value: "22222"
+              - column:
+                  name: text
+                  value: "text2text2"
+      rollback:
+        - delete:
+            tableName: post_comments
+            where: post_id in ('0', '1')
+  - changeSet:
+      id: 15
+      author: dude
+      comment: "Create captcha codes"
+      changes:
+        - insert:
+            tableName: captcha_codes
+            columns:
+              - column:
+                  name: time
+                  value: "111111111"
+              - column:
+                  name: code
+                  value: "captcha1"
+              - column:
+                  name: secret_code
+                  value: "code2"
+        - insert:
+            tableName: captcha_codes
+            columns:
+              - column:
+                  name: time
+                  value: "2222222"
+              - column:
+                  name: code
+                  value: "captcha2"
+              - column:
+                  name: secret_code
+                  value: "code1"
+      rollback:
+        - delete:
+            tableName: captcha_codes
+            where: code in ('captcha1', 'captcha2')
+  - changeSet:
+      id: 16
+      author: dude
+      comment: "Create global settings"
+      changes:
+        - insert:
+            tableName: global_settings
+            columns:
+              - column:
+                  name: code
+                  value: "MULTIUSER_MODE"
+              - column:
+                  name: name
+                  value: "Многопользовательский режим"
+              - column:
+                  name: value
+                  value: "YES"
+        - insert:
+            tableName: global_settings
+            columns:
+              - column:
+                  name: code
+                  value: "POST_PREMODERATION"
+              - column:
+                  name: name
+                  value: "Премодерация постов"
+              - column:
+                  name: value
+                  value: "YES"
+        - insert:
+            tableName: global_settings
+            columns:
+              - column:
+                  name: code
+                  value: "STATISTICS_IS_PUBLIC"
+              - column:
+                  name: name
+                  value: "Показывать всем статистику блога"
+              - column:
+                  name: value
+                  value: "YES"
+      rollback:
+        - delete:
+            tableName: global_settings
+            where: value in ('YES')

@@ -1,31 +1,31 @@
 package main.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Entity
 public class PostVotes {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@Column(nullable = false)
+	@OneToOne(cascade = CascadeType.ALL) // тот, кто поставил лайк/дизлайк
+	@Column(nullable = false, name = "user_id", columnDefinition = "INT")
 	private User user;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "post_id", columnDefinition = "INT")
 	private Post post;
 
-	@Column(nullable = false)
-	private Date time;
+	@Column(nullable = false, name = "time", columnDefinition = "DATETIME")
+	private Timestamp time;
 
-	@Column(nullable = false)
-	private int value;
+	@Column(nullable = false, name = "value", columnDefinition = "TINYINT")
+	private byte value;
 
-	public PostVotes(int id, User user, Post post, Date time, int value){
+	public PostVotes(int id, User user, Post post, Timestamp time, byte value) {
 		this.id = id;
 		this.user = user;
 		this.post = post;
@@ -57,19 +57,19 @@ public class PostVotes {
 		this.post = post;
 	}
 
-	public Date getTime() {
+	public Timestamp getTime() {
 		return time;
 	}
 
-	public void setTime(Date time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
 	}
 
-	public int getValue() {
+	public byte getValue() {
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(byte value) {
 		this.value = value;
 	}
 }

@@ -1,6 +1,7 @@
 package main.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -8,19 +9,19 @@ public class CaptchaCodes {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false)
+	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
-	@Column(nullable = false)
-	private Date time;
+	@Column(nullable = false, name = "time", columnDefinition = "DATETIME")
+	private Timestamp time;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "code", columnDefinition = "TINYTEXT")
 	private String code;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "secret_code", columnDefinition = "TINYTEXT")
 	private String secretCode;
 
-	public CaptchaCodes (int id, Date time, String code, String secretCode) {
+	public CaptchaCodes (int id, Timestamp time, String code, String secretCode) {
 		this.id = id;
 		this.time = time;
 		this.code = code;
@@ -35,11 +36,11 @@ public class CaptchaCodes {
 		this.id = id;
 	}
 
-	public Date getTime() {
+	public Timestamp getTime() {
 		return time;
 }
 
-	public void setTime(Date time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
 	}
 
