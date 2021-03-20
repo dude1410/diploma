@@ -99,7 +99,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: view_count
-                  type: INT
+                  type: INTEGER
                   constraints:
                     nullable: false
   - changeSet:
@@ -119,12 +119,12 @@ databaseChangeLog:
                       nullable: false
                 - column:
                     name: user_id
-                    type: INT
+                    type: INTEGER
                     constraints:
                       nullable: false
                 - column:
                     name: post_id
-                    type: INT
+                    type: INTEGER
                     constraints:
                       nullable: false
                 - column:
@@ -353,7 +353,7 @@ databaseChangeLog:
                   value: "NEW"
               - column:
                   name: moderator_id
-                  value: null
+                  value: "1"
               - column:
                   name: user_id
                   value: "0"
@@ -497,7 +497,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: parent_id
-                  value: null
+                  value: "0"
               - column:
                   name: post_id
                   value: "0"
@@ -515,7 +515,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: parent_id
-                  value: "0"
+                  value: "1"
               - column:
                   name: post_id
                   value: "1"

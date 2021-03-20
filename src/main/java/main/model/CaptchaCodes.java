@@ -2,7 +2,6 @@ package main.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Date;
 
 @Entity
 public class CaptchaCodes {
