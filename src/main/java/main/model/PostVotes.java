@@ -12,11 +12,11 @@ public class PostVotes {
 	private int id;
 
 	@OneToOne(cascade = CascadeType.ALL) // тот, кто поставил лайк/дизлайк
-	@Column(nullable = false, name = "user_id", columnDefinition = "INT")
+	@JoinColumn(nullable = false, name = "user_id", columnDefinition = "INT")
 	private User user;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@Column(nullable = false, name = "post_id", columnDefinition = "INT")
+	@JoinColumn(nullable = false, name = "post_id", columnDefinition = "INT")
 	private Post post;
 
 	@Column(nullable = false, name = "time", columnDefinition = "DATETIME")

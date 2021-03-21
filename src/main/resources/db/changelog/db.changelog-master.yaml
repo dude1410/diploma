@@ -21,10 +21,10 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                name: reg_time
-                type: TIMESTAMP
-                constraints:
-                  nullable: false
+                  name: reg_time
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
               - column:
                   name: name
                   type: VARCHAR(255)
@@ -68,11 +68,11 @@ databaseChangeLog:
                   type: BINARY
                   constraints:
                     nullable: false
-              - column:
-                  name: moderation_status
-                  type: ENUM
-                  constraints:
-                    nullable: false
+#              - column:
+#                  name: moderation_status
+#                  type: ENUM
+#                  constraints:
+#                    nullable: false
               - column:
                   name: moderator_id
                   type: INTEGER
@@ -293,7 +293,7 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: reg_time
-                  value: "1111111"
+                  value: "98-12-31 11:30:45"
               - column:
                   name: name
                   value: "admin"
@@ -308,7 +308,7 @@ databaseChangeLog:
                   value: "admin"
               - column:
                   name: photo
-                  value: null
+                  value: "sdjfhsdhfkhsdhfksdhfhsdfhsdkfhsdhf"
         - insert:
             tableName: users
             columns:
@@ -317,7 +317,7 @@ databaseChangeLog:
                   value: "0"
               - column:
                   name: reg_time
-                  value: "222222"
+                  value: "98-12-31 11:30:46"
               - column:
                   name: name
                   value: "guest"
@@ -332,7 +332,7 @@ databaseChangeLog:
                   value: "guest"
               - column:
                   name: photo
-                  value: null
+                  value: "dsfsdkjfjsdkjfksdjfjs"
       rollback:
         - delete:
             tableName: users
@@ -340,7 +340,7 @@ databaseChangeLog:
   - changeSet:
       id: 10
       author: dude
-      comment: "Create post"
+      comment: "Create posts"
       changes:
         - insert:
             tableName: posts
@@ -348,9 +348,9 @@ databaseChangeLog:
               - column:
                   name: is_active
                   value: "1"
-              - column:
-                  name: moderation_status
-                  value: "NEW"
+#              - column:
+#                  name: moderation_status
+#                  value: "NEW"
               - column:
                   name: moderator_id
                   value: "1"
@@ -359,7 +359,7 @@ databaseChangeLog:
                   value: "0"
               - column:
                   name: time
-                  value: "111111"
+                  value: "98-12-31 11:30:46"
               - column:
                   name: title
                   value: "title1"
@@ -375,9 +375,9 @@ databaseChangeLog:
               - column:
                   name: is_active
                   value: "0"
-              - column:
-                  name: moderation_status
-                  value: "ACCEPTED"
+#              - column:
+#                  name: moderation_status
+#                  value: "ACCEPTED"
               - column:
                   name: moderator_id
                   value: "1"
@@ -386,7 +386,7 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: time
-                  value: "2322322"
+                  value: "98-12-31 11:30:45"
               - column:
                   name: title
                   value: "title2"
@@ -416,12 +416,12 @@ databaseChangeLog:
                   value: "0"
               - column:
                   name: time
-                  value: "1111111"
+                  value: "98-12-31 11:30:46"
               - column:
                   name: value
-                  value: "comment1"
+                  value: "1"
         - insert:
-            tableName: posts_votes
+            tableName: post_votes
             columns:
               - column:
                   name: user_id
@@ -431,10 +431,10 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: time
-                  value: "222222"
+                  value: "98-12-31 11:30:47"
               - column:
                   name: value
-                  value: "comment2"
+                  value: "1"
       rollback:
         - delete:
             tableName: post_votes
@@ -506,7 +506,7 @@ databaseChangeLog:
                   value: "0"
               - column:
                   name: time
-                  value: "111111111"
+                  value: "98-12-31 11:30:44"
               - column:
                   name: text
                   value: "text1text1"
@@ -524,7 +524,7 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: time
-                  value: "22222"
+                  value: "98-12-31 11:30:41"
               - column:
                   name: text
                   value: "text2text2"
@@ -542,7 +542,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: time
-                  value: "111111111"
+                  value: "98-12-31 11:30:41"
               - column:
                   name: code
                   value: "captcha1"
@@ -554,7 +554,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: time
-                  value: "2222222"
+                  value: "98-12-31 11:30:44"
               - column:
                   name: code
                   value: "captcha2"

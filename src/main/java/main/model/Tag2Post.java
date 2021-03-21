@@ -11,11 +11,11 @@ public class Tag2Post {
 	private int id;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@Column(nullable = false, name = "post_id", columnDefinition = "INT")
+	@JoinColumn(nullable = false, name = "post_id", columnDefinition = "INT")
 	private Post post;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@Column(nullable = false, name = "tag_id", columnDefinition = "INT")
+	@JoinColumn(nullable = false, name = "tag_id", columnDefinition = "INT")
 	private Tags tag;
 
 	public Tag2Post (int id, Post post, Tags tag) {
