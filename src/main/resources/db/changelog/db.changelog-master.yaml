@@ -68,11 +68,11 @@ databaseChangeLog:
                   type: BINARY
                   constraints:
                     nullable: false
-#              - column:
-#                  name: moderation_status
-#                  type: ENUM
-#                  constraints:
-#                    nullable: false
+              - column:
+                  name: moderation_status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
               - column:
                   name: moderator_id
                   type: INTEGER
@@ -348,9 +348,9 @@ databaseChangeLog:
               - column:
                   name: is_active
                   value: "1"
-#              - column:
-#                  name: moderation_status
-#                  value: "NEW"
+              - column:
+                  name: moderation_status
+                  value: "NEW"
               - column:
                   name: moderator_id
                   value: "1"
@@ -375,9 +375,9 @@ databaseChangeLog:
               - column:
                   name: is_active
                   value: "0"
-#              - column:
-#                  name: moderation_status
-#                  value: "ACCEPTED"
+              - column:
+                  name: moderation_status
+                  value: "ACCEPTED"
               - column:
                   name: moderator_id
                   value: "1"

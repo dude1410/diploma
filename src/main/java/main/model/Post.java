@@ -14,7 +14,7 @@ public class Post {
 	@Column(nullable = false, name = "is_active", columnDefinition = "TINYINT")
 	private byte isActive;
 
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	@Column(nullable = false, name = "moderation_status", columnDefinition = "ENUM")
 	private ModerationStatus moderationStatus;
 
