@@ -6,3 +6,10 @@ spring.datasource.password: 1410
 spring.jpa.show-sql: true
 spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 spring.jpa.hibernate.ddl-auto: none
+
+blog.title: DevPub
+blog.subtitle: Devs' stories
+blog.phone: +7-903-1368108
+blog.email: dude1410@mail.ru
+blog.copyright: Vladysik Pavel
+blog.copyrightFrom: 2021
