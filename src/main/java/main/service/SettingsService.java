@@ -8,9 +8,9 @@ public class SettingsService {
 
 	public SettingsResponse getGlobalSettings(){
 		SettingsResponse settingsResponse = new SettingsResponse();
-		settingsResponse.setMultiuserMode("YES");
-		settingsResponse.setPostPremoderation("NO");
-		settingsResponse.setStatisticsIsPublic("YES");
+		settingsResponse.setMultiuserMode(true);
+		settingsResponse.setPostPremoderation(false);
+		settingsResponse.setStatisticsIsPublic(true);
 		return settingsResponse;
 	}
 }
