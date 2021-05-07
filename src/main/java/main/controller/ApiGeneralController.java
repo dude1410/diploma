@@ -4,9 +4,11 @@ import main.api.response.InitResponse;
 import main.api.response.SettingsResponse;
 import main.service.SettingsService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api")
 public class ApiGeneralController {
 
 	private final SettingsService settingsService;
@@ -20,17 +22,15 @@ public class ApiGeneralController {
 	/*
 		настройки могут меняться, поэтому мы их будем брать из БД
 		нельзя их сделать final как для футера и хэдера
-		 */
-	@GetMapping("/api/settings")
+	*/
+	@GetMapping("/settings")
 	private SettingsResponse settings(){
 		return settingsService.getGlobalSettings();
 	}
 
 	// инфа для футера и хэдера будет у нас величиной постоянной
-	@GetMapping("/api/init")
+	@GetMapping("/init")
 	private InitResponse initResponse(){
 		return initResponse;
 	}
-
-
 }

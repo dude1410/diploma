@@ -32,6 +32,8 @@ public class User {
 	@Column(name = "photo", columnDefinition = "TEXT") // LONGVARCHAR?
 	private String photo;
 
+	public User(){};
+
 	public User(int id, byte isModerator, Timestamp regTime, String name,
 				String email, String password, String code, String photo) {
 		this.id = id;

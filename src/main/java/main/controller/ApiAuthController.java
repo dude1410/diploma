@@ -1,21 +1,22 @@
 package main.controller;
 
 import main.api.response.AuthResponse;
-import main.service.AuthService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/auth")
 public class ApiAuthController {
 
-	private final AuthService authService;
+	private final AuthResponse authResponse;
 
-	public ApiAuthController(AuthService authService) {
-		this.authService = authService;
+	public ApiAuthController(AuthResponse authResponse){
+		this.authResponse = authResponse;
 	}
 
-	@RequestMapping("/api/auth/")
-	private AuthResponse response(){
-		return authService.getAuthResponse();
+	@GetMapping("/check")
+	private AuthResponse authResponse() {
+		return authResponse();
 	}
 }
