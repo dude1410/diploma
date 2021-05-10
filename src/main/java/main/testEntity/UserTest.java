@@ -1,4 +1,4 @@
-package main.model;
+package main.testEntity;
 
 import org.springframework.stereotype.Component;
 

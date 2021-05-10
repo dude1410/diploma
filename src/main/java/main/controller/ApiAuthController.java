@@ -17,6 +17,6 @@ public class ApiAuthController {
 
 	@GetMapping("/check")
 	private AuthResponse authResponse() {
-		return authResponse();
+		return authResponse;
 	}
 }

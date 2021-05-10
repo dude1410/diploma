@@ -1,6 +1,6 @@
 package main.api.response;
 
-import main.model.UserTest;
+import main.testEntity.UserTest;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,7 +8,7 @@ public class AuthResponse {
 
 	private boolean result = true;
 //	private boolean result = false;
-	private UserTest userTest = new UserTest();
+	private UserTest user = new UserTest();
 
 	public boolean isResult() {
 		return result;
@@ -19,10 +19,10 @@ public class AuthResponse {
 	}
 
 	public UserTest getUserTest() {
-		return userTest;
+		return user;
 	}
 
-	public void setUserTest(UserTest userTest) {
-		this.userTest = userTest;
+	public void setUserTest(UserTest user) {
+		this.user = user;
 	}
 }
