@@ -4,6 +4,7 @@ import main.api.response.TagResponse;
 import main.testEntity.TagTest;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -11,23 +12,24 @@ public class TagTestService {
 
     public static TagResponse getTagResponse() {
         TagResponse tagResponse = new TagResponse();
-        List <TagTest> tagTests = tagResponse.getTagTestList();
+        List <TagTest> tags = new ArrayList<>();
         TagTest tagTest1 = new TagTest();
         tagTest1.setName("Java");
         tagTest1.setWeight(1);
         TagTest tagTest2 = new TagTest();
-        tagTest1.setName("Spring");
-        tagTest1.setWeight(0.56);
+        tagTest2.setName("Spring");
+        tagTest2.setWeight(0.56);
         TagTest tagTest3 = new TagTest();
-        tagTest1.setName("Hibernate");
-        tagTest1.setWeight(0.22);
+        tagTest3.setName("Hibernate");
+        tagTest3.setWeight(0.22);
         TagTest tagTest4 = new TagTest();
-        tagTest1.setName("Hadoop");
-        tagTest1.setWeight(0.17);
-        tagTests.add(tagTest1);
-        tagTests.add(tagTest2);
-        tagTests.add(tagTest3);
-        tagTests.add(tagTest4);
+        tagTest4.setName("Hadoop");
+        tagTest4.setWeight(0.17);
+        tags.add(tagTest1);
+        tags.add(tagTest2);
+        tags.add(tagTest3);
+        tags.add(tagTest4);
+        tagResponse.setTags(tags);
         return tagResponse;
     }
 }

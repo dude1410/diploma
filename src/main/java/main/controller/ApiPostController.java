@@ -1,20 +1,21 @@
 package main.controller;
 
 import main.api.response.PostResponse;
+import main.service.PostService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ApiPostController {
 
-    private final PostResponse postResponse;
+    private final PostService postService;
 
-    public ApiPostController(PostResponse postResponse) {
-        this.postResponse = postResponse;
+    public ApiPostController(PostService postService) {
+        this.postService = postService;
     }
 
-    @GetMapping("/api/post/")
+    @GetMapping("/api/post")
     private PostResponse postResponse(){
-	    return postResponse;
+	    return postService.getPostResponse();
     }
 }

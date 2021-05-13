@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UserTestForPostTest {
-    private int id = 88;
-    private String name = "Dmitriy Petrov";
+    private int id;
+    private String name;
 
 
     public int getId() {

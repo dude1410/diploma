@@ -1,14 +1,15 @@
 package main.api.response;
 
 import main.testEntity.PostTest;
-import org.springframework.stereotype.Component;
 
-@Component
+import java.util.ArrayList;
+import java.util.List;
+
 public class PostResponse {
 
     private int count = 1;
 //    private int count = 0;
-    private PostTest postTest = new PostTest();
+    private List<PostTest> posts = new ArrayList<>();
 
     public int getCount() {
         return count;
@@ -18,11 +19,11 @@ public class PostResponse {
         this.count = count;
     }
 
-    public PostTest getPostTest() {
-        return postTest;
+    public List<PostTest> getPosts() {
+        return posts;
     }
 
-    public void setPostTest(PostTest postTest) {
-        this.postTest = postTest;
+    public void setPosts(List<PostTest> posts) {
+        this.posts = posts;
     }
 }

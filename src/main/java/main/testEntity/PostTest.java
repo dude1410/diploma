@@ -7,15 +7,15 @@ import java.sql.Timestamp;
 @Component
 public class PostTest {
 
-    private int id = 345;
-    private Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-    private UserTestForPostTest user = new UserTestForPostTest();
-    private String title = "Text title";
-    private String announce = "Text announce without html-tags";
-    private int likeCount = 36;
-    private int dislikeCount = 3;
-    private int commentCount = 15;
-    private int viewCount = 55;
+    private int id;
+    private Timestamp timestamp;
+    private UserTestForPostTest user;
+    private String title;
+    private String announce;
+    private int likeCount;
+    private int dislikeCount;
+    private int commentCount;
+    private int viewCount;
 
     public int getId() {
         return id;

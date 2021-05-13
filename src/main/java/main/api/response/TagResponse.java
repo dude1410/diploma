@@ -1,22 +1,18 @@
 package main.api.response;
 
 import main.testEntity.TagTest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 public class TagResponse {
 
-    @Autowired
-    private List <TagTest> tagTestList;
+    private List <TagTest> tags;
 
-    public List<TagTest> getTagTestList() {
-        return tagTestList;
+    public List<TagTest> getTags() {
+        return tags;
     }
 
-    public void setTagTestList(List<TagTest> tagTestList) {
-        this.tagTestList = tagTestList;
+    public void setTags(List<TagTest> tags) {
+        this.tags = tags;
     }
 }

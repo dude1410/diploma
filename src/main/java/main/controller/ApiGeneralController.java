@@ -18,7 +18,8 @@ public class ApiGeneralController {
 	private final TagTestService tagTestService;
 
 	public ApiGeneralController(SettingsService settingsService,
-								InitResponse initResponse, TagResponse tagResponse, TagTestService tagTestService) {
+								InitResponse initResponse,
+								TagTestService tagTestService) {
 		this.settingsService = settingsService;
 		this.initResponse = initResponse;
 		this.tagTestService = tagTestService;
