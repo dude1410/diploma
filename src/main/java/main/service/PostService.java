@@ -34,4 +34,13 @@ public class PostService {
 
         return postResponse;
     }
+
+    public static PostResponse getPostEmptyResponse () {
+        PostResponse postResponse = new PostResponse();
+        postResponse.setCount(0);
+        List <PostTest> posts = new ArrayList<>();
+        postResponse.setPosts(posts);
+
+        return postResponse;
+    }
 }
