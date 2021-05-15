@@ -3,9 +3,11 @@ package main.testEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserTestForPostTest {
-    private int id;
-    private String name;
+public class UserTestForCommentForPost {
+
+    private int id = 576;
+    private String name = "Dmitriy Petrov";
+    private String photo = "/avatars/ab/cd/ef/52461.jpg";
 
     public int getId() {
         return id;
@@ -21,5 +23,13 @@ public class UserTestForPostTest {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }
