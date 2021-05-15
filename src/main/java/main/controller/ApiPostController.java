@@ -21,13 +21,18 @@ public class ApiPostController {
 	    return postService.getPostResponse();
     }
 
+//    @GetMapping("/search")
+//    private PostResponse postResponseSearch(){
+//        return postService.getPostEmptyResponse();
+//    }
+
     @GetMapping("/search")
     private PostResponse postResponseSearch(){
-        return postService.getPostEmptyResponse();
+        return postService.getPostResponse();
     }
 
-//    @GetMapping("/search")
-//    private PostResponse postResponse(){
-//        return postService.getPostResponse();
-//    }
+    @GetMapping("/byDate")
+    private PostResponse postResponseByDate(){
+        return postService.getPostResponse();
+    }
 }
