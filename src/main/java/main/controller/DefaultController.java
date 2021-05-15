@@ -2,6 +2,7 @@ package main.controller;
 
 import main.api.response.AuthResponse;
 import main.api.response.InitResponse;
+import main.api.response.RegisterSuccessResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,11 +12,14 @@ public class DefaultController
 {
 	private final InitResponse initResponse;
 	private final AuthResponse authResponse;
+	private final RegisterSuccessResponse successResponse;
 
 	public DefaultController(InitResponse initResponse,
-							 AuthResponse authResponse) {
+							 AuthResponse authResponse,
+							 RegisterSuccessResponse successResponse) {
 		this.initResponse = initResponse;
 		this.authResponse = authResponse;
+		this.successResponse = successResponse;
 	}
 
 //	@RequestMapping("/")
