@@ -1,12 +1,14 @@
 package main.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class GlobalSettings {
+@Table(name = "global_settings")
+public class GlobalSettings implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
@@ -18,13 +20,6 @@ public class GlobalSettings {
 
 	@Column(nullable = false, name = "value", columnDefinition = "VARCHAR(255)")
 	private String value;
-
-	public GlobalSettings (int id, String code, String name, String value) {
-		this.id = id;
-		this.code = code;
-		this.name = name;
-		this.value = value;
-	}
 
 	public int getId() {
 		return id;

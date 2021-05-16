@@ -30,10 +30,6 @@ public class ApiGeneralController {
 		this.calendarService = calendarService;
 	}
 
-	/*
-		настройки могут меняться, поэтому мы их будем брать из БД
-		нельзя их сделать final как для футера и хэдера
-	*/
 	@GetMapping("/settings")
 	private SettingsResponse settings(){
 		return settingsService.getGlobalSettings();
