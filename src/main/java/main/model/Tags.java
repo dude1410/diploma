@@ -1,9 +1,11 @@
 package main.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Tags {
+@Table(name = "tags")
+public class Tags implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

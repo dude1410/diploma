@@ -24,22 +24,16 @@ public class SettingsService {
 
 		for (GlobalSettings set : settings) {
 //			System.out.println(set.getCode());
-			if (set.getCode().equals("MULTIUSER_MODE")) {
-				if (set.getValue().equals("YES")) {
-					settingsResponse.setMultiuserMode(true);
-				}
+			if (set.getCode().equals("MULTIUSER_MODE") && (set.getValue().equals("YES"))) {
+				settingsResponse.setMultiuserMode(true);
 			}
 
-			if (set.getCode().equals("POST_PREMODERATION")) {
-				if (set.getValue().equals("YES")) {
-					settingsResponse.setPostPremoderation(true);
-				}
+			if (set.getCode().equals("POST_PREMODERATION") && (set.getValue().equals("YES"))) {
+				settingsResponse.setPostPremoderation(true);
 			}
 
-			if (set.getCode().equals("STATISTICS_IS_PUBLIC")) {
-				if (set.getValue().equals("YES")) {
-					settingsResponse.setStatisticsIsPublic(true);
-				}
+			if (set.getCode().equals("STATISTICS_IS_PUBLIC") && (set.getValue().equals("YES"))) {
+				settingsResponse.setStatisticsIsPublic(true);
 			}
 		}
 

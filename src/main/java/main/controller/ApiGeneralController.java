@@ -7,8 +7,10 @@ import main.api.response.TagResponse;
 import main.service.CalendarService;
 import main.service.SettingsService;
 import main.service.TagTestService;
+import main.service.TagsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -17,17 +19,20 @@ public class ApiGeneralController {
 
 	private final SettingsService settingsService;
 	private final InitResponse initResponse;
-	private final TagTestService tagTestService;
+//	private final TagTestService tagTestService;
 	private final CalendarService calendarService;
+	private final TagsService tagsService;
 
 	public ApiGeneralController(SettingsService settingsService,
 								InitResponse initResponse,
-								TagTestService tagTestService,
-								CalendarService calendarService) {
+//								TagTestService tagTestService,
+								CalendarService calendarService,
+								TagsService tagsService) {
 		this.settingsService = settingsService;
 		this.initResponse = initResponse;
-		this.tagTestService = tagTestService;
+//		this.tagTestService = tagTestService;
 		this.calendarService = calendarService;
+		this.tagsService = tagsService;
 	}
 
 	@GetMapping("/settings")
@@ -42,8 +47,8 @@ public class ApiGeneralController {
 	}
 
 	@GetMapping("/tag")
-	private TagResponse tagResponse() {
-		return TagTestService.getTagResponse();
+	private TagResponse tagResponse(@RequestParam(required = false)String query) {
+		return tagsService.getTagResponse(query);
 	}
 
 	@GetMapping("/calendar")
