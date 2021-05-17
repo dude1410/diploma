@@ -22,17 +22,38 @@ public class SettingsService {
 		SettingsResponse settingsResponse = new SettingsResponse();
 		List<GlobalSettings> settings = settingsRepository.findAll();
 
-		if (settings.get(0).getValue().equals("YES")) {
-			settingsResponse.setMultiuserMode(true);
+		for (GlobalSettings set : settings) {
+//			System.out.println(set.getCode());
+			if (set.getCode().equals("MULTIUSER_MODE")) {
+				if (set.getValue().equals("YES")) {
+					settingsResponse.setMultiuserMode(true);
+				}
+			}
+
+			if (set.getCode().equals("POST_PREMODERATION")) {
+				if (set.getValue().equals("YES")) {
+					settingsResponse.setPostPremoderation(true);
+				}
+			}
+
+			if (set.getCode().equals("STATISTICS_IS_PUBLIC")) {
+				if (set.getValue().equals("YES")) {
+					settingsResponse.setStatisticsIsPublic(true);
+				}
+			}
 		}
 
-		if (settings.get(1).getValue().equals("YES")) {
-			settingsResponse.setPostPremoderation(true);
-		}
-
-		if (settings.get(2).getValue().equals("YES")) {
-			settingsResponse.setStatisticsIsPublic(true);
-		}
+//		if (settings.get(0).getValue().equals("YES")) {
+//			settingsResponse.setMultiuserMode(true);
+//		}
+//
+//		if (settings.get(1).getValue().equals("YES")) {
+//			settingsResponse.setPostPremoderation(true);
+//		}
+//
+//		if (settings.get(2).getValue().equals("YES")) {
+//			settingsResponse.setStatisticsIsPublic(true);
+//		}
 
 		return settingsResponse;
 	}
