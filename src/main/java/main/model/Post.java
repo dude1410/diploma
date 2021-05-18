@@ -4,17 +4,18 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "posts")
 public class Post {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
 	@Column(nullable = false, name = "is_active", columnDefinition = "TINYINT")
 	private byte isActive;
 
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "moderation_status", columnDefinition = "ENUM")
 	private ModerationStatus moderationStatus;
 
@@ -48,6 +49,9 @@ public class Post {
 		this.title = title;
 		this.text = text;
 		this.viewCount = viewCount;
+	}
+
+	public Post() {
 	}
 
 	public int getId() {

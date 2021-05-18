@@ -4,10 +4,11 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "post_votes")
 public class PostVotes {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
@@ -31,6 +32,9 @@ public class PostVotes {
 		this.post = post;
 		this.time = time;
 		this.value = value;
+	}
+
+	public PostVotes() {
 	}
 
 	public int getId() {

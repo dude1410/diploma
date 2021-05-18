@@ -21,6 +21,16 @@ public class GlobalSettings implements Serializable {
 	@Column(nullable = false, name = "value", columnDefinition = "VARCHAR(255)")
 	private String value;
 
+	public GlobalSettings(int id, String code, String name, String value) {
+		this.id = id;
+		this.code = code;
+		this.name = name;
+		this.value = value;
+	}
+
+	public GlobalSettings() {
+	}
+
 	public int getId() {
 		return id;
 	}

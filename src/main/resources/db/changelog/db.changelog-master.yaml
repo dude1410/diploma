@@ -70,7 +70,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: moderation_status
-                  type: VARCHAR(255)
+                  type: ENUM ('NEW', 'ACCEPTED', 'DECLINED')
                   constraints:
                     nullable: false
               - column:
@@ -296,19 +296,19 @@ databaseChangeLog:
                   value: "98-12-31 11:30:45"
               - column:
                   name: name
-                  value: "admin"
+                  value: "admin Vasya"
               - column:
                   name: password
-                  value: "admin"
+                  value: "adminVasya"
               - column:
                   name: email
-                  value: "admin@server.com"
+                  value: "adminVasya@server.com"
               - column:
                   name: code
-                  value: "admin"
+                  value: "adminV"
               - column:
                   name: photo
-                  value: "sdjfhsdhfkhsdhfksdhfhsdfhsdkfhsdhf"
+                  value: "foto-of-admin-Vasya"
         - insert:
             tableName: users
             columns:
@@ -320,19 +320,19 @@ databaseChangeLog:
                   value: "97-12-31 11:30:45"
               - column:
                   name: name
-                  value: "admin1"
+                  value: "admin Petya"
               - column:
                   name: password
-                  value: "admin1"
+                  value: "adminPetya"
               - column:
                   name: email
-                  value: "admin1@server.com"
+                  value: "adminPetya@server.com"
               - column:
                   name: code
-                  value: "admin1"
+                  value: "adminP"
               - column:
                   name: photo
-                  value: "sdjfhsdhfkhsdhfksdhdkfhsdhf"
+                  value: "foto-of-admin-Petya"
         - insert:
             tableName: users
             columns:
@@ -344,19 +344,19 @@ databaseChangeLog:
                   value: "98-12-31 11:30:46"
               - column:
                   name: name
-                  value: "guest"
+                  value: "guest Katya"
               - column:
                   name: password
-                  value: "guest"
+                  value: "guestKatya"
               - column:
                   name: email
-                  value: "guest@server.com"
+                  value: "guestKatya@server.com"
               - column:
                   name: code
-                  value: "guest"
+                  value: "guestK"
               - column:
                   name: photo
-                  value: "dsfsdkjfjsdkjfksdjfjs"
+                  value: "foto-of-guest-Katya"
         - insert:
             tableName: users
             columns:
@@ -368,23 +368,23 @@ databaseChangeLog:
                   value: "98-12-11 11:30:46"
               - column:
                   name: name
-                  value: "guest1"
+                  value: "guest Masha"
               - column:
                   name: password
-                  value: "guest1"
+                  value: "guestMasha"
               - column:
                   name: email
-                  value: "guest1@server.com"
+                  value: "guestMasha@server.com"
               - column:
                   name: code
-                  value: "guest1"
+                  value: "guestM"
               - column:
                   name: photo
-                  value: "dsfsdkjsdkjfksdjfjs"
+                  value: "foto-of-guest-Masha"
       rollback:
         - delete:
             tableName: users
-            where: name in ('admin', 'guest', 'admin1', 'guest1')
+            where: name in ('admin Vasya', 'admin Petya', 'guest Masha', 'guest Katya')
   - changeSet:
       id: 10
       author: dude
@@ -404,19 +404,19 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: user_id
-                  value: "0"
+                  value: "1"
               - column:
                   name: time
                   value: "98-12-31 11:30:46"
               - column:
                   name: title
-                  value: "title0"
+                  value: "Java is the BEST"
               - column:
                   name: text
-                  value: "text0text0text0"
+                  value: "Java — строго типизированный объектно-ориентированный язык программирования общего назначения"
               - column:
                   name: view_count
-                  value: "0"
+                  value: "1225"
         - insert:
             tableName: posts
             columns:
@@ -431,19 +431,21 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: user_id
-                  value: "0"
+                  value: "2"
               - column:
                   name: time
                   value: "98-12-31 11:30:46"
               - column:
                   name: title
-                  value: "title1"
+                  value: "Why C#?"
               - column:
                   name: text
-                  value: "text1text1text1"
+                  value: "C# (произносится си шарп) — объектно-ориентированный язык программирования.
+                   Разработан в 1998—2001 годах группой инженеров компании Microsoft под руководством
+                   Андерса Хейлсберга и Скотта Вильтаумота"
               - column:
                   name: view_count
-                  value: "0"
+                  value: "23"
         - insert:
             tableName: posts
             columns:
@@ -458,19 +460,21 @@ databaseChangeLog:
                   value: "2"
               - column:
                   name: user_id
-                  value: "2"
+                  value: "3"
               - column:
                   name: time
                   value: "98-12-30 11:30:45"
               - column:
                   name: title
-                  value: "title2"
+                  value: "Popular Hibernate"
               - column:
                   name: text
-                  value: "text2text2text2"
+                  value: "Hibernate — библиотека для языка программирования Java, предназначенная для решения задач
+                  объектно-реляционного отображения (ORM), самая популярная реализация спецификации JPA. Распространяется
+                   свободно на условиях GNU Lesser General Public License."
               - column:
                   name: view_count
-                  value: "15"
+                  value: "115"
         - insert:
             tableName: posts
             columns:
@@ -485,23 +489,25 @@ databaseChangeLog:
                   value: "3"
               - column:
                   name: user_id
-                  value: "3"
+                  value: "4"
               - column:
                   name: time
                   value: "96-12-29 11:30:45"
               - column:
                   name: title
-                  value: "title3"
+                  value: "SQL or PostgreSQL"
               - column:
                   name: text
-                  value: "text3text3text3"
+                  value: "Существует в реализациях для множества UNIX-подобных платформ,
+                   включая AIX, различные BSD-системы, HP-UX, IRIX, Linux, macOS, Solaris/OpenSolaris,
+                    Tru64, QNX, а также для Microsoft Windows."
               - column:
                   name: view_count
                   value: "8"
       rollback:
         - delete:
             tableName: posts
-            where: user_id in ('0', '1', '2', '3')
+            where: user_id in ('4', '1', '2', '3')
   - changeSet:
       id: 11
       author: dude
@@ -512,10 +518,10 @@ databaseChangeLog:
             columns:
               - column:
                   name: user_id
-                  value: "0"
+                  value: "1"
               - column:
                   name: post_id
-                  value: "0"
+                  value: "1"
               - column:
                   name: time
                   value: "98-12-31 11:30:46"
@@ -527,10 +533,10 @@ databaseChangeLog:
             columns:
               - column:
                   name: user_id
-                  value: "1"
+                  value: "2"
               - column:
                   name: post_id
-                  value: "1"
+                  value: "2"
               - column:
                   name: time
                   value: "98-12-31 11:30:47"
@@ -542,25 +548,25 @@ databaseChangeLog:
             columns:
               - column:
                   name: user_id
-                  value: "2"
+                  value: "3"
               - column:
                   name: post_id
-                  value: "2"
+                  value: "3"
               - column:
                   name: time
                   value: "99-12-31 11:30:46"
               - column:
                   name: value
-                  value: "1"
+                  value: "0"
         - insert:
             tableName: post_votes
             columns:
               - column:
                   name: user_id
-                  value: "3"
+                  value: "4"
               - column:
                   name: post_id
-                  value: "3"
+                  value: "4"
               - column:
                   name: time
                   value: "95-12-31 11:30:46"
@@ -570,7 +576,7 @@ databaseChangeLog:
       rollback:
         - delete:
             tableName: post_votes
-            where: user_id in ('0', '1', '2', '3')
+            where: user_id in ('4', '1', '2', '3')
   - changeSet:
       id: 12
       author: dude
@@ -581,29 +587,65 @@ databaseChangeLog:
             columns:
               - column:
                   name: name
-                  value: "tag1"
+                  value: "Java"
         - insert:
             tableName: tags
             columns:
               - column:
                   name: name
-                  value: "tag2"
+                  value: "Java"
         - insert:
             tableName: tags
             columns:
               - column:
                   name: name
-                  value: "tag3"
+                  value: "C#"
         - insert:
             tableName: tags
             columns:
               - column:
                   name: name
-                  value: "tag4"
+                  value: "C#"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "Hibernate"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "SQL"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "SQL"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "SQL"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "SQL"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "SQL"
       rollback:
         - delete:
             tableName: tags
-            where: name in ('tag1', 'tag2', 'tag3', 'tag4')
+            where: name in ('Java', 'C#', 'Hibernate', 'SQL')
   - changeSet:
       id: 13
       author: dude
@@ -614,15 +656,6 @@ databaseChangeLog:
             columns:
               - column:
                   name: post_id
-                  value: "0"
-              - column:
-                  name: tag_id
-                  value: "0"
-        - insert:
-            tableName: tag2post
-            columns:
-              - column:
-                  name: post_id
                   value: "1"
               - column:
                   name: tag_id
@@ -632,7 +665,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: post_id
-                  value: "2"
+                  value: "1"
               - column:
                   name: tag_id
                   value: "2"
@@ -641,14 +674,41 @@ databaseChangeLog:
             columns:
               - column:
                   name: post_id
-                  value: "3"
+                  value: "2"
               - column:
                   name: tag_id
                   value: "3"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "2"
+              - column:
+                  name: tag_id
+                  value: "4"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "3"
+              - column:
+                  name: tag_id
+                  value: "5"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "4"
+              - column:
+                  name: tag_id
+                  value: "6"
       rollback:
         - delete:
             tableName: tag2post
-            where: post_id in ('0', '1', '2', '3')
+            where: post_id in ('4', '1', '2', '3')
   - changeSet:
       id: 14
       author: dude
@@ -662,16 +722,16 @@ databaseChangeLog:
                   value: "0"
               - column:
                   name: post_id
-                  value: "0"
+                  value: "1"
               - column:
                   name: user_id
-                  value: "0"
+                  value: "1"
               - column:
                   name: time
                   value: "98-12-31 11:30:44"
               - column:
                   name: text
-                  value: "text0text0"
+                  value: "comment text 1"
         - insert:
             tableName: post_comments
             columns:
@@ -683,53 +743,53 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: user_id
-                  value: "1"
+                  value: "2"
               - column:
                   name: time
                   value: "98-12-31 11:30:41"
               - column:
                   name: text
-                  value: "text1text1"
+                  value: "comment text 2"
         - insert:
             tableName: post_comments
             columns:
               - column:
                   name: parent_id
-                  value: "2"
+                  value: "0"
               - column:
                   name: post_id
-                  value: "2"
+                  value: "3"
               - column:
                   name: user_id
-                  value: "2"
+                  value: "3"
               - column:
                   name: time
                   value: "98-12-31 10:30:44"
               - column:
                   name: text
-                  value: "text2text2"
+                  value: "comment text 3"
         - insert:
             tableName: post_comments
             columns:
               - column:
                   name: parent_id
-                  value: "3"
+                  value: "1"
               - column:
                   name: post_id
                   value: "3"
               - column:
                   name: user_id
-                  value: "3"
+                  value: "4"
               - column:
                   name: time
                   value: "98-12-31 11:35:44"
               - column:
                   name: text
-                  value: "text3text3"
+                  value: "comment text 4"
       rollback:
         - delete:
             tableName: post_comments
-            where: post_id in ('0', '1', '2', '3')
+            where: post_id in ('4', '1', '2', '3')
   - changeSet:
       id: 15
       author: dude

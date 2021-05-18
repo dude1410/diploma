@@ -3,10 +3,11 @@ package main.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "tag2post")
 public class Tag2Post {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
@@ -22,6 +23,9 @@ public class Tag2Post {
 		this.id = id;
 		this.post = post;
 		this.tag = tag;
+	}
+
+	public Tag2Post() {
 	}
 
 	public int getId() {

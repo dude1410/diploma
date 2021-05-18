@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Tags implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
@@ -18,6 +18,9 @@ public class Tags implements Serializable {
 	public Tags(int id, String name){
 		this.id = id;
 		this.name = name;
+	}
+
+	public Tags() {
 	}
 
 	public int getId() {

@@ -4,10 +4,11 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "captcha_codes")
 public class CaptchaCodes {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
@@ -25,6 +26,9 @@ public class CaptchaCodes {
 		this.time = time;
 		this.code = code;
 		this.secretCode = secretCode;
+	}
+
+	public CaptchaCodes() {
 	}
 
 	public int getId() {
