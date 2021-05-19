@@ -2,6 +2,8 @@ package main.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "posts")
@@ -37,6 +39,12 @@ public class Post {
 
 	@Column(nullable = false, name = "view_count", columnDefinition = "INT")
 	private int viewCount;
+
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<PostComments> postComments = new HashSet<>();
+
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<PostVotes> postVotes = new HashSet<>();
 
 	public Post(int id, byte isActive, ModerationStatus moderationStatus, int moderatorId,
 				User user, Timestamp time, String title, String text, int viewCount){
@@ -124,5 +132,21 @@ public class Post {
 
 	public void setViewCount(int viewCount) {
 		this.viewCount = viewCount;
+	}
+
+	public Set<PostComments> getPostComments() {
+		return postComments;
+	}
+
+	public void setPostComments(Set<PostComments> postComments) {
+		this.postComments = postComments;
+	}
+
+	public Set<PostVotes> getPostVotes() {
+		return postVotes;
+	}
+
+	public void setPostVotes(Set<PostVotes> postVotes) {
+		this.postVotes = postVotes;
 	}
 }

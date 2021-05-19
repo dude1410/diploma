@@ -6,6 +6,7 @@ import main.model.Tags;
 import main.repository.PostRepository;
 import main.repository.TagsRepository;
 import main.testEntity.TagTest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class TagsService {
     private final TagsRepository tagsRepository;
     private final PostRepository postRepository;
 
+    @Autowired
     public TagsService(TagsRepository tagsRepository, PostRepository postRepository) {
         this.tagsRepository = tagsRepository;
         this.postRepository = postRepository;

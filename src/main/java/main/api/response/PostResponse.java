@@ -1,14 +1,17 @@
 package main.api.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import main.testEntity.PostTest;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PostResponse {
 
-    private int count = 1;
-//    private int count = 0;
+    private int count;
     private List<PostTest> posts = new ArrayList<>();
 
     public int getCount() {

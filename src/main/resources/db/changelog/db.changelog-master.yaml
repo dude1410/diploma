@@ -413,10 +413,40 @@ databaseChangeLog:
                   value: "Java is the BEST"
               - column:
                   name: text
-                  value: "Java — строго типизированный объектно-ориентированный язык программирования общего назначения"
+                  value: "Java — строго типизированный объектно-ориентированный язык программирования общего назначения
+                  Java — строго типизированный объектно-ориентированный язык программирования общего назначения
+                  Java — строго типизированный объектно-ориентированный язык программирования общего назначения
+                  Java — строго типизированный объектно-ориентированный язык программирования общего назначения"
               - column:
                   name: view_count
                   value: "1225"
+        - insert:
+             tableName: posts
+             columns:
+               - column:
+                   name: is_active
+                   value: "1"
+               - column:
+                   name: moderation_status
+                   value: "ACCEPTED"
+               - column:
+                   name: moderator_id
+                   value: "2"
+               - column:
+                   name: user_id
+                   value: "2"
+               - column:
+                   name: time
+                   value: "99-12-31 11:30:46"
+               - column:
+                   name: title
+                   value: "Java is the Worst"
+               - column:
+                   name: text
+                   value: "Java — пипец какой сложный язык программирования"
+               - column:
+                   name: view_count
+                   value: "125"
         - insert:
             tableName: posts
             columns:
@@ -525,6 +555,21 @@ databaseChangeLog:
               - column:
                   name: time
                   value: "98-12-31 11:30:46"
+              - column:
+                  name: value
+                  value: "0"
+        - insert:
+            tableName: post_votes
+            columns:
+              - column:
+                  name: user_id
+                  value: "4"
+              - column:
+                  name: post_id
+                  value: "1"
+              - column:
+                  name: time
+                  value: "94-12-31 11:30:46"
               - column:
                   name: value
                   value: "1"
@@ -750,6 +795,24 @@ databaseChangeLog:
               - column:
                   name: text
                   value: "comment text 2"
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: parent_id
+                  value: "0"
+              - column:
+                  name: post_id
+                  value: "2"
+              - column:
+                  name: user_id
+                  value: "2"
+              - column:
+                  name: time
+                  value: "99-12-31 11:30:41"
+              - column:
+                  name: text
+                  value: "comment text text"
         - insert:
             tableName: post_comments
             columns:

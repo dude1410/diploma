@@ -6,10 +6,7 @@ import main.service.PostIdService;
 import main.service.PostService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/post")
@@ -25,51 +22,53 @@ public class ApiPostController {
     }
 
     @GetMapping
-    private PostResponse postResponse(){
-	    return postService.getPostResponse();
+    private PostResponse getAllPostResponse(@RequestParam("limit") int limit,
+                                            @RequestParam("offset") int offset,
+                                            @RequestParam("mode") String mode){
+	    return postService.getAllPostResponse(limit,offset, mode);
     }
 
 //    @GetMapping
 //    private PostResponse postResponse(){
 //        return postService.getPostEmptyResponse();
 //    }
-
+//
 //    @GetMapping("/search")
 //    private PostResponse postResponseSearch(){
 //        return postService.getPostEmptyResponse();
 //    }
-
-    @GetMapping("/search")
-    private PostResponse postResponseSearch(){
-        return postService.getPostResponse();
-    }
-
-    @GetMapping("/byDate")
-    private PostResponse postResponseByDate(){
-        return postService.getPostResponse();
-    }
-
+//
+//    @GetMapping("/search")
+//    private PostResponse postResponseSearch(){
+//        return postService.getPostResponse();
+//    }
+//
+//    @GetMapping("/byDate")
+//    private PostResponse postResponseByDate(){
+//        return postService.getPostResponse();
+//    }
+//
 //    @GetMapping("/byDate")
 //    private PostResponse postResponseByDate(){
 //        return postService.getPostEmptyResponse();
 //    }
-
-    @GetMapping("/byTag")
-    private PostResponse postResponseByTag(){
-        return postService.getPostResponse();
-    }
-
+//
 //    @GetMapping("/byTag")
+//    private PostResponse postResponseByTag(){
+//        return postService.getPostResponse();
+//    }
+//
+////    @GetMapping("/byTag")
 //    private PostResponse postResponseByTag(){
 //        return postService.getPostEmptyResponse();
 //    }
-
-    @GetMapping("/{ID}")
-    private ResponseEntity<PostResponseId> postResponseId(@PathVariable String ID){
-        if (ID.equals("0")){
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(postIdService.getPostResponseId (), HttpStatus.OK);
-        }
-    }
+//
+//    @GetMapping("/{ID}")
+//    private ResponseEntity<PostResponseId> postResponseId(@PathVariable String ID){
+//        if (ID.equals("0")){
+//            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+//        } else {
+//            return new ResponseEntity<>(postIdService.getPostResponseId (), HttpStatus.OK);
+//        }
+//    }
 }
