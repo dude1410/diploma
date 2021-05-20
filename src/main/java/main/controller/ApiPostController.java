@@ -25,7 +25,14 @@ public class ApiPostController {
     private PostResponse getAllPostResponse(@RequestParam("limit") int limit,
                                             @RequestParam("offset") int offset,
                                             @RequestParam("mode") String mode){
-	    return postService.getAllPostResponse(limit,offset, mode);
+	    return postService.getAllPostResponse(limit, offset, mode);
+    }
+
+    @GetMapping("/search")
+    private PostResponse getSearchPostResponse(@RequestParam("limit") int limit,
+                                            @RequestParam("offset") int offset,
+                                            @RequestParam("query") String query){
+        return postService.getSearchPostResponse(limit, offset, query);
     }
 
 //    @GetMapping

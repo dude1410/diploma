@@ -23,10 +23,10 @@ public class PostVotes {
 	@Column(nullable = false, name = "time", columnDefinition = "DATETIME")
 	private Timestamp time;
 
-	@Column(nullable = false, name = "value", columnDefinition = "TINYINT")
-	private byte value;
+	@Column(nullable = false, name = "value", columnDefinition = "INT")
+	private int value;
 
-	public PostVotes(int id, User user, Post post, Timestamp time, byte value) {
+	public PostVotes(int id, User user, Post post, Timestamp time, int value) {
 		this.id = id;
 		this.user = user;
 		this.post = post;
@@ -69,11 +69,11 @@ public class PostVotes {
 		this.time = time;
 	}
 
-	public byte getValue() {
+	public int getValue() {
 		return value;
 	}
 
-	public void setValue(byte value) {
+	public void setValue(int value) {
 		this.value = value;
 	}
 }

@@ -3,7 +3,6 @@ package main.service;
 import main.api.response.PostResponse;
 import main.model.Post;
 import main.repository.PostRepository;
-import main.repository.UserRepository;
 import main.testEntity.PostTest;
 import main.testEntity.UserTestForPostTest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.jsoup.Jsoup;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +36,26 @@ public class PostService {
         int postCount = 0;
 
         if (mode == null) {mode = "recent";}
-        if (mode.equalsIgnoreCase("recent")) {
+        if (mode.equalsIgnoreCase("recent")) { //todo разобраться с датами
             postsToShow = postRepository.findPostsByTimeNewFist(PageRequest.of(offset / limit, limit));
+            postCount = (int) postsToShow.getTotalElements();
+            for (Post post : postsToShow) {
+                PostTest postTest = newPostTest(post);
+                if (!posts.contains(postTest)) {
+                    posts.add(postTest);
+                }
+            }
+        } else if (mode.equalsIgnoreCase("early")) {
+            postsToShow = postRepository.findPostsByTimeOldFist(PageRequest.of(offset / limit, limit));
+            postCount = (int) postsToShow.getTotalElements();
+            for (Post post : postsToShow) {
+                PostTest postTest = newPostTest(post);
+                if (!posts.contains(postTest)) {
+                    posts.add(postTest);
+                }
+            }
+        } else if (mode.equalsIgnoreCase("popular")) {
+            postsToShow = postRepository.findPostsMostPopular(PageRequest.of(offset / limit, limit));
             postCount = (int) postsToShow.getTotalElements();
             for (Post post : postsToShow) {
                 PostTest postTest = newPostTest(post);
@@ -49,10 +65,34 @@ public class PostService {
             }
         }
 //        else if () {}
-//        //TODO: продолжить
+//        //TODO: продолжить "best"
 
         allPosts.setCount(postCount);
         allPosts.setPosts(posts);
+        return allPosts;
+    }
+
+    public PostResponse getSearchPostResponse (int limit, int offset, String query){
+        PostResponse allPosts = new PostResponse();
+        List<PostTest> posts = new ArrayList<>();
+        Page<Post> postsToShow;
+
+        int postCount = 0;
+
+        if (query.trim().length() == 0) {
+            allPosts = getAllPostResponse(limit, offset, "recent");
+        } else {
+            postsToShow = postRepository.findTextInPost(PageRequest.of(offset / limit, limit), query);
+            postCount = (int) postsToShow.getTotalElements();
+            for (Post post : postsToShow) {
+                PostTest postTest = newPostTest(post);
+                if (!posts.contains(postTest)) {
+                    posts.add(postTest);
+                }
+            }
+            allPosts.setCount(postCount);
+            allPosts.setPosts(posts);
+        }
         return allPosts;
     }
 
@@ -74,7 +114,7 @@ public class PostService {
         }
 
         postTest.setLikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 1).count());
-        postTest.setDislikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() != 1).count());
+        postTest.setDislikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 0).count()); // теперь не считает вообще
         postTest.setCommentCount(post.getPostComments().size());
         postTest.setViewCount(post.getViewCount());
         return postTest;

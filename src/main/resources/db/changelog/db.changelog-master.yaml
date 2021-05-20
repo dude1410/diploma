@@ -134,7 +134,7 @@ databaseChangeLog:
                       nullable: false
                 - column:
                     name: value
-                    type: BINARY
+                    type: INTEGER
                     constraints:
                       nullable: false
   - changeSet:
@@ -455,6 +455,35 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: moderation_status
+                  value: "ACCEPTED"
+              - column:
+                  name: moderator_id
+                  value: "1"
+              - column:
+                  name: user_id
+                  value: "4"
+              - column:
+                  name: time
+                  value: "95-12-31 11:30:46"
+              - column:
+                  name: title
+                  value: "Java rule the world"
+              - column:
+                  name: text
+                  value: "Java rule the world Java rule the world Java rule the world Java rule the world Java rule the world
+                  Java rule the world Java rule the world Java rule the world Java rule the world Java rule the world Java rule the world
+                  Java rule the world Java rule the world Java rule the world Java rule the world Java rule the world Java rule the world"
+              - column:
+                  name: view_count
+                  value: "12"
+        - insert:
+            tableName: posts
+            columns:
+              - column:
+                  name: is_active
+                  value: "1"
+              - column:
+                  name: moderation_status
                   value: "NEW"
               - column:
                   name: moderator_id
@@ -505,6 +534,33 @@ databaseChangeLog:
               - column:
                   name: view_count
                   value: "115"
+        - insert:
+            tableName: posts
+            columns:
+              - column:
+                  name: is_active
+                  value: "1"
+              - column:
+                  name: moderation_status
+                  value: "ACCEPTED"
+              - column:
+                  name: moderator_id
+                  value: "1"
+              - column:
+                  name: user_id
+                  value: "1"
+              - column:
+                  name: time
+                  value: "01-12-30 11:30:45"
+              - column:
+                  name: title
+                  value: "herokuapp"
+              - column:
+                  name: text
+                  value: "здесь можно разместить свой проект для обкатки и презентации"
+              - column:
+                  name: view_count
+                  value: "1222"
         - insert:
             tableName: posts
             columns:
@@ -603,6 +659,21 @@ databaseChangeLog:
               - column:
                   name: value
                   value: "0"
+        - insert:
+            tableName: post_votes
+            columns:
+              - column:
+                  name: user_id
+                  value: "2"
+              - column:
+                  name: post_id
+                  value: "1"
+              - column:
+                  name: time
+                  value: "95-12-31 11:30:46"
+              - column:
+                  name: value
+                  value: "1"
         - insert:
             tableName: post_votes
             columns:
@@ -849,6 +920,24 @@ databaseChangeLog:
               - column:
                   name: text
                   value: "comment text 4"
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: parent_id
+                  value: "1"
+              - column:
+                  name: post_id
+                  value: "1"
+              - column:
+                  name: user_id
+                  value: "1"
+              - column:
+                  name: time
+                  value: "99-12-31 11:35:44"
+              - column:
+                  name: text
+                  value: "comment text text"
       rollback:
         - delete:
             tableName: post_comments
