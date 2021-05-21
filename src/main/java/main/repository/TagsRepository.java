@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface TagsRepository extends JpaRepository<Tags, Integer> {
 
-    @Query ("select t " +
+    @Query("select t " +
             "from Tags t " +
-            "left join Tag2Post tp on tp.tag.id = t.id " +
-            "left join Post p on p.id = tp.post.id ")
+            "join Tag2Post tp on tp.tag.id = t.id ")
+
     List<Tags> findAll();
 }

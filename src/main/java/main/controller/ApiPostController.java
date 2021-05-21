@@ -35,6 +35,20 @@ public class ApiPostController {
         return postService.getSearchPostResponse(limit, offset, query);
     }
 
+    @GetMapping("/byDate")
+    private PostResponse getSearchByDatePostResponse(@RequestParam("limit") int limit,
+                                               @RequestParam("offset") int offset,
+                                               @RequestParam("date") String date){
+        return postService.getSearchByDatePostResponse(limit, offset, date);
+    }
+
+    @GetMapping("/byTag")
+    private PostResponse getSearchByTagPostResponse(@RequestParam("limit") int limit,
+                                                     @RequestParam("offset") int offset,
+                                                     @RequestParam("tag") String tag){
+        return postService.getSearchByTagPostResponse(limit, offset, tag);
+    }
+
 //    @GetMapping
 //    private PostResponse postResponse(){
 //        return postService.getPostEmptyResponse();

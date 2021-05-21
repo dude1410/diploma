@@ -4,7 +4,8 @@ spring.datasource.username: root
 spring.datasource.password: 1410
 
 spring.jpa.show-sql: true
-spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+#spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+properties.hibernate.dialect: org.hibernate.dialect.MySQL7Dialect
 spring.jpa.hibernate.ddl-auto: none
 
 blog.title: DevPub

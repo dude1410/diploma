@@ -709,18 +709,6 @@ databaseChangeLog:
             columns:
               - column:
                   name: name
-                  value: "Java"
-        - insert:
-            tableName: tags
-            columns:
-              - column:
-                  name: name
-                  value: "C#"
-        - insert:
-            tableName: tags
-            columns:
-              - column:
-                  name: name
                   value: "C#"
         - insert:
             tableName: tags
@@ -734,30 +722,7 @@ databaseChangeLog:
               - column:
                   name: name
                   value: "SQL"
-        - insert:
-            tableName: tags
-            columns:
-              - column:
-                  name: name
-                  value: "SQL"
-        - insert:
-            tableName: tags
-            columns:
-              - column:
-                  name: name
-                  value: "SQL"
-        - insert:
-            tableName: tags
-            columns:
-              - column:
-                  name: name
-                  value: "SQL"
-        - insert:
-            tableName: tags
-            columns:
-              - column:
-                  name: name
-                  value: "SQL"
+
       rollback:
         - delete:
             tableName: tags
@@ -811,16 +776,25 @@ databaseChangeLog:
                   value: "3"
               - column:
                   name: tag_id
-                  value: "5"
+                  value: "1"
         - insert:
             tableName: tag2post
             columns:
               - column:
                   name: post_id
-                  value: "4"
+                  value: "6"
               - column:
                   name: tag_id
-                  value: "6"
+                  value: "1"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "3"
+              - column:
+                  name: tag_id
+                  value: "2"
       rollback:
         - delete:
             tableName: tag2post

@@ -68,8 +68,9 @@ public class PostService {
                 }
             }
         }
-//        else if () {}
-//        //TODO: продолжить "best"
+        else if (mode.equalsIgnoreCase("best")) {
+            //TODO: продолжить "best"
+        }
 
         allPosts.setCount(postCount);
         allPosts.setPosts(posts);
@@ -127,6 +128,47 @@ public class PostService {
         calendar.setPosts(posts);
         calendar.setYears(years);
         return calendar;
+    }
+
+    public PostResponse getSearchByDatePostResponse (int limit, int offset, String date) {
+        PostResponse allPosts = new PostResponse();
+        List<PostTest> posts = new ArrayList<>();
+        Page<Post> postsToShow;
+
+        int postCount = 0;
+
+        postsToShow = postRepository.getSearchByDatePostResponse(PageRequest.of(offset / limit, limit), date);
+        postCount = (int) postsToShow.getTotalElements();
+        for (Post post : postsToShow) {
+            PostTest postTest = newPostTest(post);
+            if (!posts.contains(postTest)) {
+                posts.add(postTest);
+            }
+        }
+        allPosts.setCount(postCount);
+        allPosts.setPosts(posts);
+        return allPosts;
+    }
+
+    public PostResponse getSearchByTagPostResponse (int limit, int offset, String tag){
+        PostResponse allPosts = new PostResponse();
+        List<PostTest> posts = new ArrayList<>();
+        Page<Post> postsToShow;
+
+        int postCount = 0;
+
+        postsToShow = postRepository.getSearchByTagPostResponse(PageRequest.of(offset / limit, limit), tag);
+        postCount = (int) postsToShow.getTotalElements();
+        for (Post post : postsToShow) {
+            PostTest postTest = newPostTest(post);
+            if (!posts.contains(postTest)) {
+                posts.add(postTest);
+            }
+        }
+        allPosts.setCount(postCount);
+        allPosts.setPosts(posts);
+
+        return allPosts;
     }
 
     public PostTest newPostTest (Post post) {
