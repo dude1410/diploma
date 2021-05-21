@@ -1,5 +1,6 @@
 package main.service;
 
+import main.api.response.CalendarResponse;
 import main.api.response.PostResponse;
 import main.model.Post;
 import main.repository.PostRepository;
@@ -11,7 +12,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.jsoup.Jsoup;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -36,7 +40,7 @@ public class PostService {
         int postCount = 0;
 
         if (mode == null) {mode = "recent";}
-        if (mode.equalsIgnoreCase("recent")) { //todo разобраться с датами
+        if (mode.equalsIgnoreCase("recent")) {
             postsToShow = postRepository.findPostsByTimeNewFist(PageRequest.of(offset / limit, limit));
             postCount = (int) postsToShow.getTotalElements();
             for (Post post : postsToShow) {
@@ -96,10 +100,39 @@ public class PostService {
         return allPosts;
     }
 
+    SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat formatYear = new SimpleDateFormat("yyyy");
+
+    public CalendarResponse getCalendar () {
+        CalendarResponse calendar = new CalendarResponse();
+        List<Integer> years = new ArrayList<>();
+        HashMap<String, Integer> posts = new HashMap<>();
+
+        List<Post> allCalendarPosts = postRepository.getCalendar();
+
+        for (Post post : allCalendarPosts) {
+            Date date = post.getTime();
+            int year = Integer.parseInt(formatYear.format(date));
+            String monthDay = formatDate.format(date);
+
+            if (!years.contains(year)) {
+                years.add(year);
+            }
+            if (!posts.containsKey(monthDay)) {
+                posts.put(monthDay, 1);
+            } else {
+                posts.put(monthDay, posts.get(monthDay) + 1);
+            }
+        }
+        calendar.setPosts(posts);
+        calendar.setYears(years);
+        return calendar;
+    }
+
     public PostTest newPostTest (Post post) {
         PostTest postTest = new PostTest();
         postTest.setId(post.getId());
-        postTest.setTimestamp(post.getTime());
+        postTest.setTimestamp(post.getTime().getTime() / 1000);
         UserTestForPostTest userTestForPostTest = new UserTestForPostTest();
         userTestForPostTest.setId(post.getUser().getId());
         userTestForPostTest.setName(post.getUser().getName());
@@ -114,7 +147,7 @@ public class PostService {
         }
 
         postTest.setLikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 1).count());
-        postTest.setDislikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 0).count()); // теперь не считает вообще
+        postTest.setDislikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 0).count());
         postTest.setCommentCount(post.getPostComments().size());
         postTest.setViewCount(post.getViewCount());
         return postTest;

@@ -2,13 +2,11 @@ package main.testEntity;
 
 import org.springframework.stereotype.Component;
 
-import java.sql.Timestamp;
-
 @Component
 public class PostTest {
 
     private int id;
-    private Timestamp timestamp;
+    private long timestamp;
     private UserTestForPostTest user;
     private String title;
     private String announce;
@@ -25,11 +23,11 @@ public class PostTest {
         this.id = id;
     }
 
-    public Timestamp getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 

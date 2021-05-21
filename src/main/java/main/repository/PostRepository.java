@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 public interface PostRepository extends JpaRepository<Post, Integer> {
 
     @Query("SELECT p " +
@@ -45,4 +47,10 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "and (p.text like  %:query% or p.title like %:query% )" +
             "group by p.id ")
     Page<Post> findTextInPost(Pageable page, @RequestParam("query") String query);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "where (p.isActive = 1 and p.moderationStatus = 'ACCEPTED' and p.time <= CURRENT_TIMESTAMP)" +
+            "group by p.id ")
+    List<Post> getCalendar();
 }

@@ -407,7 +407,7 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: time
-                  value: "98-12-31 11:30:46"
+                  value: "17-12-31 11:30:46"
               - column:
                   name: title
                   value: "Java is the BEST"
@@ -437,7 +437,7 @@ databaseChangeLog:
                    value: "2"
                - column:
                    name: time
-                   value: "99-12-31 11:30:46"
+                   value: "10-12-31 11:30:46"
                - column:
                    name: title
                    value: "Java is the Worst"
@@ -464,7 +464,7 @@ databaseChangeLog:
                   value: "4"
               - column:
                   name: time
-                  value: "95-12-31 11:30:46"
+                  value: "15-12-31 11:30:46"
               - column:
                   name: title
                   value: "Java rule the world"
@@ -493,7 +493,7 @@ databaseChangeLog:
                   value: "2"
               - column:
                   name: time
-                  value: "98-12-31 11:30:46"
+                  value: "20-12-31 11:30:46"
               - column:
                   name: title
                   value: "Why C#?"
@@ -522,7 +522,7 @@ databaseChangeLog:
                   value: "3"
               - column:
                   name: time
-                  value: "98-12-30 11:30:45"
+                  value: "18-12-30 11:30:45"
               - column:
                   name: title
                   value: "Popular Hibernate"
@@ -551,7 +551,7 @@ databaseChangeLog:
                   value: "1"
               - column:
                   name: time
-                  value: "01-12-30 11:30:45"
+                  value: "08-12-30 11:30:45"
               - column:
                   name: title
                   value: "herokuapp"
@@ -578,7 +578,7 @@ databaseChangeLog:
                   value: "4"
               - column:
                   name: time
-                  value: "96-12-29 11:30:45"
+                  value: "21-01-29 11:30:45"
               - column:
                   name: title
                   value: "SQL or PostgreSQL"
