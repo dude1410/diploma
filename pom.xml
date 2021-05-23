@@ -16,10 +16,18 @@
     <name>diploma</name>
     <description>diploma_blog_core</description>
 
+<!--    <properties>-->
+<!--        <java.version>11</java.version>-->
+<!--        <timestamp>${maven.build.timestamp}</timestamp>-->
+<!--        <maven.build.timestamp.format>yyyyMMdd-HHmmssSSS</maven.build.timestamp.format>-->
+<!--    </properties>-->
+
     <properties>
         <java.version>11</java.version>
-        <timestamp>${maven.build.timestamp}</timestamp>
-        <maven.build.timestamp.format>yyyyMMdd-HHmmssSSS</maven.build.timestamp.format>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <build>
@@ -40,6 +48,27 @@
             </resource>
         </resources>
         <plugins>
+<!--            добавлено для heroku begin-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                        <configuration>
+                            <additionalProperties>
+                                <encoding.source>${project.build.sourceEncoding}</encoding.source>
+                                <encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+                                <java.source>${maven.compiler.source}</java.source>
+                                <java.target>${maven.compiler.target}</java.target>
+                            </additionalProperties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--            добавлено для heroku end-->
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
