@@ -3,13 +3,12 @@ package main.api.response;
 import main.testEntity.CommentTestForPost;
 import main.testEntity.UserTestForPostTest;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 public class PostResponseId {
 
     private int id;
-    private Timestamp timestamp;
+    private long timestamp;
     private boolean active;
     private UserTestForPostTest user;
     private String title;
@@ -28,11 +27,11 @@ public class PostResponseId {
         this.id = id;
     }
 
-    public Timestamp getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 

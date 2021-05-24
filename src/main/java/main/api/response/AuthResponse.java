@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 public class AuthResponse {
 
 	private boolean result = true;
-//	private boolean result = false;
 	private UserTest user = new UserTest();
 
 	public boolean isResult() {

@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 @Component
 public class CommentTestForPost {
     private int id;
-    private Timestamp timestamp;
+    private long timestamp;
     private String text;
     private UserTestForCommentForPost user;
 
@@ -19,11 +19,11 @@ public class CommentTestForPost {
         this.id = id;
     }
 
-    public Timestamp getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 

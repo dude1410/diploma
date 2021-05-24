@@ -65,7 +65,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: is_active
-                  type: BINARY
+                  type: INTEGER
                   constraints:
                     nullable: false
               - column:

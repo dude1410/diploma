@@ -4,8 +4,6 @@ import main.api.response.PostResponse;
 import main.api.response.PostResponseId;
 import main.service.PostIdService;
 import main.service.PostService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -49,47 +47,9 @@ public class ApiPostController {
         return postService.getSearchByTagPostResponse(limit, offset, tag);
     }
 
-//    @GetMapping
-//    private PostResponse postResponse(){
-//        return postService.getPostEmptyResponse();
-//    }
-//
-//    @GetMapping("/search")
-//    private PostResponse postResponseSearch(){
-//        return postService.getPostEmptyResponse();
-//    }
-//
-//    @GetMapping("/search")
-//    private PostResponse postResponseSearch(){
-//        return postService.getPostResponse();
-//    }
-//
-//    @GetMapping("/byDate")
-//    private PostResponse postResponseByDate(){
-//        return postService.getPostResponse();
-//    }
-//
-//    @GetMapping("/byDate")
-//    private PostResponse postResponseByDate(){
-//        return postService.getPostEmptyResponse();
-//    }
-//
-//    @GetMapping("/byTag")
-//    private PostResponse postResponseByTag(){
-//        return postService.getPostResponse();
-//    }
-//
-////    @GetMapping("/byTag")
-//    private PostResponse postResponseByTag(){
-//        return postService.getPostEmptyResponse();
-//    }
-//
-//    @GetMapping("/{ID}")
-//    private ResponseEntity<PostResponseId> postResponseId(@PathVariable String ID){
-//        if (ID.equals("0")){
-//            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-//        } else {
-//            return new ResponseEntity<>(postIdService.getPostResponseId (), HttpStatus.OK);
-//        }
-//    }
+    //todo: исправить авторизацию
+    @GetMapping("/{id}")
+    private PostResponseId getPostById(@PathVariable int id){
+        return postService.getPostById(id);
+    }
 }

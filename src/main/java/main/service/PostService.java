@@ -2,21 +2,25 @@ package main.service;
 
 import main.api.response.CalendarResponse;
 import main.api.response.PostResponse;
+import main.api.response.PostResponseId;
 import main.model.Post;
+import main.model.PostComments;
+import main.model.Tags;
 import main.repository.PostRepository;
+import main.testEntity.CommentTestForPost;
 import main.testEntity.PostTest;
+import main.testEntity.UserTestForCommentForPost;
 import main.testEntity.UserTestForPostTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.jsoup.Jsoup;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class PostService {
@@ -170,6 +174,51 @@ public class PostService {
 
         return allPosts;
     }
+    // todo: добавить код после авторизации
+    // todo: изменить тип возврата для active
+    public PostResponseId getPostById(int id){
+        PostResponseId postResponseId = new PostResponseId();
+        Post post = postRepository.getPostById(id);
+        if (post == null) {throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        postResponseId.setId(post.getId());
+        postResponseId.setTimestamp(post.getTime().getTime() / 1000);
+        if (post.isIs_active() == 1) {
+            postResponseId.setActive(true);
+        } else {postResponseId.setActive(false);}
+        UserTestForPostTest user = new UserTestForPostTest();
+        user.setId(post.getUser().getId());
+        user.setName(post.getUser().getName());
+        postResponseId.setUser(user);
+        postResponseId.setTitle(post.getTitle());
+        postResponseId.setText(post.getText());
+        postResponseId.setLikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 1).count());
+        postResponseId.setDislikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 0).count());
+        postResponseId.setViewCount(post.getViewCount());
+        List<CommentTestForPost> comments = new ArrayList<>();
+        Set<PostComments> postComments = post.getPostComments();
+        for (PostComments com : postComments){
+            CommentTestForPost comment = new CommentTestForPost();
+            comment.setId(com.getId());
+            comment.setTimestamp(com.getTime().getTime() / 1000);
+            comment.setText(com.getText());
+            UserTestForCommentForPost userTestForPostTest = new UserTestForCommentForPost();
+            userTestForPostTest.setId(com.getUser().getId());
+            userTestForPostTest.setName(com.getUser().getName());
+            userTestForPostTest.setPhoto(com.getUser().getPhoto());
+            comment.setUser(userTestForPostTest);
+            comments.add(comment);
+        }
+        comments.sort(Comparator.comparing(CommentTestForPost::getTimestamp).reversed());
+        postResponseId.setComments(comments);
+        Set<Tags> tagSet = post.getTags();
+        List<String> tags = new ArrayList<>();
+        for (Tags tag : tagSet) {
+            tags.add(tag.getName());
+        }
+        postResponseId.setTags(tags);
+        return postResponseId;
+    }
 
     public PostTest newPostTest (Post post) {
         PostTest postTest = new PostTest();
@@ -194,52 +243,4 @@ public class PostService {
         postTest.setViewCount(post.getViewCount());
         return postTest;
     }
-
-//    public static PostResponse getPostResponse () {
-//        PostResponse postResponse = new PostResponse();
-//        postResponse.setCount(2);
-//        List <PostTest> posts = new ArrayList<>();
-//        PostTest post1 = new PostTest();
-//        post1.setId(345);
-//        post1.setTimestamp(new Timestamp(System.currentTimeMillis()));
-//        UserTestForPostTest user1 = new UserTestForPostTest();
-//        user1.setId(88);
-//        user1.setName("Dmitriy Petrov");
-//        post1.setUser(user1);
-//        post1.setTitle("Text title");
-//        post1.setAnnounce("Text announce without html-tags");
-//        post1.setLikeCount(36);
-//        post1.setDislikeCount(3);
-//        post1.setCommentCount(15);
-//        post1.setViewCount(55);
-//        posts.add(post1);
-//
-//        PostTest post2 = new PostTest();
-//        post2.setId(346);
-//        post2.setTimestamp(new Timestamp(System.currentTimeMillis()));
-//        UserTestForPostTest user2 = new UserTestForPostTest();
-//        user2.setId(89);
-//        user2.setName("Ivan Ivanov");
-//        post2.setUser(user2);
-//        post2.setTitle("Text title 2");
-//        post2.setAnnounce("Text announce without html-tags 2");
-//        post2.setLikeCount(37);
-//        post2.setDislikeCount(4);
-//        post2.setCommentCount(16);
-//        post2.setViewCount(56);
-//        posts.add(post2);
-//
-//        postResponse.setPosts(posts);
-//
-//        return postResponse;
-//    }
-//
-//    public static PostResponse getPostEmptyResponse () {
-//        PostResponse postResponse = new PostResponse();
-//        postResponse.setCount(0);
-//        List <PostTest> posts = new ArrayList<>();
-//        postResponse.setPosts(posts);
-//
-//        return postResponse;
-//    }
 }

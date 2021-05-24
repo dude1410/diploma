@@ -37,11 +37,6 @@ public class ApiAuthController {
 		return  captchaService.getCaptcha ();
 	}
 
-//	@PostMapping("/register")
-//	private RegisterSuccessResponse successResponse () {
-//		return successResponse;
-//	}
-
 	@PostMapping("/register")
 	private RegisterFailResponse failResponse(){
 		return RegisterFailService.getResponse();

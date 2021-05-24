@@ -21,7 +21,7 @@
 <!--        <timestamp>${maven.build.timestamp}</timestamp>-->
 <!--        <maven.build.timestamp.format>yyyyMMdd-HHmmssSSS</maven.build.timestamp.format>-->
 <!--    </properties>-->
-
+    <!--            добавлено для heroku begin-->
     <properties>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,7 +29,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-
+    <!--            добавлено для heroku end-->
     <build>
         <resources>
             <resource>

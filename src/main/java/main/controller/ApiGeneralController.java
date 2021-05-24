@@ -31,7 +31,6 @@ public class ApiGeneralController {
 		return settingsService.getGlobalSettings();
 	}
 
-	// инфа для футера и хэдера будет у нас величиной постоянной
 	@GetMapping("/init")
 	private InitResponse initResponse(){
 		return initResponse;
@@ -41,11 +40,6 @@ public class ApiGeneralController {
 	private TagResponse tagResponse(@RequestParam(required = false)String query) {
 		return tagsService.getTagResponse(query);
 	}
-
-//	@GetMapping("/calendar")
-//	private CalendarResponse calendarService(){
-//		return calendarService.getCalendarResponse();
-//	}
 
 	@GetMapping("/calendar")
 	private CalendarResponse calendarResponse (){

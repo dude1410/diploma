@@ -68,4 +68,13 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "where p.isActive = 1 and p.moderationStatus = 'ACCEPTED' and p.time <= CURRENT_TIMESTAMP " +
             "and t.name like %:tag% ")
     Page<Post> getSearchByTagPostResponse(Pageable page, @Param("tag") String tag);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where p.isActive = 1 and p.moderationStatus = 'ACCEPTED' and p.time <= current_timestamp " +
+            "and p.id = :id ")
+    Post getPostById (int id);
 }

@@ -14,8 +14,8 @@ public class Post {
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
-	@Column(nullable = false, name = "is_active", columnDefinition = "TINYINT")
-	private byte isActive;
+	@Column(nullable = false, name = "is_active", columnDefinition = "INT")
+	private int isActive;
 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "moderation_status", columnDefinition = "ENUM")
@@ -46,6 +46,16 @@ public class Post {
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<PostVotes> postVotes = new HashSet<>();
 
+	@ManyToMany
+	@JoinTable(name = "tag2post",
+			joinColumns = @JoinColumn(name = "post_id"),
+			inverseJoinColumns = @JoinColumn(name = "tag_id"))
+	private Set<Tags> tags = new HashSet<>();
+
+	public Set<Tags> getTags() {
+		return tags;
+	}
+
 	public Post(int id, byte isActive, ModerationStatus moderationStatus, int moderatorId,
 				User user, Timestamp time, String title, String text, int viewCount){
 		this.id = id;
@@ -70,11 +80,11 @@ public class Post {
 		this.id = id;
 	}
 
-	public byte isIs_active() {
+	public int isIs_active() {
 		return isActive;
 	}
 
-	public void setIs_active(byte is_active) {
+	public void setIs_active(int is_active) {
 		this.isActive = is_active;
 	}
 
