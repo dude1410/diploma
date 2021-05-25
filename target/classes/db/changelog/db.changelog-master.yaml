@@ -289,6 +289,9 @@ databaseChangeLog:
             tableName: users
             columns:
               - column:
+                    name: id
+                    value: "1"
+              - column:
                   name: is_moderator
                   value: "1"
               - column:
@@ -312,6 +315,9 @@ databaseChangeLog:
         - insert:
             tableName: users
             columns:
+              - column:
+                    name: id
+                    value: "2"
               - column:
                   name: is_moderator
                   value: "1"
@@ -337,6 +343,9 @@ databaseChangeLog:
             tableName: users
             columns:
               - column:
+                  name: id
+                  value: "3"
+              - column:
                   name: is_moderator
                   value: "0"
               - column:
@@ -360,6 +369,9 @@ databaseChangeLog:
         - insert:
             tableName: users
             columns:
+              - column:
+                  name: id
+                  value: "4"
               - column:
                   name: is_moderator
                   value: "0"
@@ -394,6 +406,9 @@ databaseChangeLog:
             tableName: posts
             columns:
               - column:
+                  name: id
+                  value: "1"
+              - column:
                   name: is_active
                   value: "1"
               - column:
@@ -424,6 +439,9 @@ databaseChangeLog:
              tableName: posts
              columns:
                - column:
+                   name: id
+                   value: "2"
+               - column:
                    name: is_active
                    value: "1"
                - column:
@@ -450,6 +468,9 @@ databaseChangeLog:
         - insert:
             tableName: posts
             columns:
+              - column:
+                  name: id
+                  value: "3"
               - column:
                   name: is_active
                   value: "1"
@@ -480,6 +501,9 @@ databaseChangeLog:
             tableName: posts
             columns:
               - column:
+                  name: id
+                  value: "4"
+              - column:
                   name: is_active
                   value: "1"
               - column:
@@ -508,6 +532,9 @@ databaseChangeLog:
         - insert:
             tableName: posts
             columns:
+              - column:
+                  name: id
+                  value: "5"
               - column:
                   name: is_active
                   value: "0"
@@ -538,6 +565,9 @@ databaseChangeLog:
             tableName: posts
             columns:
               - column:
+                  name: id
+                  value: "6"
+              - column:
                   name: is_active
                   value: "1"
               - column:
@@ -564,6 +594,9 @@ databaseChangeLog:
         - insert:
             tableName: posts
             columns:
+              - column:
+                  name: id
+                  value: "7"
               - column:
                   name: is_active
                   value: "1"
@@ -603,6 +636,9 @@ databaseChangeLog:
             tableName: post_votes
             columns:
               - column:
+                  name: id
+                  value: "1"
+              - column:
                   name: user_id
                   value: "1"
               - column:
@@ -617,6 +653,9 @@ databaseChangeLog:
         - insert:
             tableName: post_votes
             columns:
+              - column:
+                  name: id
+                  value: "2"
               - column:
                   name: user_id
                   value: "4"
@@ -633,6 +672,9 @@ databaseChangeLog:
             tableName: post_votes
             columns:
               - column:
+                  name: id
+                  value: "3"
+              - column:
                   name: user_id
                   value: "2"
               - column:
@@ -647,6 +689,9 @@ databaseChangeLog:
         - insert:
             tableName: post_votes
             columns:
+              - column:
+                  name: id
+                  value: "4"
               - column:
                   name: user_id
                   value: "3"
@@ -663,6 +708,9 @@ databaseChangeLog:
             tableName: post_votes
             columns:
               - column:
+                  name: id
+                  value: "5"
+              - column:
                   name: user_id
                   value: "2"
               - column:
@@ -677,6 +725,9 @@ databaseChangeLog:
         - insert:
             tableName: post_votes
             columns:
+              - column:
+                  name: id
+                  value: "6"
               - column:
                   name: user_id
                   value: "4"
@@ -702,11 +753,17 @@ databaseChangeLog:
             tableName: tags
             columns:
               - column:
+                  name: id
+                  value: "1"
+              - column:
                   name: name
                   value: "Java"
         - insert:
             tableName: tags
             columns:
+              - column:
+                  name: id
+                  value: "2"
               - column:
                   name: name
                   value: "C#"
@@ -714,11 +771,17 @@ databaseChangeLog:
             tableName: tags
             columns:
               - column:
+                  name: id
+                  value: "3"
+              - column:
                   name: name
                   value: "Hibernate"
         - insert:
             tableName: tags
             columns:
+              - column:
+                  name: id
+                  value: "4"
               - column:
                   name: name
                   value: "SQL"
@@ -736,6 +799,9 @@ databaseChangeLog:
             tableName: tag2post
             columns:
               - column:
+                  name: id
+                  value: "1"
+              - column:
                   name: post_id
                   value: "1"
               - column:
@@ -744,6 +810,9 @@ databaseChangeLog:
         - insert:
             tableName: tag2post
             columns:
+              - column:
+                  name: id
+                  value: "2"
               - column:
                   name: post_id
                   value: "1"
@@ -753,6 +822,9 @@ databaseChangeLog:
         - insert:
             tableName: tag2post
             columns:
+              - column:
+                  name: id
+                  value: "3"
               - column:
                   name: post_id
                   value: "2"
@@ -762,6 +834,9 @@ databaseChangeLog:
         - insert:
             tableName: tag2post
             columns:
+              - column:
+                  name: id
+                  value: "4"
               - column:
                   name: post_id
                   value: "2"
@@ -772,6 +847,9 @@ databaseChangeLog:
             tableName: tag2post
             columns:
               - column:
+                  name: id
+                  value: "5"
+              - column:
                   name: post_id
                   value: "3"
               - column:
@@ -781,6 +859,9 @@ databaseChangeLog:
             tableName: tag2post
             columns:
               - column:
+                  name: id
+                  value: "6"
+              - column:
                   name: post_id
                   value: "6"
               - column:
@@ -789,6 +870,9 @@ databaseChangeLog:
         - insert:
             tableName: tag2post
             columns:
+              - column:
+                  name: id
+                  value: "7"
               - column:
                   name: post_id
                   value: "3"
@@ -808,6 +892,9 @@ databaseChangeLog:
             tableName: post_comments
             columns:
               - column:
+                  name: id
+                  value: "1"
+              - column:
                   name: parent_id
                   value: "0"
               - column:
@@ -825,6 +912,9 @@ databaseChangeLog:
         - insert:
             tableName: post_comments
             columns:
+              - column:
+                  name: id
+                  value: "2"
               - column:
                   name: parent_id
                   value: "1"
@@ -844,6 +934,9 @@ databaseChangeLog:
             tableName: post_comments
             columns:
               - column:
+                  name: id
+                  value: "3"
+              - column:
                   name: parent_id
                   value: "0"
               - column:
@@ -861,6 +954,9 @@ databaseChangeLog:
         - insert:
             tableName: post_comments
             columns:
+              - column:
+                  name: id
+                  value: "4"
               - column:
                   name: parent_id
                   value: "0"
@@ -880,6 +976,9 @@ databaseChangeLog:
             tableName: post_comments
             columns:
               - column:
+                  name: id
+                  value: "5"
+              - column:
                   name: parent_id
                   value: "1"
               - column:
@@ -897,6 +996,9 @@ databaseChangeLog:
         - insert:
             tableName: post_comments
             columns:
+              - column:
+                  name: id
+                  value: "6"
               - column:
                   name: parent_id
                   value: "1"
@@ -925,6 +1027,9 @@ databaseChangeLog:
             tableName: captcha_codes
             columns:
               - column:
+                  name: id
+                  value: "1"
+              - column:
                   name: time
                   value: "98-12-31 11:30:41"
               - column:
@@ -936,6 +1041,9 @@ databaseChangeLog:
         - insert:
             tableName: captcha_codes
             columns:
+              - column:
+                  name: id
+                  value: "2"
               - column:
                   name: time
                   value: "98-12-31 11:30:44"
@@ -949,6 +1057,9 @@ databaseChangeLog:
             tableName: captcha_codes
             columns:
               - column:
+                  name: id
+                  value: "3"
+              - column:
                   name: time
                   value: "98-12-31 11:30:47"
               - column:
@@ -960,6 +1071,9 @@ databaseChangeLog:
         - insert:
             tableName: captcha_codes
             columns:
+              - column:
+                  name: id
+                  value: "4"
               - column:
                   name: time
                   value: "98-12-31 11:30:40"
@@ -982,6 +1096,9 @@ databaseChangeLog:
             tableName: global_settings
             columns:
               - column:
+                  name: id
+                  value: "1"
+              - column:
                   name: code
                   value: "MULTIUSER_MODE"
               - column:
@@ -994,6 +1111,9 @@ databaseChangeLog:
             tableName: global_settings
             columns:
               - column:
+                  name: id
+                  value: "2"
+              - column:
                   name: code
                   value: "POST_PREMODERATION"
               - column:
@@ -1005,6 +1125,9 @@ databaseChangeLog:
         - insert:
             tableName: global_settings
             columns:
+              - column:
+                  name: id
+                  value: "3"
               - column:
                   name: code
                   value: "STATISTICS_IS_PUBLIC"
