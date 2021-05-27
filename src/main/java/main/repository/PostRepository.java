@@ -42,12 +42,21 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
     @Query("SELECT p " +
             "from Post p " +
             "left join User u on u.id = p.user.id " +
+            "left join PostComments pc on pc.post.id = p.id " +
+            "left join PostVotes pv on p.id = pv.post.id and pv.value = 1 " +
+            "where (p.isActive = 1 and p.moderationStatus = 'ACCEPTED' and p.time <= CURRENT_TIMESTAMP) " +
+            "group by p.id order by count(pv) desc ")
+    Page<Post> findPostsBest(Pageable page);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join User u on u.id = p.user.id " +
             "left join PostComments pc on p.id = pc.post.id " +
             "left join PostVotes pv on p.id = pc.post.id " +
             "where (p.isActive = 1 and p.moderationStatus = 'ACCEPTED' and p.time <= CURRENT_TIMESTAMP) " +
             "and (p.text like  %:query% or p.title like %:query% ) " +
             "group by p.id ")
-    Page<Post> findTextInPost(Pageable page, @RequestParam("query") String query);
+    Page<Post> findTextInPost(Pageable page, @Param("query") String query);
 
     @Query("SELECT p " +
             "from Post p " +
@@ -77,4 +86,9 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "where p.isActive = 1 and p.moderationStatus = 'ACCEPTED' and p.time <= current_timestamp " +
             "and p.id = :id ")
     Post getPostById (int id);
+
+    @Query ("SELECT count(p) " +
+            "from Post p " +
+            "where p.moderationStatus = 'NEW' ")
+    int findNewPosts();
 }

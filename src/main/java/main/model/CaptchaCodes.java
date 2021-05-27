@@ -1,8 +1,12 @@
 package main.model;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
+@Transactional
 @Entity
 @Table(name = "captcha_codes")
 public class CaptchaCodes {
@@ -12,13 +16,13 @@ public class CaptchaCodes {
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
-	@Column(nullable = false, name = "time", columnDefinition = "DATETIME")
+	@Column(name = "time", columnDefinition = "DATETIME")
 	private Timestamp time;
 
-	@Column(nullable = false, name = "code", columnDefinition = "TINYTEXT")
+	@Column(nullable = false, name = "code", columnDefinition = "TEXT")
 	private String code;
 
-	@Column(nullable = false, name = "secret_code", columnDefinition = "TINYTEXT")
+	@Column(name = "secret_code", columnDefinition = "TEXT")
 	private String secretCode;
 
 	public CaptchaCodes (int id, Timestamp time, String code, String secretCode) {
@@ -31,7 +35,10 @@ public class CaptchaCodes {
 	public CaptchaCodes() {
 	}
 
-	public int getId() {
+    public CaptchaCodes(Date date, String toString, String toString1) {
+    }
+
+    public int getId() {
 		return id;
 	}
 

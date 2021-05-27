@@ -4,6 +4,7 @@ import main.api.response.PostResponse;
 import main.api.response.PostResponseId;
 import main.service.PostIdService;
 import main.service.PostService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -44,10 +44,10 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: code
-                  type: VARCHAR(255)
+                  type: TEXT
               - column:
                   name: photo
-                  type: LONGVARCHAR
+                  type: TEXT
   - changeSet:
       id: 2
       author: dude
@@ -94,7 +94,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: text
-                  type: LONGVARCHAR
+                  type: TEXT
                   constraints:
                     nullable: false
               - column:
@@ -217,7 +217,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: text
-                  type: LONGVARCHAR
+                  type: TEXT
                   constraints:
                     nullable: false
   - changeSet:
@@ -272,12 +272,12 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: code
-                  type: TINYTEXT
+                  type: TEXT
                   constraints:
                     nullable: false
               - column:
                   name: secret_code
-                  type: TINYTEXT
+                  type: TEXT
                   constraints:
                     nullable: false
   - changeSet:
@@ -302,7 +302,7 @@ databaseChangeLog:
                   value: "admin Vasya"
               - column:
                   name: password
-                  value: "adminVasya"
+                  value: "$2y$12$LOKvGzEvkBNhsXVW9Cn7mOh9C.S7IQUmvzEZkWuJ9j3SQeozSX742"
               - column:
                   name: email
                   value: "adminVasya@server.com"
@@ -329,7 +329,7 @@ databaseChangeLog:
                   value: "admin Petya"
               - column:
                   name: password
-                  value: "adminPetya"
+                  value: "$2y$12$RFJDOYlbIfsyV9Qnpg/A..MCG65MYJw0928z.itt48YtMG9QhZTza"
               - column:
                   name: email
                   value: "adminPetya@server.com"
@@ -356,7 +356,7 @@ databaseChangeLog:
                   value: "guest Katya"
               - column:
                   name: password
-                  value: "guestKatya"
+                  value: "$2y$12$.T2JajRGtiTe8hw1Vjd1D.DM2sxvSqTNOEy8uspDOKsBUxnlko.fC"
               - column:
                   name: email
                   value: "guestKatya@server.com"
@@ -383,7 +383,7 @@ databaseChangeLog:
                   value: "guest Masha"
               - column:
                   name: password
-                  value: "guestMasha"
+                  value: "$2y$12$/tOUjNoVeyKJsYGh1nrSHeFYRDWoicgHRNkBpMmWLnMOoG3FRKa3e"
               - column:
                   name: email
                   value: "guestMasha@server.com"
@@ -1106,7 +1106,7 @@ databaseChangeLog:
                   value: "Многопользовательский режим"
               - column:
                   name: value
-                  value: "NO"
+                  value: "YES"
         - insert:
             tableName: global_settings
             columns:

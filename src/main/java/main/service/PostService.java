@@ -73,7 +73,14 @@ public class PostService {
             }
         }
         else if (mode.equalsIgnoreCase("best")) {
-            //TODO: продолжить "best"
+            postsToShow = postRepository.findPostsBest(PageRequest.of(offset / limit, limit));
+            postCount = (int) postsToShow.getTotalElements();
+            for (Post post : postsToShow) {
+                PostTest postTest = newPostTest(post);
+                if (!posts.contains(postTest)) {
+                    posts.add(postTest);
+                }
+            }
         }
 
         allPosts.setCount(postCount);

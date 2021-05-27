@@ -1,5 +1,7 @@
 package main.model;
 
+import main.model.security.Role;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -27,11 +29,15 @@ public class User {
 	@Column(nullable = false, name = "password", columnDefinition = "VARCHAR(255)")
 	private String password;
 
-	@Column(name = "code", columnDefinition = "VARCHAR(255)")
+	@Column(name = "code", columnDefinition = "TEXT")
 	private String code;
 
-	@Column(name = "photo", columnDefinition = "TEXT") // LONGVARCHAR?
+	@Column(name = "photo", columnDefinition = "TEXT")
 	private String photo;
+
+	public Role getRole(){
+		return isModerator == 1 ? Role.MODERATOR : Role.USER;
+	}
 
 	public User(){};
 

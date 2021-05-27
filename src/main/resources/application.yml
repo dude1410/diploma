@@ -13,9 +13,13 @@ server.port: ${PORT:8081}
 #  port: 8081
 spring.jpa.hibernate.ddl-auto: none
 
+#footer
 blog.title: DevPub
 blog.subtitle: Devs' stories
 blog.phone: +7-903-1368108
 blog.email: dude1410@mail.ru
 blog.copyright: Vladysik Pavel
 blog.copyrightFrom: 2021
+
+#delete captcha in one hour
+blog.deleteCaptchaTimePeriod: 3600
