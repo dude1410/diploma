@@ -1,4 +1,4 @@
-package main.testEntity;
+package main.model.DTO;
 
 import org.springframework.stereotype.Component;
 

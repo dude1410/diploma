@@ -1,6 +1,6 @@
 package main.api.response;
 
-import main.testEntity.UserTest;
+import main.model.DTO.UserTest;
 import org.springframework.stereotype.Component;
 
 @Component

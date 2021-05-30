@@ -1,6 +1,6 @@
 package main.api.response;
 
-import main.testEntity.TagTest;
+import main.model.DTO.TagTest;
 
 import java.util.List;
 

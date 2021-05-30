@@ -1,6 +1,7 @@
 package main.controller;
 
 import main.api.request.LoginRequest;
+import main.api.request.RegisterRequest;
 import main.api.response.*;
 import main.repository.UserRepository;
 import main.service.AuthService;
@@ -51,7 +52,7 @@ public class ApiAuthController {
 		if (principal == null) {
 			return ResponseEntity.ok(new LoginResponse());
 		}
-		return authService.check(principal);
+		return authService.check();
 	}
 
 	@GetMapping("/captcha")
@@ -59,8 +60,8 @@ public class ApiAuthController {
 		return authService.getCaptcha();
 	}
 
-//	@PostMapping("/register")
-//	private RegisterFailResponse failResponse(){
-//		return RegisterFailService.getResponse();
-//	}
+	@PostMapping("/register")
+	private FailResponse register(@RequestBody RegisterRequest request) throws IOException {
+		return authService.register(request);
+	}
 }

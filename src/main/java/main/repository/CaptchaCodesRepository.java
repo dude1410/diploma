@@ -14,4 +14,6 @@ public interface CaptchaCodesRepository extends JpaRepository<CaptchaCodes, Inte
 
     @Modifying
     void deleteAllByTimeBefore(Date date);
+
+    CaptchaCodes findBySecretCode(String secretCode);
 }

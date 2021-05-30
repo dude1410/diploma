@@ -1,6 +1,6 @@
 package main.model;
 
-import main.model.security.Role;
+import main.security.Role;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -14,8 +14,8 @@ public class User {
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
 	private int id;
 
-	@Column(nullable = false, name = "is_moderator", columnDefinition = "TINYINT")
-	private byte isModerator;
+	@Column(nullable = false, name = "is_moderator", columnDefinition = "INT")
+	private int isModerator;
 
 	@Column(nullable = false, name = "reg_time", columnDefinition = "DATETIME")
 	private Timestamp regTime;
@@ -61,11 +61,11 @@ public class User {
 		this.id = id;
 	}
 
-	public byte isIs_moderator() {
+	public int isIs_moderator() {
 		return isModerator;
 	}
 
-	public void setIs_moderator(byte is_moderator) {
+	public void setIs_moderator(int is_moderator) {
 		this.isModerator = is_moderator;
 	}
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="diplomadb@localhost" uuid="83b43238-0376-4399-8ea2-debbbdce8337">
+    <data-source source="LOCAL" name="MySQL - heroku_ae1c664fe33fbc9@eu-cdbr-west-01.cleardb.com" uuid="dd06c2d7-f1c3-497a-bce3-7732bea480d9">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/diplomadb</jdbc-url>
+      <jdbc-url>jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_ae1c664fe33fbc9</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

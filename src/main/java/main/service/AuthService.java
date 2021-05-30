@@ -3,10 +3,8 @@ package main.service;
 import com.github.cage.Cage;
 import com.github.cage.YCage;
 import main.api.request.LoginRequest;
-import main.api.response.CaptchaResponse;
-import main.api.response.LoginResponse;
-import main.api.response.LogoutResponse;
-import main.api.response.UserLoginResponse;
+import main.api.request.RegisterRequest;
+import main.api.response.*;
 import main.model.CaptchaCodes;
 import main.model.User;
 import main.repository.CaptchaCodesRepository;
@@ -14,21 +12,25 @@ import main.repository.PostRepository;
 import main.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.security.Principal;
 import java.sql.Timestamp;
 import java.util.Base64;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Random;
 
 @Service
@@ -84,15 +86,23 @@ public class AuthService {
         userLoginResponse.setId(currentUser.getId());
         userLoginResponse.setName(currentUser.getName());
         userLoginResponse.setPhoto(currentUser.getPhoto());
-        userLoginResponse.setSettings(currentUser.isIs_moderator() == 1 ? true : false);
+        userLoginResponse.setSettings(currentUser.isIs_moderator() == 1);
         loginResponse.setResult(true);
         loginResponse.setUserLoginResponse(userLoginResponse);
         return loginResponse;
     }
 
-    public ResponseEntity<LoginResponse> check(Principal principal) { // todo: откуда у нас principal?
-        var currentUser = userRepository.findByEmail(principal.getName());
-        return ResponseEntity.ok(getLoginResponse(currentUser));
+    public ResponseEntity<LoginResponse> check() {
+
+        String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+        if (findEmail == null){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        }
+        User userInDB = userRepository.findByEmail(findEmail);
+        if (userInDB == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(getLoginResponse(userInDB));
     }
 
     public CaptchaResponse getCaptcha() throws IOException {
@@ -105,9 +115,7 @@ public class AuthService {
         captchaCodes.setCode(captchaBaseCode.toString());
         System.out.println(captchaBaseCode.toString());
         captchaCodes.setTime(new Timestamp(System.currentTimeMillis()));
-        System.out.println(new Timestamp(System.currentTimeMillis()));
         captchaCodes.setSecretCode(secretCode.toString());
-        System.out.println(secretCode.toString());
         captchaCodesRepository.save(captchaCodes);
         return new CaptchaResponse(secretCode.toString(), captchaBaseCode.toString());
     }
@@ -123,7 +131,8 @@ public class AuthService {
             int index = (int) (random.nextFloat() * captchaCodeSymbols.length());
             secretCode.append(captchaCodeSymbols.charAt(index));
         }
-        int captchaLength = 4 + (int) (Math.random() * 2);
+        int captchaLength = 4;
+//                + (int) (Math.random() * 2);
         while (bufferCaptcha.length() < captchaLength) {
             int index = (int) (random.nextFloat() * captchaSymbols.length());
             bufferCaptcha.append(captchaSymbols.charAt(index));
@@ -153,5 +162,49 @@ public class AuthService {
         LogoutResponse logoutResponse = new LogoutResponse();
         logoutResponse.setResult(true);
         return ResponseEntity.ok(logoutResponse);
+    }
+
+    public FailResponse register(RegisterRequest request) throws IOException {
+        FailResponse response = new FailResponse();
+        HashMap<String, String> errors = new HashMap<>();
+        if (request == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+        User userInDB = userRepository.findByEmail(request.getEmail());
+        if (userInDB != null) {
+            errors.put("email", "Этот e-mail уже зарегистрирован");
+        }
+        if (!request.getName().matches("([А-Яа-яA-Za-z0-9-_]+)")) {
+            errors.put("name", "Имя указано неверно");
+        }
+        if (request.getPassword().length() < 6) {
+            errors.put("password", "Пароль короче 6-ти символов");
+        }
+        CaptchaCodes captcha = captchaCodesRepository.findBySecretCode(request.getSecretCode());
+        cage = new YCage();
+        BufferedImage bufferedImage = cage.drawImage(request.getCaptcha());
+        if (captcha.getCode().equals(createCaptchaString(bufferedImage))) {
+            errors.put("captcha", "Код с картинки введён неверно");
+        }
+        if (errors.isEmpty()) {
+            response.setResult(true);
+
+            User user = new User();
+            user.setIs_moderator((byte) 0);
+            user.setReg_time(new Timestamp(System.currentTimeMillis()));
+            user.setName(request.getName());
+            user.setEmail(request.getEmail());
+            user.setPassword(passwordEncoder().encode(request.getPassword()));
+            userRepository.save(user);
+            return response;
+        } else {
+            response.setResult(false);
+            response.setErrors(errors);
+            return response;
+        }
+    }
+
+    private PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(12);
     }
 }

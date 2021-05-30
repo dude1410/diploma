@@ -6,7 +6,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -85,10 +84,82 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "left join User u on u.id = p.user.id " +
             "where p.isActive = 1 and p.moderationStatus = 'ACCEPTED' and p.time <= current_timestamp " +
             "and p.id = :id ")
-    Post getPostById (int id);
+    Post getPostById (@Param("id") int id);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where p.id = :id ")
+    Post getPostByIdAuth (@Param("id") int id);
+
 
     @Query ("SELECT count(p) " +
             "from Post p " +
             "where p.moderationStatus = 'NEW' ")
     int findNewPosts();
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where p.moderationStatus = 'NEW' " +
+            "order by p.time desc ")
+    Page<Post> getNewPostsResponse(Pageable page);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where p.moderationStatus = 'DECLINED' and p.moderatorId = :modId " +
+            "order by p.time desc ")
+    Page<Post> getDeclinedPostsResponse(Pageable page, @Param("modId") int modId);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where p.moderationStatus = 'ACCEPTED' and p.moderatorId = :modId " +
+            "order by p.time desc ")
+    Page<Post> getAcceptedPostsResponse (Pageable page, @Param("modId") int modId);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where u.id = :userId and p.isActive = 0 " +
+            "group by p.id order by p.time desc ")
+    Page<Post> findMyInActivePosts(Pageable page, @Param("userId") int userId);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where u.id = :userId and p.isActive = 1 and p.moderationStatus = 'NEW' " +
+            "group by p.id order by p.time desc ")
+    Page<Post> findMyPendingPosts(Pageable page, @Param("userId") int userId);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where u.id = :userId and p.isActive = 1 and p.moderationStatus = 'DECLINED' " +
+            "group by p.id order by p.time desc ")
+    Page<Post> findMyDeclinedPosts(Pageable page, @Param("userId") int userId);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join Tag2Post tp on tp.post.id = p.id " +
+            "left join Tags t on t.id = tp.tag.id " +
+            "left join User u on u.id = p.user.id " +
+            "where u.id = :userId and p.isActive = 1 and p.moderationStatus = 'ACCEPTED' " +
+            "group by p.id order by p.time desc ")
+    Page<Post> findMyAcceptedPosts(Pageable page, @Param("userId") int userId);
 }

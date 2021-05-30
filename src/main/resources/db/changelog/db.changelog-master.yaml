@@ -17,7 +17,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: is_moderator
-                  type: BINARY
+                  type: INTEGER
                   constraints:
                     nullable: false
               - column:

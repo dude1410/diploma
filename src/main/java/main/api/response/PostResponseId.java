@@ -1,7 +1,7 @@
 package main.api.response;
 
-import main.testEntity.CommentTestForPost;
-import main.testEntity.UserTestForPostTest;
+import main.model.DTO.CommentTestForPost;
+import main.model.DTO.UserTestForPostTest;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package main.model.security;
+package main.security;
 
 public enum Permission {
     USER("user:write"),

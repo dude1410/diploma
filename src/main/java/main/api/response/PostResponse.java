@@ -1,7 +1,6 @@
 package main.api.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import main.testEntity.PostTest;
+import main.model.DTO.PostTest;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

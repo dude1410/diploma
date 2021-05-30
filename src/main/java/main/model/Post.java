@@ -56,7 +56,7 @@ public class Post {
 		return tags;
 	}
 
-	public Post(int id, byte isActive, ModerationStatus moderationStatus, int moderatorId,
+	public Post(int id, int isActive, ModerationStatus moderationStatus, int moderatorId,
 				User user, Timestamp time, String title, String text, int viewCount){
 		this.id = id;
 		this.isActive = isActive;

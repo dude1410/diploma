@@ -5,7 +5,7 @@ import main.model.Post;
 import main.model.Tags;
 import main.repository.PostRepository;
 import main.repository.TagsRepository;
-import main.testEntity.TagTest;
+import main.model.DTO.TagTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

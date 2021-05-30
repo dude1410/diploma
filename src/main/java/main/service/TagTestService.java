@@ -1,7 +1,7 @@
 package main.service;
 
 import main.api.response.TagResponse;
-import main.testEntity.TagTest;
+import main.model.DTO.TagTest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -23,3 +23,8 @@ blog.copyrightFrom: 2021
 
 #delete captcha in one hour
 blog.deleteCaptchaTimePeriod: 3600
+
+#cloudinary
+blog.cloud_name: ${CLOUD_NAME}
+blog.api_key: ${API_KEY}
+blog.api_secret: ${API_SECRET}

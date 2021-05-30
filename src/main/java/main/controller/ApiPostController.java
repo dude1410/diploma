@@ -1,10 +1,10 @@
 package main.controller;
 
+import main.api.request.NewPostRequest;
+import main.api.response.FailResponse;
 import main.api.response.PostResponse;
 import main.api.response.PostResponseId;
-import main.service.PostIdService;
 import main.service.PostService;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.*;
 public class ApiPostController {
 
     private final PostService postService;
-    private final PostIdService postIdService;
 
-    public ApiPostController(PostService postService,
-                             PostIdService postIdService) {
+    public ApiPostController(PostService postService) {
         this.postService = postService;
-        this.postIdService = postIdService;
     }
 
     @GetMapping
@@ -48,9 +45,32 @@ public class ApiPostController {
         return postService.getSearchByTagPostResponse(limit, offset, tag);
     }
 
-    //todo: исправить авторизацию
     @GetMapping("/{id}")
     private PostResponseId getPostById(@PathVariable int id){
         return postService.getPostById(id);
+    }
+
+    @GetMapping("/moderation")
+    private PostResponse getPostModeration(@RequestParam("limit") int limit,
+                                           @RequestParam("offset") int offset,
+                                           @RequestParam("status") String status){
+        return postService.getPostModeration(limit, offset, status);
+    }
+
+    @GetMapping("/my")
+    private PostResponse getMyPostsResponse (@RequestParam("limit") int limit,
+                                             @RequestParam("offset") int offset,
+                                             @RequestParam("status") String status) {
+        return postService.getMyPostsResponse(limit, offset, status);
+    }
+
+    @PostMapping
+    private FailResponse postNewPost (@RequestBody NewPostRequest request) {
+        return postService.postNewPost(request);
+    }
+
+    @PutMapping("/{id}")
+    private FailResponse putPost (@PathVariable int id, @RequestBody NewPostRequest request){
+        return postService.putPost(id, request);
     }
 }
