@@ -65,7 +65,7 @@ public class ApiGeneralController {
 //	}
 
 	@PostMapping("/comment")
-	private FailResponse postComment(CommentRequest request) {
+	private FailResponse postComment(@RequestBody CommentRequest request) {
 		return commentService.postComment(request);
 	}
 

@@ -26,6 +26,10 @@ public interface PostCommentsRepository extends JpaRepository<PostComments, Inte
                                                 @Param("text") String text,
                                                 @Param("parentId") int parentId);
 
+    @Query("select pc " +
+            "from PostComments pc " +
+            "where pc.id = :parentId ")
+    PostComments findById (@Param("parentId") int parentId);
 
 }
 

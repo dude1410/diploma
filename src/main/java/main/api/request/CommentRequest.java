@@ -1,12 +1,16 @@
 package main.api.request;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CommentRequest {
 
+    @JsonProperty("parent_id")
     private int parentId;
+    @JsonProperty("post_id")
     private int postId;
+    @JsonProperty("text")
     private String text;
 
     public int getParentId() {
