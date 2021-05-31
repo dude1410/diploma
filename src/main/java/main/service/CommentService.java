@@ -1,6 +1,5 @@
 package main.service;
 
-import javassist.NotFoundException;
 import main.api.request.CommentRequest;
 import main.api.response.FailResponse;
 import main.model.Post;

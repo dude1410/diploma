@@ -1,6 +1,7 @@
 package main.controller;
 
 import main.api.request.CommentRequest;
+import main.api.request.PostModerationRequest;
 import main.api.response.*;
 import main.service.*;
 import org.springframework.http.MediaType;
@@ -69,4 +70,8 @@ public class ApiGeneralController {
 		return commentService.postComment(request);
 	}
 
+	@PostMapping("/moderation")
+	private FailResponse postModeration (@RequestBody PostModerationRequest request){
+		return postService.postModeration(request);
+	}
 }

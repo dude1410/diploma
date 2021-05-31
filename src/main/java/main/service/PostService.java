@@ -1,6 +1,7 @@
 package main.service;
 
 import main.api.request.NewPostRequest;
+import main.api.request.PostModerationRequest;
 import main.api.response.CalendarResponse;
 import main.api.response.FailResponse;
 import main.api.response.PostResponse;
@@ -373,5 +374,32 @@ public class PostService {
             response.setResult(true);
             return response;
         }
+    }
+
+    public FailResponse postModeration(PostModerationRequest request) {
+        String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+        checkAuthorized(findEmail);
+        FailResponse response = new FailResponse();
+        User moderator = findModeratorByEmail(findEmail);
+        if (moderator == null) {
+            response.setResult(false);
+            return response;
+        } else {
+            if (request == null) {
+                response.setResult(false);
+                return response;
+            }
+            Post postToModerate = postRepository.getPostByIdModerate(request.getPostId());
+            postToModerate.setModeration_status(request.getDecision().equals("accept")
+                    ? ModerationStatus.ACCEPTED : ModerationStatus.DECLINED);
+            postToModerate.setModerator_id(moderator.getId());
+            postRepository.save(postToModerate);
+            response.setResult(true);
+            return response;
+        }
+    }
+
+    private User findModeratorByEmail(String email) {
+        return userRepository.findModeratorByEmail(email);
     }
 }

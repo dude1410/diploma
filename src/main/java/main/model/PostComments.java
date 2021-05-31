@@ -1,23 +1,22 @@
 package main.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "post_comments")
-public class PostComments implements Serializable {
+public class PostComments {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
-	private int id;
+	private Integer id;
 
 	@Column(name = "parent_id", columnDefinition = "INT")
-	private int parentId;
+	private Integer parentId;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(nullable = false, name = "post_id", columnDefinition = "INT")
+	@JoinColumn(nullable = false, name = "post_id" ,columnDefinition = "INT")
 	private Post post;
 
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -30,7 +29,7 @@ public class PostComments implements Serializable {
 	@Column(nullable = false, name = "text", columnDefinition = "TEXT")
 	private String text;
 
-	public PostComments(int id, int parentId, Post post, User user, Timestamp time, String text) {
+	public PostComments(Integer id, Integer parentId, Post post, User user, Timestamp time, String text) {
 		this.id = id;
 		this.parentId = parentId;
 		this.post = post;
@@ -42,19 +41,19 @@ public class PostComments implements Serializable {
 	public PostComments() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int getParentId() {
+	public Integer getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(int parentId) {
+	public void setParentId(Integer parentId) {
 		this.parentId = parentId;
 	}
 

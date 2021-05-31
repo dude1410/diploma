@@ -106,6 +106,7 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "left join Tags t on t.id = tp.tag.id " +
             "left join User u on u.id = p.user.id " +
             "where p.moderationStatus = 'NEW' " +
+            "group by p.id " +
             "order by p.time desc ")
     Page<Post> getNewPostsResponse(Pageable page);
 
@@ -115,6 +116,7 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "left join Tags t on t.id = tp.tag.id " +
             "left join User u on u.id = p.user.id " +
             "where p.moderationStatus = 'DECLINED' and p.moderatorId = :modId " +
+            "group by p.id " +
             "order by p.time desc ")
     Page<Post> getDeclinedPostsResponse(Pageable page, @Param("modId") int modId);
 
@@ -124,6 +126,7 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "left join Tags t on t.id = tp.tag.id " +
             "left join User u on u.id = p.user.id " +
             "where p.moderationStatus = 'ACCEPTED' and p.moderatorId = :modId " +
+            "group by p.id " +
             "order by p.time desc ")
     Page<Post> getAcceptedPostsResponse (Pageable page, @Param("modId") int modId);
 
@@ -162,4 +165,9 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "where u.id = :userId and p.isActive = 1 and p.moderationStatus = 'ACCEPTED' " +
             "group by p.id order by p.time desc ")
     Page<Post> findMyAcceptedPosts(Pageable page, @Param("userId") int userId);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "where p.id = :id ")
+    Post getPostByIdModerate (@Param("id") int id);
 }

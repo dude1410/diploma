@@ -28,3 +28,7 @@ blog.deleteCaptchaTimePeriod: 3600
 blog.cloud_name: ${CLOUD_NAME}
 blog.api_key: ${API_KEY}
 blog.api_secret: ${API_SECRET}
+
+#mailSender
+blog.myEmail: ${MY_EMAIL}
+blog.myPassword: ${MY_PASSWORD}

@@ -2,9 +2,12 @@ package main.service;
 
 import com.github.cage.Cage;
 import com.github.cage.YCage;
+import main.api.request.ChangePasswordRequest;
 import main.api.request.LoginRequest;
 import main.api.request.RegisterRequest;
+import main.api.request.RestorePasswordRequest;
 import main.api.response.*;
+import main.config.MailConfig;
 import main.model.CaptchaCodes;
 import main.model.User;
 import main.repository.CaptchaCodesRepository;
@@ -14,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +28,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.imageio.ImageIO;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -41,24 +48,34 @@ public class AuthService {
     private Cage cage;
     StringBuilder secretCode = new StringBuilder();
     StringBuilder captchaBaseCode = new StringBuilder();
-    private final String captchaBaseCodePrefix = "data:image/png;base64, ";
-    private final String captchaCodeSymbols = "abcdefghijklmnopqrstuvwxyz1234567890";
-    private final String captchaSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    private final String CAPTCHA_BASE_CODE_PREFIX = "data:image/png;base64, ";
+    private final String CAPTCHA_CODE_SYMBOLS = "abcdefghijklmnopqrstuvwxyz1234567890";
+    private final String CAPTCHA_SYMBOLS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    private final int HASH_LENGTH = 45;
+    private final String HASH_PREFIX = "http://localhost:8080/login/change-password/";
+    private final String CHANGE_PASSWORD_ADRESS = "http://localhost:8080/auth/restore";
+    private final long CODE_LIFETIME = 86400000L;
 
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
     private final PostRepository postRepository;
     private final CaptchaCodesRepository captchaCodesRepository;
+    private final MailConfig mailConfig;
+    private final JavaMailSender javaMailSender;
 
     @Autowired
     public AuthService(AuthenticationManager authenticationManager,
                        UserRepository userRepository,
                        PostRepository postRepository,
-                       CaptchaCodesRepository captchaCodesRepository) {
+                       CaptchaCodesRepository captchaCodesRepository,
+                       MailConfig mailConfig,
+                       JavaMailSender javaMailSender) {
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.postRepository = postRepository;
         this.captchaCodesRepository = captchaCodesRepository;
+        this.mailConfig = mailConfig;
+        this.javaMailSender = javaMailSender;
     }
 
     public ResponseEntity<LoginResponse> login(LoginRequest loginRequest) {
@@ -109,11 +126,16 @@ public class AuthService {
         cage = new YCage();
         Date dateToDeleteCaptcha = new Date(new Date().getTime() - (Long.parseLong(deleteCaptchaTimePeriod) * 1000));
         captchaCodesRepository.deleteAllByTimeBefore(dateToDeleteCaptcha);
-        BufferedImage bufferedImage = cage.drawImage(generateNewCaptcha());
+
+        captchaBaseCode = new StringBuilder();
+        captchaBaseCode.append(CAPTCHA_BASE_CODE_PREFIX);
+
+        String genCaptcha = generateNewCaptcha();
+
+        BufferedImage bufferedImage = cage.drawImage(genCaptcha);
         captchaBaseCode.append(createCaptchaString(bufferedImage));
         CaptchaCodes captchaCodes = new CaptchaCodes();
-        captchaCodes.setCode(captchaBaseCode.toString());
-        System.out.println(captchaBaseCode.toString());
+        captchaCodes.setCode(genCaptcha);
         captchaCodes.setTime(new Timestamp(System.currentTimeMillis()));
         captchaCodes.setSecretCode(secretCode.toString());
         captchaCodesRepository.save(captchaCodes);
@@ -122,20 +144,18 @@ public class AuthService {
 
     public String generateNewCaptcha() {
         secretCode = new StringBuilder();
-        captchaBaseCode = new StringBuilder();
-        captchaBaseCode.append(captchaBaseCodePrefix);
+
         StringBuilder bufferCaptcha = new StringBuilder();
         Random random = new Random();
         int codeLength = 15 + (int) (Math.random() * 10);
         for (int i = 0; i < codeLength; i++) {
-            int index = (int) (random.nextFloat() * captchaCodeSymbols.length());
-            secretCode.append(captchaCodeSymbols.charAt(index));
+            int index = (int) (random.nextFloat() * CAPTCHA_CODE_SYMBOLS.length());
+            secretCode.append(CAPTCHA_CODE_SYMBOLS.charAt(index));
         }
         int captchaLength = 4;
-//                + (int) (Math.random() * 2);
         while (bufferCaptcha.length() < captchaLength) {
-            int index = (int) (random.nextFloat() * captchaSymbols.length());
-            bufferCaptcha.append(captchaSymbols.charAt(index));
+            int index = (int) (random.nextFloat() * CAPTCHA_SYMBOLS.length());
+            bufferCaptcha.append(CAPTCHA_SYMBOLS.charAt(index));
         }
         return bufferCaptcha.toString();
     }
@@ -181,9 +201,7 @@ public class AuthService {
             errors.put("password", "Пароль короче 6-ти символов");
         }
         CaptchaCodes captcha = captchaCodesRepository.findBySecretCode(request.getSecretCode());
-        cage = new YCage();
-        BufferedImage bufferedImage = cage.drawImage(request.getCaptcha());
-        if (captcha.getCode().equals(createCaptchaString(bufferedImage))) {
+        if (!captcha.getCode().equals(request.getCaptcha())) {
             errors.put("captcha", "Код с картинки введён неверно");
         }
         if (errors.isEmpty()) {
@@ -207,4 +225,53 @@ public class AuthService {
     private PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(12);
     }
+
+    public FailResponse restorePassword (RestorePasswordRequest request) throws MessagingException {
+        FailResponse response = new FailResponse();
+        User user = userRepository.findByEmail(request.getEmail());
+        if (user == null) {
+            response.setResult(false);
+            return response;
+        } else {
+            StringBuilder hashBuilder = new StringBuilder();
+            Random random = new Random();
+            for (int i = 0; i < HASH_LENGTH; i++) {
+                int index = (int) (random.nextFloat() * CAPTCHA_CODE_SYMBOLS.length());
+                hashBuilder.append(CAPTCHA_CODE_SYMBOLS.charAt(index));
+            }
+            String userCode = hashBuilder.append(new Date().getTime()).toString();
+            user.setCode(userCode);
+            userRepository.save(user);
+
+            MimeMessage message = javaMailSender.createMimeMessage();
+            var helper = new MimeMessageHelper(message, true, "utf-8");
+            String messageText = HASH_PREFIX + hashBuilder;
+            String htmlMsg = "<a href=\"" + messageText + "\">Follow the link to change the password on the site</a>";
+            message.setContent(htmlMsg, "text/html");
+            helper.setTo(request.getEmail());
+            helper.setSubject("Восстановление пароля");
+            this.javaMailSender.send(message);
+            response.setResult(true);
+            return response;
+        }
+    }
+
+    public FailResponse changePassword (ChangePasswordRequest request) {
+        FailResponse response = new FailResponse();
+        HashMap<String, String> errors = new HashMap<>();
+        User user = userRepository.findByCode(request.getCode());
+        if (user == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        if (new Date().getTime() - Long.parseLong(user.getCode().substring(45)) > CODE_LIFETIME) {
+            errors.put("code","Ссылка для восстановления пароля устарела.\n" +
+                    "<a href=\"" + CHANGE_PASSWORD_ADRESS + ">Запросить ссылку снова</a>\"");
+        };
+
+
+
+
+        return response;
+    }
+
 }

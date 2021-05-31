@@ -36,6 +36,5 @@ public class FailResponse {
         this.errors = errors;
 
         User user = new User();
-
     }
 }

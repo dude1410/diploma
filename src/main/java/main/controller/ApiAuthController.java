@@ -1,7 +1,9 @@
 package main.controller;
 
+import main.api.request.ChangePasswordRequest;
 import main.api.request.LoginRequest;
 import main.api.request.RegisterRequest;
+import main.api.request.RestorePasswordRequest;
 import main.api.response.*;
 import main.repository.UserRepository;
 import main.service.AuthService;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import java.io.IOException;
 import java.security.Principal;
 
@@ -35,18 +38,6 @@ public class ApiAuthController {
 		return authService.logout();
 	}
 
-//	private final AuthResponse authResponse;
-//	private final CaptchaService captchaService;
-//	private final RegisterSuccessResponse successResponse;
-//	private final RegisterFailService failService;
-//
-//	public ApiAuthController(AuthResponse authResponse, CaptchaService captchaService, RegisterSuccessResponse successResponse, RegisterFailService failService){
-//		this.authResponse = authResponse;
-//		this.captchaService = captchaService;
-//		this.successResponse = successResponse;
-//		this.failService = failService;
-//	}
-//
 	@GetMapping("/check")
 	public ResponseEntity<LoginResponse> check(Principal principal) throws IOException {
 		if (principal == null) {
@@ -63,5 +54,15 @@ public class ApiAuthController {
 	@PostMapping("/register")
 	private FailResponse register(@RequestBody RegisterRequest request) throws IOException {
 		return authService.register(request);
+	}
+
+	@PostMapping("/restore")
+	private FailResponse restorePassword (@RequestBody RestorePasswordRequest request) throws MessagingException {
+		return authService.restorePassword(request);
+	}
+
+	@PostMapping("/password")
+	private FailResponse changePassword (@RequestBody ChangePasswordRequest request) {
+		return authService.changePassword(request);
 	}
 }

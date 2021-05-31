@@ -7,22 +7,22 @@ import java.util.Set;
 
 @Entity
 @Table(name = "posts")
-public class Post {
+public class Post  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, name = "id", columnDefinition = "INT")
-	private int id;
+	private Integer id;
 
 	@Column(nullable = false, name = "is_active", columnDefinition = "INT")
-	private int isActive;
+	private Integer isActive;
 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "moderation_status", columnDefinition = "ENUM")
 	private ModerationStatus moderationStatus;
 
 	@Column(name = "moderator_id", columnDefinition = "INT")
-	private int moderatorId;
+	private Integer moderatorId;
 
 	@ManyToOne()
 	@JoinColumn(nullable = false, name = "user_id", columnDefinition = "INT")
@@ -38,7 +38,7 @@ public class Post {
 	private String text;
 
 	@Column(nullable = false, name = "view_count", columnDefinition = "INT")
-	private int viewCount;
+	private Integer viewCount;
 
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<PostComments> postComments = new HashSet<>();
@@ -56,8 +56,8 @@ public class Post {
 		return tags;
 	}
 
-	public Post(int id, int isActive, ModerationStatus moderationStatus, int moderatorId,
-				User user, Timestamp time, String title, String text, int viewCount){
+	public Post(Integer id, Integer isActive, ModerationStatus moderationStatus, Integer moderatorId,
+				User user, Timestamp time, String title, String text, Integer viewCount){
 		this.id = id;
 		this.isActive = isActive;
 		this.moderationStatus = moderationStatus;
@@ -72,19 +72,19 @@ public class Post {
 	public Post() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int isIs_active() {
+	public Integer isIs_active() {
 		return isActive;
 	}
 
-	public void setIs_active(int is_active) {
+	public void setIs_active(Integer is_active) {
 		this.isActive = is_active;
 	}
 
@@ -96,11 +96,11 @@ public class Post {
 		this.moderationStatus = moderation_status;
 	}
 
-	public int getModerator_id() {
+	public Integer getModerator_id() {
 		return moderatorId;
 	}
 
-	public void setModerator_id(int moderator_id) {
+	public void setModerator_id(Integer moderator_id) {
 		this.moderatorId = moderator_id;
 	}
 
@@ -136,11 +136,11 @@ public class Post {
 		this.text = text;
 	}
 
-	public int getViewCount() {
+	public Integer getViewCount() {
 		return viewCount;
 	}
 
-	public void setViewCount(int viewCount) {
+	public void setViewCount(Integer viewCount) {
 		this.viewCount = viewCount;
 	}
 
