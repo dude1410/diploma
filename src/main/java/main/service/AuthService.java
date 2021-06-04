@@ -53,11 +53,12 @@ public class AuthService {
     private final String CAPTCHA_CODE_SYMBOLS = "abcdefghijklmnopqrstuvwxyz1234567890";
     private final String CAPTCHA_SYMBOLS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     private final int HASH_LENGTH = 45;
-    private final String HASH_PREFIX = "http://localhost:8080/login/change-password/";
-    private final String CHANGE_PASSWORD_ADRESS = "http://localhost:8080/auth/restore"; // todo: change to herokuapp
+//    private final String HASH_PREFIX = "http://localhost:8080/login/change-password/";
+    private final String HASH_PREFIX = "https://pavel-vladysik-blog-core-on-ja.herokuapp.com/login/change-password/";
+//    private final String CHANGE_PASSWORD_ADRESS = "http://localhost:8080/auth/restore";
+    private final String CHANGE_PASSWORD_ADRESS = "https://pavel-vladysik-blog-core-on-ja.herokuapp.com/auth/restore";
     private final long CODE_LIFETIME = 86400000L;
     private final int MIN_PASSWORD_LENGTH = 6;
-
 
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
