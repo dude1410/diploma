@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.api.request.LikeDislikeRequest;
 import main.api.request.NewPostRequest;
 import main.api.response.FailResponse;
 import main.api.response.PostResponse;
@@ -72,5 +73,15 @@ public class ApiPostController {
     @PutMapping("/{id}")
     private FailResponse putPost (@PathVariable int id, @RequestBody NewPostRequest request){
         return postService.putPost(id, request);
+    }
+
+    @PostMapping("/like")
+    private FailResponse postLike (@RequestBody LikeDislikeRequest request) {
+        return postService.postLike(request);
+    }
+
+    @PostMapping("/dislike")
+    private FailResponse postDislike (@RequestBody LikeDislikeRequest request) {
+        return postService.postDislike(request);
     }
 }

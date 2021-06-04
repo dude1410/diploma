@@ -1,5 +1,6 @@
 package main.service;
 
+import main.api.request.LikeDislikeRequest;
 import main.api.request.NewPostRequest;
 import main.api.request.PostModerationRequest;
 import main.api.response.CalendarResponse;
@@ -7,14 +8,11 @@ import main.api.response.FailResponse;
 import main.api.response.PostResponse;
 import main.api.response.PostResponseId;
 import main.model.*;
-import main.repository.PostRepository;
+import main.repository.*;
 import main.model.DTO.CommentTestForPost;
 import main.model.DTO.PostTest;
 import main.model.DTO.UserTestForCommentForPost;
 import main.model.DTO.UserTestForPostTest;
-import main.repository.Tag2PostRepository;
-import main.repository.TagsRepository;
-import main.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -35,19 +33,28 @@ public class PostService {
     private final UserRepository userRepository;
     private final TagsRepository tagsRepository;
     private final Tag2PostRepository tag2PostRepository;
+    private final PostVotesRepository postVotesRepository;
+    private final GlobalSettingsRepository globalSettingsRepository;
 
     SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat formatYear = new SimpleDateFormat("yyyy");
+
+    private final int LIKE_VALUE = 1;
+    private final int DISLIKE_VALUE = 0;
 
     @Autowired
     public PostService(PostRepository postRepository,
                        UserRepository userRepository,
                        TagsRepository tagsRepository,
-                       Tag2PostRepository tag2PostRepository) {
+                       Tag2PostRepository tag2PostRepository,
+                       PostVotesRepository postVotesRepository,
+                       GlobalSettingsRepository globalSettingsRepository) {
         this.postRepository = postRepository;
         this.userRepository = userRepository;
         this.tagsRepository = tagsRepository;
         this.tag2PostRepository = tag2PostRepository;
+        this.postVotesRepository = postVotesRepository;
+        this.globalSettingsRepository = globalSettingsRepository;
     }
 
     public PostResponse getAllPostResponse(int limit, int offset, String mode) {
@@ -110,8 +117,6 @@ public class PostService {
         return createResponse(postRepository.getSearchByTagPostResponse(PageRequest.of(offset / limit, limit), tag));
     }
 
-    // todo: добавить код после авторизации
-    // todo: изменить тип возврата для active
     public PostResponseId getPostById(int id) {
         PostResponseId postResponseId = new PostResponseId();
 
@@ -125,6 +130,16 @@ public class PostService {
         }
         if (post == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        User userInDB = userRepository.findByEmail(findEmail);
+        if (userInDB != null) {
+            if (userInDB.isIs_moderator() == 0 && userInDB != post.getUser()) {
+                post.setViewCount(post.getViewCount() + 1);
+                postRepository.save(post);
+            }
+        } else {
+            post.setViewCount(post.getViewCount() + 1);
+            postRepository.save(post);
         }
         postResponseId.setId(post.getId());
         postResponseId.setTimestamp(post.getTime().getTime() / 1000);
@@ -268,6 +283,7 @@ public class PostService {
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
         checkAuthorized(findEmail);
         User userInDB = userRepository.findByEmail(findEmail);
+        boolean moderationMode = globalSettingsRepository.findPremoderationMode().equals("YES");
         if (userInDB == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
@@ -284,7 +300,11 @@ public class PostService {
         } else {
             Post post = new Post();
             post.setIs_active(request.getActive());
-            post.setModeration_status(ModerationStatus.NEW);
+            if (!moderationMode && request.getActive() == 1) {
+                post.setModeration_status(ModerationStatus.ACCEPTED);
+            } else {
+                post.setModeration_status(ModerationStatus.NEW);
+            }
             post.setUser(userInDB);
 
             if ((request.getTimestamp().getTime() * 1000) < (new Timestamp(System.currentTimeMillis())).getTime()) {
@@ -401,5 +421,72 @@ public class PostService {
 
     private User findModeratorByEmail(String email) {
         return userRepository.findModeratorByEmail(email);
+    }
+
+    public FailResponse postLike(LikeDislikeRequest request) {
+        System.out.println(request.getPostId());
+        String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+        checkAuthorized(findEmail);
+        User userInDB = userRepository.findByEmail(findEmail);
+        if (userInDB == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        Post postInDB = postRepository.getPostById(request.getPostId());
+        if (postInDB == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        FailResponse response = new FailResponse();
+        PostVotes postVotesInDB = postVotesRepository.findByUserAndPost(userInDB.getId(), request.getPostId());
+        if (postVotesInDB == null) {
+            response.setResult(newPostVotesLikeOrDislike(userInDB, postInDB, LIKE_VALUE));
+            return response;
+        } else {
+            if (postVotesInDB.getValue() == LIKE_VALUE) {
+                response.setResult(false);
+                return response;
+            } else {
+                postVotesInDB.setValue(LIKE_VALUE);
+                response.setResult(true);
+                return response;
+            }
+        }
+    }
+
+    public FailResponse postDislike(LikeDislikeRequest request) {
+        String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+        checkAuthorized(findEmail);
+        User userInDB = userRepository.findByEmail(findEmail);
+        if (userInDB == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        Post postInDB = postRepository.getPostById(request.getPostId());
+        if (postInDB == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        FailResponse response = new FailResponse();
+        PostVotes postVotesInDB = postVotesRepository.findByUserAndPost(userInDB.getId(), request.getPostId());
+        if (postVotesInDB == null) {
+            response.setResult(newPostVotesLikeOrDislike(userInDB, postInDB, DISLIKE_VALUE));
+            return response;
+        } else {
+            if (postVotesInDB.getValue() == DISLIKE_VALUE) {
+                response.setResult(false);
+                return response;
+            } else {
+                postVotesInDB.setValue(DISLIKE_VALUE);
+                response.setResult(true);
+                return response;
+            }
+        }
+    }
+
+    private boolean newPostVotesLikeOrDislike(User user, Post post, int value) {
+        PostVotes newPostVote = new PostVotes();
+        newPostVote.setUser(user);
+        newPostVote.setPostId(post);
+        newPostVote.setTime(new Timestamp(System.currentTimeMillis()));
+        newPostVote.setValue(value);
+        postVotesRepository.save(newPostVote);
+        return true;
     }
 }

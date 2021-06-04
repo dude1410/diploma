@@ -4,6 +4,7 @@ import main.api.request.CommentRequest;
 import main.api.response.FailResponse;
 import main.model.Post;
 import main.model.PostComments;
+import main.model.User;
 import main.repository.PostCommentsRepository;
 import main.repository.PostRepository;
 import main.repository.UserRepository;
@@ -51,18 +52,19 @@ public class CommentService {
         }
 
         Post post = postRepository.getPostById(request.getPostId());
-        PostComments comment = postCommentsRepository.findById(request.getParentId());
+//        PostComments comment = postCommentsRepository.findById(request.getParentId());
+
 
         if (post != null) {
-            if (comment != null) {
+            if (request.getParentId() != null) { // ???
                 newPC = createNewPostCommentWithParent(request.getParentId(),
-                        request.getPostId(),
+                        post,
                         request.getText(),
                         findEmail);
                 response.setId(newPC);
                 return response;
             } else {
-                newPC = createNewPostCommentWithoutParent(request.getPostId(),
+                newPC = createNewPostCommentWithoutParent(post,
                         request.getText(),
                         findEmail);
                 response.setId(newPC);
@@ -81,22 +83,22 @@ public class CommentService {
         return response;
     }
 
-    private int createNewPostCommentWithParent(int parentId, int postId, String text, String findEmail) {
+    private int createNewPostCommentWithParent(int parentId, Post post, String text, String findEmail) {
         PostComments newPostComment = new PostComments();
         newPostComment.setParentId(parentId);
-        newPostComment.setPost(postRepository.getPostById(postId));
+        newPostComment.setPost(post);
         newPostComment.setUser(userRepository.findByEmail(findEmail));
         newPostComment.setTime(new Timestamp(System.currentTimeMillis()));
         newPostComment.setText(text);
         return postCommentsRepository.save(newPostComment).getId();
     }
 
-    private int createNewPostCommentWithoutParent(int postId, String text, String findEmail) {
+    private int createNewPostCommentWithoutParent(Post post, String text, String findEmail) {
         PostComments newPostComment = new PostComments();
         newPostComment.setUser(userRepository.findByEmail(findEmail));
         newPostComment.setTime(new Timestamp(System.currentTimeMillis()));
         newPostComment.setText(text);
-        newPostComment.setPost(postRepository.getPostById(postId));
+        newPostComment.setPost(post);
         return postCommentsRepository.save(newPostComment).getId();
     }
 }

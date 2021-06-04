@@ -11,6 +11,7 @@ import main.config.MailConfig;
 import main.model.CaptchaCodes;
 import main.model.User;
 import main.repository.CaptchaCodesRepository;
+import main.repository.GlobalSettingsRepository;
 import main.repository.PostRepository;
 import main.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +54,10 @@ public class AuthService {
     private final String CAPTCHA_SYMBOLS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     private final int HASH_LENGTH = 45;
     private final String HASH_PREFIX = "http://localhost:8080/login/change-password/";
-    private final String CHANGE_PASSWORD_ADRESS = "http://localhost:8080/auth/restore";
+    private final String CHANGE_PASSWORD_ADRESS = "http://localhost:8080/auth/restore"; // todo: change to herokuapp
     private final long CODE_LIFETIME = 86400000L;
+    private final int MIN_PASSWORD_LENGTH = 6;
+
 
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
@@ -62,6 +65,7 @@ public class AuthService {
     private final CaptchaCodesRepository captchaCodesRepository;
     private final MailConfig mailConfig;
     private final JavaMailSender javaMailSender;
+    private final GlobalSettingsRepository globalSettingsRepository;
 
     @Autowired
     public AuthService(AuthenticationManager authenticationManager,
@@ -69,13 +73,15 @@ public class AuthService {
                        PostRepository postRepository,
                        CaptchaCodesRepository captchaCodesRepository,
                        MailConfig mailConfig,
-                       JavaMailSender javaMailSender) {
+                       JavaMailSender javaMailSender,
+                       GlobalSettingsRepository globalSettingsRepository) {
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.postRepository = postRepository;
         this.captchaCodesRepository = captchaCodesRepository;
         this.mailConfig = mailConfig;
         this.javaMailSender = javaMailSender;
+        this.globalSettingsRepository = globalSettingsRepository;
     }
 
     public ResponseEntity<LoginResponse> login(LoginRequest loginRequest) {
@@ -185,6 +191,11 @@ public class AuthService {
     }
 
     public FailResponse register(RegisterRequest request) throws IOException {
+
+        if (globalSettingsRepository.findMultiuserMode().equals("NO")) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
         FailResponse response = new FailResponse();
         HashMap<String, String> errors = new HashMap<>();
         if (request == null) {
@@ -197,7 +208,7 @@ public class AuthService {
         if (!request.getName().matches("([А-Яа-яA-Za-z0-9-_]+)")) {
             errors.put("name", "Имя указано неверно");
         }
-        if (request.getPassword().length() < 6) {
+        if (request.getPassword().length() < MIN_PASSWORD_LENGTH) {
             errors.put("password", "Пароль короче 6-ти символов");
         }
         CaptchaCodes captcha = captchaCodesRepository.findBySecretCode(request.getSecretCode());
@@ -245,7 +256,7 @@ public class AuthService {
 
             MimeMessage message = javaMailSender.createMimeMessage();
             var helper = new MimeMessageHelper(message, true, "utf-8");
-            String messageText = HASH_PREFIX + hashBuilder;
+            String messageText = HASH_PREFIX + userCode;
             String htmlMsg = "<a href=\"" + messageText + "\">Follow the link to change the password on the site</a>";
             message.setContent(htmlMsg, "text/html");
             helper.setTo(request.getEmail());
@@ -266,12 +277,33 @@ public class AuthService {
         if (new Date().getTime() - Long.parseLong(user.getCode().substring(45)) > CODE_LIFETIME) {
             errors.put("code","Ссылка для восстановления пароля устарела.\n" +
                     "<a href=\"" + CHANGE_PASSWORD_ADRESS + ">Запросить ссылку снова</a>\"");
-        };
-
-
-
-
+            response.setResult(false);
+            response.setErrors(errors);
+            return response;
+        }
+        String captchaSecret = request.getCaptchaSecret();
+        CaptchaCodes captcha = captchaCodesRepository.findBySecretCode(captchaSecret);
+        if (captcha == null) {
+            errors.put("captcha","Код с картинки введён неверно");
+            response.setResult(false);
+            response.setErrors(errors);
+            return response;
+        }
+        if (!captcha.getCode().equals(request.getCaptcha())){
+            errors.put("captcha","Код с картинки введён неверно");
+            response.setResult(false);
+            response.setErrors(errors);
+            return response;
+        }
+        if (request.getPassword().length() < MIN_PASSWORD_LENGTH) {
+            errors.put("password","Пароль короче 6-ти символов");
+            response.setResult(false);
+            response.setErrors(errors);
+            return response;
+        }
+        user.setPassword(passwordEncoder().encode(request.getPassword()));
+        userRepository.save(user);
+        response.setResult(true);
         return response;
     }
-
 }

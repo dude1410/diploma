@@ -3,6 +3,8 @@ package main.repository;
 import main.model.CaptchaCodes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,5 +17,8 @@ public interface CaptchaCodesRepository extends JpaRepository<CaptchaCodes, Inte
     @Modifying
     void deleteAllByTimeBefore(Date date);
 
-    CaptchaCodes findBySecretCode(String secretCode);
+    @Query("select cc " +
+            "from CaptchaCodes cc " +
+            "where cc.secretCode = :secretCode ")
+    CaptchaCodes findBySecretCode(@Param("secretCode") String secretCode);
 }

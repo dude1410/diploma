@@ -170,4 +170,20 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
             "from Post p " +
             "where p.id = :id ")
     Post getPostByIdModerate (@Param("id") int id);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join PostVotes pv on pv.post.id = p.id " +
+            "left join User u on u.id = p.user.id " +
+            "where u.email = :email " +
+            "group by p.id " +
+            "order by p.time ")
+    List<Post> findAllMyPostsByEmail (@Param("email") String email);
+
+    @Query("SELECT p " +
+            "from Post p " +
+            "left join PostVotes pv on pv.post.id = p.id " +
+            "group by p.id " +
+            "order by p.time ")
+    List<Post> allPosts ();
 }

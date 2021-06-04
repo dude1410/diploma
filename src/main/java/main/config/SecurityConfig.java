@@ -56,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     out.flush();
                 })
                 .and()
-                .httpBasic();
+                .httpBasic().disable();
     }
 
     @Bean

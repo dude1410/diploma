@@ -29,7 +29,12 @@ public class PostComments {
 	@Column(nullable = false, name = "text", columnDefinition = "TEXT")
 	private String text;
 
-	public PostComments(Integer id, Integer parentId, Post post, User user, Timestamp time, String text) {
+	public PostComments(Integer id,
+						Integer parentId,
+						Post post,
+						User user,
+						Timestamp time,
+						String text) {
 		this.id = id;
 		this.parentId = parentId;
 		this.post = post;
@@ -61,7 +66,7 @@ public class PostComments {
 		return post;
 	}
 
-	public void setPost(Post postId) {
+	public void setPost(Post post) {
 		this.post = post;
 	}
 
