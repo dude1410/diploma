@@ -6,7 +6,11 @@ import main.api.response.FailResponse;
 import main.api.response.PostResponse;
 import main.api.response.PostResponseId;
 import main.service.PostService;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/post")
@@ -66,22 +70,26 @@ public class ApiPostController {
     }
 
     @PostMapping
-    private FailResponse postNewPost (@RequestBody NewPostRequest request) {
-        return postService.postNewPost(request);
+    private FailResponse postNewPost (@Valid @RequestBody NewPostRequest request,
+                                      BindingResult error) {
+        return postService.postNewPost(request, error);
     }
 
     @PutMapping("/{id}")
-    private FailResponse putPost (@PathVariable int id, @RequestBody NewPostRequest request){
-        return postService.putPost(id, request);
+    private FailResponse putPost (@PathVariable int id, @Valid @RequestBody NewPostRequest request,
+                                  BindingResult error){
+        return postService.putPost(id, request, error);
     }
 
     @PostMapping("/like")
-    private FailResponse postLike (@RequestBody LikeDislikeRequest request) {
-        return postService.postLike(request);
+    private FailResponse postLike (@Valid @RequestBody LikeDislikeRequest request,
+                                   BindingResult error) {
+        return postService.postLike(request, error);
     }
 
     @PostMapping("/dislike")
-    private FailResponse postDislike (@RequestBody LikeDislikeRequest request) {
-        return postService.postDislike(request);
+    private FailResponse postDislike (@Valid @RequestBody LikeDislikeRequest request,
+                                      BindingResult error) {
+        return postService.postDislike(request, error);
     }
 }

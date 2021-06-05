@@ -1,16 +1,22 @@
 package main.api.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import main.config.Config;
+
+import javax.validation.constraints.NotBlank;
 
 public class SettingsRequest {
 
     @JsonProperty("MULTIUSER_MODE")
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
     private boolean multiuserMode;
 
     @JsonProperty("POST_PREMODERATION")
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
     private boolean postPremoderation;
 
     @JsonProperty("STATISTICS_IS_PUBLIC")
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
     private boolean statisticsIsPublic;
 
     public boolean isMultiuserMode() {

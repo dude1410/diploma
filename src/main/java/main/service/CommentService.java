@@ -8,11 +8,15 @@ import main.model.User;
 import main.repository.PostCommentsRepository;
 import main.repository.PostRepository;
 import main.repository.UserRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.sql.Timestamp;
@@ -22,6 +26,8 @@ import static main.service.PostService.checkAuthorized;
 
 @Service
 public class CommentService {
+
+    private final Logger logger = LogManager.getLogger(CommentService.class);
 
     private final PostCommentsRepository postCommentsRepository;
     private final PostRepository postRepository;
@@ -36,7 +42,7 @@ public class CommentService {
         this.userRepository = userRepository;
     }
 
-    public FailResponse postComment(CommentRequest request) {
+    public FailResponse postComment(CommentRequest request, BindingResult error) {
 
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
         checkAuthorized(findEmail);

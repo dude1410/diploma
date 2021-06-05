@@ -1,5 +1,9 @@
 package main.api.request;
 
+import main.config.Config;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Set;
@@ -8,8 +12,15 @@ public class NewPostRequest {
 
     private Date timestamp;
     private int active;
+
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
+    @Size(min = 3, max = 255, message = Config.STRING_NEW_POST_TITLE)
     private String title;
+
     private Set<String> tags;
+
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
+    @Size(min = 50, message = Config.STRING_NEW_POST_TEXT)
     private String text;
 
     public Date getTimestamp() {

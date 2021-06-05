@@ -4,6 +4,8 @@ import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import main.api.response.FailResponse;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -26,6 +28,8 @@ import static main.service.PostService.checkAuthorized;
 
 @Service
 public class FilesService {
+
+    private final Logger logger = LogManager.getLogger(FilesService.class);
 
     private final Pattern IMAGE_NAME = Pattern.compile("^(.*)(.)(png|jpe?g)$");
     private final long MAX_IMAGE_SIZE = 5242880;

@@ -20,6 +20,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.jsoup.Jsoup;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.sql.Timestamp;
@@ -277,7 +279,7 @@ public class PostService {
         }
     }
 
-    public FailResponse postNewPost(NewPostRequest request) {
+    public FailResponse postNewPost(NewPostRequest request, BindingResult error) {
         FailResponse response = new FailResponse();
         HashMap<String, String> errors = new HashMap<>();
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -343,7 +345,7 @@ public class PostService {
         tag2PostRepository.save(tag2Post);
     }
 
-    public FailResponse putPost(int id, NewPostRequest request) {
+    public FailResponse putPost(int id, NewPostRequest request, BindingResult error) {
         FailResponse response = new FailResponse();
         HashMap<String, String> errors = new HashMap<>();
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -396,7 +398,7 @@ public class PostService {
         }
     }
 
-    public FailResponse postModeration(PostModerationRequest request) {
+    public FailResponse postModeration(PostModerationRequest request, BindingResult error) {
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
         checkAuthorized(findEmail);
         FailResponse response = new FailResponse();
@@ -423,7 +425,8 @@ public class PostService {
         return userRepository.findModeratorByEmail(email);
     }
 
-    public FailResponse postLike(LikeDislikeRequest request) {
+    public FailResponse postLike(LikeDislikeRequest request,
+                                 BindingResult error) {
         System.out.println(request.getPostId());
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
         checkAuthorized(findEmail);
@@ -452,7 +455,8 @@ public class PostService {
         }
     }
 
-    public FailResponse postDislike(LikeDislikeRequest request) {
+    public FailResponse postDislike(LikeDislikeRequest request,
+                                    BindingResult error) {
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
         checkAuthorized(findEmail);
         User userInDB = userRepository.findByEmail(findEmail);

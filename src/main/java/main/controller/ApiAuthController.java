@@ -9,9 +9,11 @@ import main.repository.UserRepository;
 import main.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
+import javax.validation.Valid;
 import java.io.IOException;
 import java.security.Principal;
 
@@ -23,14 +25,16 @@ public class ApiAuthController {
 	private final AuthService authService;
 
 	@Autowired
-	public ApiAuthController(UserRepository userRepository, AuthService authService) {
+	public ApiAuthController(UserRepository userRepository,
+							 AuthService authService) {
 		this.authService = authService;
 		this.userRepository = userRepository;
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
-		return authService.login(loginRequest);
+	public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest,
+											   BindingResult error) {
+		return authService.login(loginRequest, error);
 	}
 
 	@GetMapping("/logout")
@@ -52,17 +56,20 @@ public class ApiAuthController {
 	}
 
 	@PostMapping("/register")
-	private FailResponse register(@RequestBody RegisterRequest request) throws IOException {
-		return authService.register(request);
+	private FailResponse register(@Valid @RequestBody RegisterRequest request,
+								  BindingResult error) throws IOException {
+		return authService.register(request, error);
 	}
 
 	@PostMapping("/restore")
-	private FailResponse restorePassword (@RequestBody RestorePasswordRequest request) throws MessagingException {
-		return authService.restorePassword(request);
+	private FailResponse restorePassword (@Valid @RequestBody RestorePasswordRequest request,
+										  BindingResult error) throws MessagingException {
+		return authService.restorePassword(request, error);
 	}
 
 	@PostMapping("/password")
-	private FailResponse changePassword (@RequestBody ChangePasswordRequest request) {
-		return authService.changePassword(request);
+	private FailResponse changePassword (@Valid @RequestBody ChangePasswordRequest request,
+										 BindingResult error) {
+		return authService.changePassword(request,error);
 	}
 }

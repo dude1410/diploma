@@ -10,6 +10,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.imageio.ImageIO;
@@ -33,7 +35,7 @@ public class MyProfileService {
         this.filesService = filesService;
     }
 
-    public FailResponse postMyProfileNewPhoto(MyProfileRequest request) throws IOException {
+    public FailResponse postMyProfileNewPhoto(MyProfileRequest request, BindingResult error) throws IOException {
 
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
         checkAuthorized(findEmail);

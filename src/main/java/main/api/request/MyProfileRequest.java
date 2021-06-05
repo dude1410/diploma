@@ -1,12 +1,26 @@
 package main.api.request;
 
+import main.config.Config;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class MyProfileRequest {
 
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
+    @Size(min = 3, max = 20, message = Config.STRING_AUTH_NAME)
     private String name;
+
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
+    @Email(message = Config.STRING_AUTH_INVALID_EMAIL)
     private String email;
+
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
+    @Size(min = 6, max = 255, message = Config.STRING_AUTH_PASSWORD)
     private String password;
+
     private Integer removePhoto;
     private MultipartFile photo;
 

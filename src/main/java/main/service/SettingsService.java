@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -49,7 +51,7 @@ public class SettingsService {
 		return settingsResponse;
 	}
 
-	public void putSettings (SettingsRequest request) {
+	public void putSettings (SettingsRequest request, BindingResult error) {
 
 		String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
 		checkAuthorized(findEmail);

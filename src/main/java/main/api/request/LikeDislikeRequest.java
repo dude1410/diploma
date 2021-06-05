@@ -1,6 +1,9 @@
 package main.api.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import main.config.Config;
+
+import javax.validation.constraints.NotBlank;
 
 public class LikeDislikeRequest {
 

@@ -1,15 +1,30 @@
 package main.api.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import main.config.Config;
+
+import javax.validation.constraints.*;
 
 public class RegisterRequest {
 
     @JsonProperty("e_mail")
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
+    @Email(message = Config.STRING_AUTH_INVALID_EMAIL)
     private String email;
+
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
+    @Size(min = 6, max = 255, message = Config.STRING_AUTH_PASSWORD)
     private String password;
+
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
+    @Size(min = 3, max = 20, message = Config.STRING_AUTH_NAME)
     private String name;
+
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
     private String captcha;
+
     @JsonProperty("captcha_secret")
+    @NotBlank(message = Config.STRING_FIELD_CANT_BE_BLANK)
     private String secretCode;
 
     public String getEmail() {

@@ -7,9 +7,12 @@ import main.api.request.LoginRequest;
 import main.api.request.RegisterRequest;
 import main.api.request.RestorePasswordRequest;
 import main.api.response.*;
+import main.config.Config;
 import main.config.MailConfig;
 import main.model.CaptchaCodes;
 import main.model.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import main.repository.CaptchaCodesRepository;
 import main.repository.GlobalSettingsRepository;
 import main.repository.PostRepository;
@@ -22,10 +25,13 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.imageio.ImageIO;
@@ -60,6 +66,8 @@ public class AuthService {
     private final long CODE_LIFETIME = 86400000L;
     private final int MIN_PASSWORD_LENGTH = 6;
 
+    private final Logger logger = LogManager.getLogger(AuthService.class);
+
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
     private final PostRepository postRepository;
@@ -85,14 +93,19 @@ public class AuthService {
         this.globalSettingsRepository = globalSettingsRepository;
     }
 
-    public ResponseEntity<LoginResponse> login(LoginRequest loginRequest) {
-        var currentUser = userRepository.findByEmail(loginRequest.getEmail());
+    public ResponseEntity<LoginResponse> login(LoginRequest loginRequest,
+                                               BindingResult errors) {
+
+        logger.info("Trying to login with login " + loginRequest.getEmail() + " and password " + loginRequest.getPassword());
+
+        User currentUser = userRepository.findByEmail(loginRequest.getEmail());
         if (currentUser == null) {
+            logger.info("Пользователь с почтовым ящиком " + loginRequest.getEmail() + " не найден");
             LoginResponse loginResponse = new LoginResponse();
             loginResponse.setResult(false);
             return ResponseEntity.ok(loginResponse);
         }
-        var authentication = authenticationManager
+        Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(
                         loginRequest.getEmail(),
                         loginRequest.getPassword()));
@@ -101,8 +114,8 @@ public class AuthService {
     }
 
     private LoginResponse getLoginResponse(User currentUser) {
-        var loginResponse = new LoginResponse();
-        var userLoginResponse = new UserLoginResponse();
+        LoginResponse loginResponse = new LoginResponse();
+        UserLoginResponse userLoginResponse = new UserLoginResponse();
         userLoginResponse.setEmail(currentUser.getEmail());
         userLoginResponse.setModeration(currentUser.isIs_moderator() == 1);
         int newPosts = postRepository.findNewPosts();
@@ -191,7 +204,13 @@ public class AuthService {
         return ResponseEntity.ok(logoutResponse);
     }
 
-    public FailResponse register(RegisterRequest request) throws IOException {
+    public FailResponse register(RegisterRequest request,
+                                 BindingResult error) throws IOException {
+
+        if (error.hasErrors()) {
+            logger.error(String.format("Errors during registration = '%s'", error.getAllErrors()));
+
+        }
 
         if (globalSettingsRepository.findMultiuserMode().equals("NO")) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -235,10 +254,11 @@ public class AuthService {
     }
 
     private PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(12);
+        return new BCryptPasswordEncoder(Config.INT_AUTH_BCRYPT_STRENGTH);
     }
 
-    public FailResponse restorePassword (RestorePasswordRequest request) throws MessagingException {
+    public FailResponse restorePassword (RestorePasswordRequest request,
+                                         BindingResult error) throws MessagingException {
         FailResponse response = new FailResponse();
         User user = userRepository.findByEmail(request.getEmail());
         if (user == null) {
@@ -268,7 +288,8 @@ public class AuthService {
         }
     }
 
-    public FailResponse changePassword (ChangePasswordRequest request) {
+    public FailResponse changePassword (ChangePasswordRequest request,
+                                        BindingResult error) {
         FailResponse response = new FailResponse();
         HashMap<String, String> errors = new HashMap<>();
         User user = userRepository.findByCode(request.getCode());

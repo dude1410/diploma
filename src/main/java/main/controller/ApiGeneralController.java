@@ -8,10 +8,13 @@ import main.api.response.*;
 import main.service.*;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
@@ -74,13 +77,15 @@ public class ApiGeneralController {
 	}
 
 	@PostMapping("/comment")
-	private FailResponse postComment(@RequestBody CommentRequest request) {
-		return commentService.postComment(request);
+	private FailResponse postComment(@Valid @RequestBody CommentRequest request,
+									 BindingResult error) {
+		return commentService.postComment(request, error);
 	}
 
 	@PostMapping("/moderation")
-	private FailResponse postModeration (@RequestBody PostModerationRequest request){
-		return postService.postModeration(request);
+	private FailResponse postModeration (@Valid @RequestBody PostModerationRequest request,
+										 BindingResult error){
+		return postService.postModeration(request, error);
 	}
 
 	@GetMapping("/statistics/my")
@@ -94,12 +99,14 @@ public class ApiGeneralController {
 	}
 
 	@PutMapping("/settings")
-	private void putSettings(@RequestBody SettingsRequest request){
-		settingsService.putSettings(request);
+	private void putSettings(@Valid @RequestBody SettingsRequest request,
+							 BindingResult error){
+		settingsService.putSettings(request, error);
 	}
 
 	@PostMapping(value = "/profile/my")
-	private FailResponse postMyProfileNewPhoto (@ModelAttribute MyProfileRequest request) throws IOException {
-		return myProfileService.postMyProfileNewPhoto(request);
+	private FailResponse postMyProfileNewPhoto (@ModelAttribute MyProfileRequest request,
+												BindingResult error) throws IOException {
+		return myProfileService.postMyProfileNewPhoto(request, error);
 	}
 }
