@@ -1,18 +1,18 @@
 package main.api.response;
 
-import main.model.DTO.TagTest;
+import main.model.DTO.TagTDO;
 
 import java.util.List;
 
 public class TagResponse {
 
-    private List <TagTest> tags;
+    private List <TagTDO> tags;
 
-    public List<TagTest> getTags() {
+    public List<TagTDO> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagTest> tags) {
+    public void setTags(List<TagTDO> tags) {
         this.tags = tags;
     }
 }

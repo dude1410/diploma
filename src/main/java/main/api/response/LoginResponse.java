@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class LoginResponse {
 
     private boolean result;
+
     @JsonProperty("user")
     private UserLoginResponse userLoginResponse;
 

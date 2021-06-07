@@ -1,7 +1,7 @@
 package main.api.response;
 
-import main.model.DTO.CommentTestForPost;
-import main.model.DTO.UserTestForPostTest;
+import main.model.DTO.CommentForPostTDO;
+import main.model.DTO.UserForPostTDO;
 
 import java.util.List;
 
@@ -10,13 +10,13 @@ public class PostResponseId {
     private int id;
     private long timestamp;
     private boolean active;
-    private UserTestForPostTest user;
+    private UserForPostTDO user;
     private String title;
     private String text;
     private int likeCount;
     private int dislikeCount;
     private int viewCount;
-    private List<CommentTestForPost> comments;
+    private List<CommentForPostTDO> comments;
     private List<String> tags;
 
     public int getId() {
@@ -43,11 +43,11 @@ public class PostResponseId {
         this.active = active;
     }
 
-    public UserTestForPostTest getUser() {
+    public UserForPostTDO getUser() {
         return user;
     }
 
-    public void setUser(UserTestForPostTest user) {
+    public void setUser(UserForPostTDO user) {
         this.user = user;
     }
 
@@ -83,11 +83,11 @@ public class PostResponseId {
         this.dislikeCount = dislikeCount;
     }
 
-    public List<CommentTestForPost> getComments() {
+    public List<CommentForPostTDO> getComments() {
         return comments;
     }
 
-    public void setComments(List<CommentTestForPost> comments) {
+    public void setComments(List<CommentForPostTDO> comments) {
         this.comments = comments;
     }
 

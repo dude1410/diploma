@@ -5,7 +5,9 @@ import main.model.Post;
 import main.model.Tags;
 import main.repository.PostRepository;
 import main.repository.TagsRepository;
-import main.model.DTO.TagTest;
+import main.model.DTO.TagTDO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,13 +46,13 @@ public class TagsService {
 
         double dWeightMax = (1 / ((double) maxTag / (double) posts.size()));
 
-        List<TagTest> result = new ArrayList<>();
+        List<TagTDO> result = new ArrayList<>();
 
         for (String key : tagsCounter.keySet()) {
-            TagTest tagTest = new TagTest();
-            tagTest.setName(key);
-            tagTest.setWeight((tagsCounter.get(key) / (double) posts.size() * dWeightMax));
-            result.add(tagTest);
+            TagTDO tagTDO = new TagTDO();
+            tagTDO.setName(key);
+            tagTDO.setWeight((tagsCounter.get(key) / (double) posts.size() * dWeightMax));
+            result.add(tagTDO);
         }
 
         tagResponse.setTags(result);

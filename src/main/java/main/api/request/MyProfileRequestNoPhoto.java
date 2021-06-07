@@ -1,13 +1,11 @@
 package main.api.request;
 
 import main.config.Config;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class MyProfileRequest {
+public class MyProfileRequestNoPhoto {
 
     @Size(min = 3, max = 20, message = Config.STRING_AUTH_NAME)
     private String name;
@@ -19,7 +17,7 @@ public class MyProfileRequest {
     private String password;
 
     private Integer removePhoto;
-    private MultipartFile photo;
+    private String photo;
 
     public String getName() {
         return name;
@@ -53,11 +51,11 @@ public class MyProfileRequest {
         this.removePhoto = removePhoto;
     }
 
-    public MultipartFile getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(MultipartFile photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 }

@@ -3,7 +3,7 @@ package main.model.DTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TagTest {
+public class TagTDO {
 
     private String name;
     private double weight;

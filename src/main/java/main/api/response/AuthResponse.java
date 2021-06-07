@@ -1,13 +1,13 @@
 package main.api.response;
 
-import main.model.DTO.UserTest;
+import main.model.DTO.UserTDO;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AuthResponse {
 
 	private boolean result = true;
-	private UserTest user = new UserTest();
+	private UserTDO user = new UserTDO();
 
 	public boolean isResult() {
 		return result;
@@ -17,11 +17,11 @@ public class AuthResponse {
 		this.result = result;
 	}
 
-	public UserTest getUserTest() {
+	public UserTDO getUserTest() {
 		return user;
 	}
 
-	public void setUserTest(UserTest user) {
+	public void setUserTest(UserTDO user) {
 		this.user = user;
 	}
 }

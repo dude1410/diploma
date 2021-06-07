@@ -1,9 +1,6 @@
 package main.controller;
 
-import main.api.request.CommentRequest;
-import main.api.request.MyProfileRequest;
-import main.api.request.PostModerationRequest;
-import main.api.request.SettingsRequest;
+import main.api.request.*;
 import main.api.response.*;
 import main.service.*;
 import org.springframework.http.MediaType;
@@ -104,9 +101,15 @@ public class ApiGeneralController {
 		settingsService.putSettings(request, error);
 	}
 
-	@PostMapping(value = "/profile/my")
+	@PostMapping(value = "/profile/my", consumes = "multipart/form-data")
 	private FailResponse postMyProfileNewPhoto (@ModelAttribute MyProfileRequest request,
 												BindingResult error) throws IOException {
 		return myProfileService.postMyProfileNewPhoto(request, error);
+	}
+
+	@PostMapping(value = "/profile/my", consumes = "application/json")
+	private FailResponse postMyProfileNoPhoto (@Valid @RequestBody MyProfileRequestNoPhoto request,
+												BindingResult error) throws IOException {
+		return myProfileService.postMyProfileNoPhoto(request, error);
 	}
 }

@@ -1,6 +1,6 @@
 package main.api.response;
 
-import main.model.DTO.PostTest;
+import main.model.DTO.PostTDO;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
 public class PostResponse {
 
     private int count;
-    private List<PostTest> posts = new ArrayList<>();
+    private List<PostTDO> posts = new ArrayList<>();
 
     public int getCount() {
         return count;
@@ -21,11 +21,11 @@ public class PostResponse {
         this.count = count;
     }
 
-    public List<PostTest> getPosts() {
+    public List<PostTDO> getPosts() {
         return posts;
     }
 
-    public void setPosts(List<PostTest> posts) {
+    public void setPosts(List<PostTDO> posts) {
         this.posts = posts;
     }
 }

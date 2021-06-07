@@ -47,43 +47,39 @@ public class FilesService {
     @Value("${blog.api_secret}")
     private String API_SECRET;
 
-    public Object image(HttpServletRequest request, MultipartFile image) throws IOException {
+    public Object image(HttpServletRequest request,
+                        MultipartFile image) throws IOException {
 
+        logger.info("Начало проверки авторизации");
         String findEmail = SecurityContextHolder.getContext().getAuthentication().getName();
         checkAuthorized(findEmail);
+        logger.info("Проверка авторизации пройдена успешно");
 
         if (image.isEmpty()) {
+            logger.error("Ошибка загрузки картинка - картинка не передана");
             return createErrorResponse(IMAGE_IS_EMPTY);
         }
         if (!IMAGE_NAME.matcher(Objects.requireNonNull(image.getOriginalFilename())).matches()) {
+            logger.error("Ошибка загрузки картинка - картинка в неверном формате");
             return createErrorResponse(INCORRECT_IMAGE_FORMAT);
         }
         if (image.getSize() > MAX_IMAGE_SIZE) {
+            logger.error("Ошибка загрузки картинка - превышен максимальный размер картинки");
             return createErrorResponse(IMAGE_SIZE_EXCEEDED);
         }
-
+        logger.info("Картинка получена - начат процесс обработки");
         String path = IMAGE_NAME_PREFIX + createRandomPath() + image.getOriginalFilename();
         String realPath = request.getServletContext().getRealPath(path);
-        System.out.println(realPath);
-
         byte[] avatar = image.getBytes();
         File file = new File(realPath);
         FileUtils.writeByteArrayToFile(file, avatar);
-
+        logger.info("Картинка загружена успешно " + path);
         return path;
     }
 
-    private FailResponse createErrorResponse(String errorText) {
-        FailResponse response = new FailResponse();
-        HashMap<String, String> errors = new HashMap<>();
-        errors.put("errors", errorText);
-        response.setResult(false);
-        response.setErrors(errors);
-        return response;
-    }
-
-    public String cloudStore(BufferedImage photo, String name) throws IOException {
-
+    public String cloudStore(BufferedImage photo,
+                             String name) throws IOException {
+        logger.info("Начало сохранения картинки в Cloudinary");
         var cloudinary = new Cloudinary(ObjectUtils.asMap(
                 "cloud_name", CLOUD_NAME,
                 "api_key", API_KEY,
@@ -94,7 +90,6 @@ public class FilesService {
                 "public_id", path,
                 "overwrite", true);
 
-
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
             ImageIO.write(photo, "png", baos);
@@ -104,7 +99,7 @@ public class FilesService {
         var imageString = "data:image/png;base64," +
                 DatatypeConverter.printBase64Binary(baos.toByteArray());
         var upload = cloudinary.uploader().upload(imageString, params);
-
+        logger.info("Картинка успешно сохранена в Cloudinary " + upload.get("url").toString());
         return upload.get("url").toString();
     }
 
@@ -116,7 +111,17 @@ public class FilesService {
             randomPath.append(SYMBOLS.charAt((int) (random.nextFloat() * SYMBOLS.length())));
             randomPath.append('/');
         }
+        logger.info("путь сгенерирован " + randomPath);
         return randomPath.toString();
+    }
+
+    private FailResponse createErrorResponse(String errorText) {
+        FailResponse response = new FailResponse();
+        HashMap<String, String> errors = new HashMap<>();
+        errors.put("errors", errorText);
+        response.setResult(false);
+        response.setErrors(errors);
+        return response;
     }
 
 }

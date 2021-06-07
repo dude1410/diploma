@@ -3,11 +3,11 @@ package main.model.DTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CommentTestForPost {
+public class CommentForPostTDO {
     private int id;
     private long timestamp;
     private String text;
-    private UserTestForCommentForPost user;
+    private UserForCommentForPostTDO user;
 
     public int getId() {
         return id;
@@ -33,11 +33,11 @@ public class CommentTestForPost {
         this.text = text;
     }
 
-    public UserTestForCommentForPost getUser() {
+    public UserForCommentForPostTDO getUser() {
         return user;
     }
 
-    public void setUser(UserTestForCommentForPost user) {
+    public void setUser(UserForCommentForPostTDO user) {
         this.user = user;
     }
 }

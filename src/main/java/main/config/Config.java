@@ -13,8 +13,17 @@ public class Config {
     public static final String STRING_AUTH_LOGIN_NO_SUCH_USER = "Пользователь не найден.";
     public static final String STRING_AUTH_WRONG_PASSWORD = "Пароль указан неверно.";
     public static final String STRING_AUTH_WRONG_FORMAT = "Неверный формат логина или пароля";
+    public static final String CAPTCHA_BASE_CODE_PREFIX = "data:image/png;base64, ";
+    public static final String CAPTCHA_SYMBOLS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    public static final String CAPTCHA_CODE_SYMBOLS = "abcdefghijklmnopqrstuvwxyz1234567890";
+    public static final String STRING_COMMENT_IS_EMPTY_OR_SHORT = "Текст комментария не задан или слишком короткий";
 
     public static final int INT_AUTH_BCRYPT_STRENGTH = 12;
+    public static final int INT_CAPTCHA_LENGTH = 3;
+    public static final int HASH_LENGTH = 45;
+    public static final int DELETE_CAPTCHA_TIME_PERIOD = 3600;
+
+    public static final long CODE_LIFETIME = 86400000L; // 24 h
 
 
 }

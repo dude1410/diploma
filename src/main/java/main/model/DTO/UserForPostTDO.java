@@ -3,7 +3,7 @@ package main.model.DTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserTestForPostTest {
+public class UserForPostTDO {
     private int id;
     private String name;
 

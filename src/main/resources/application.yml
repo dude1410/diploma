@@ -24,9 +24,6 @@ blog.email: dude1410@mail.ru
 blog.copyright: Vladysik Pavel
 blog.copyrightFrom: 2021
 
-#delete captcha in one hour
-blog.deleteCaptchaTimePeriod: 3600
-
 #cloudinary
 #blog.cloud_name: ${CLOUD_NAME}
 blog.cloud_name: dude1410
