@@ -509,6 +509,7 @@ public class PostService {
                 response.setResult(false);
             } else {
                 postVotesInDB.setValue(LIKE_VALUE);
+                postVotesRepository.save(postVotesInDB);
                 logger.info("Посту успешно прожат лайк вместо дизлайка");
                 response.setResult(true);
             }
@@ -547,6 +548,7 @@ public class PostService {
                 response.setResult(false);
             } else {
                 postVotesInDB.setValue(DISLIKE_VALUE);
+                postVotesRepository.save(postVotesInDB);
                 logger.info("Посту успешно прожат дизлайк вместо лайка");
                 response.setResult(true);
             }
