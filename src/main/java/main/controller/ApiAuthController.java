@@ -1,11 +1,12 @@
 package main.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import main.api.request.ChangePasswordRequest;
 import main.api.request.LoginRequest;
 import main.api.request.RegisterRequest;
 import main.api.request.RestorePasswordRequest;
 import main.api.response.*;
-import main.repository.UserRepository;
 import main.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,30 +20,35 @@ import java.security.Principal;
 
 @RestController
 @RequestMapping("/api/auth")
+@Api(value = "/api/auth", description = "Операции с профилем")
 public class ApiAuthController {
 
-	private final UserRepository userRepository;
 	private final AuthService authService;
 
 	@Autowired
-	public ApiAuthController(UserRepository userRepository,
-							 AuthService authService) {
+	public ApiAuthController(AuthService authService) {
 		this.authService = authService;
-		this.userRepository = userRepository;
 	}
 
-	@PostMapping("/login")
+	@PostMapping(value = "/login",
+			consumes = "application/json",
+			produces = "application/json")
+	@ApiOperation(value = "Вход в учетную запись")
 	public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest,
 											   BindingResult error) {
 		return authService.login(loginRequest, error);
 	}
 
-	@GetMapping("/logout")
+	@GetMapping(value = "/logout",
+			produces = "application/json")
+	@ApiOperation(value = "Выход из учетной записи")
 	public ResponseEntity<LogoutResponse> logout() {
 		return authService.logout();
 	}
 
-	@GetMapping("/check")
+	@GetMapping(value = "/check",
+			produces = "application/json")
+	@ApiOperation(value = "Проверка авторизации")
 	public ResponseEntity<LoginResponse> check(Principal principal) throws IOException {
 		if (principal == null) {
 			return ResponseEntity.ok(new LoginResponse());
@@ -50,24 +56,35 @@ public class ApiAuthController {
 		return authService.check();
 	}
 
-	@GetMapping("/captcha")
+	@GetMapping(value = "/captcha",
+			produces = "application/json")
+	@ApiOperation(value = "Генерация капчи")
 	private CaptchaResponse captchaResponse() throws IOException {
 		return authService.getCaptcha();
 	}
 
-	@PostMapping("/register")
+	@PostMapping(value = "/register",
+			consumes = "application/json",
+			produces = "application/json")
+	@ApiOperation(value = "Регистрация на сайте")
 	private FailResponse register(@Valid @RequestBody RegisterRequest request,
 								  BindingResult error) throws IOException {
 		return authService.register(request, error);
 	}
 
-	@PostMapping("/restore")
+	@PostMapping(value = "/restore",
+			consumes = "application/json",
+			produces = "application/json")
+	@ApiOperation(value = "Ссылка на восстановление пароля")
 	private FailResponse restorePassword (@Valid @RequestBody RestorePasswordRequest request,
 										  BindingResult error) throws MessagingException {
 		return authService.restorePassword(request, error);
 	}
 
-	@PostMapping("/password")
+	@PostMapping(value = "/password",
+			consumes = "application/json",
+			produces = "application/json")
+	@ApiOperation(value = "Восстановление пароля")
 	private FailResponse changePassword (@Valid @RequestBody ChangePasswordRequest request,
 										 BindingResult error) {
 		return authService.changePassword(request,error);

@@ -2,6 +2,7 @@ package main.service;
 
 import com.github.cage.Cage;
 import com.github.cage.YCage;
+import io.swagger.annotations.ApiOperation;
 import main.api.request.ChangePasswordRequest;
 import main.api.request.LoginRequest;
 import main.api.request.RegisterRequest;
@@ -321,6 +322,8 @@ public class AuthService {
         response.setResult(true);
         return response;
     }
+
+    // энкодер для пароля
 
     private PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(Config.INT_AUTH_BCRYPT_STRENGTH);
