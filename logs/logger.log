@@ -1157,3 +1157,534 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x16
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
 	at java.lang.Thread.run(Thread.java:832) [?:?]
+2021-06-07 13:49:51,669 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-07 13:49:51,688 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 7208 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-07 13:49:51,690 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-07 13:49:52,036 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-07 13:49:52,078 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 39ms. Found 8 JPA repository interfaces.
+2021-06-07 13:49:52,213 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2cd62003' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-07 13:49:52,215 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-07 13:49:52,340 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-06-07 13:49:52,344 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-06-07 13:49:52,345 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-07 13:49:52,345 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-07 13:49:52,403 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-07 13:49:52,403 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 695 ms
+2021-06-07 13:49:52,467 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-07 13:49:54,237 ERROR c.z.h.p.HikariPool [main] HikariPool-1 - Exception during pool initialization.
+java.sql.SQLSyntaxErrorException: User 'bd3961121424b0' has exceeded the 'max_user_connections' resource (current value: 10)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.5.jar:?]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:272) ~[liquibase-core-4.3.5.jar:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1858) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1795) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) [spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:311) [spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at main.Main.main(Main.java:9) [classes/:?]
+2021-06-07 13:49:54,245 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: java.sql.SQLSyntaxErrorException: User 'bd3961121424b0' has exceeded the 'max_user_connections' resource (current value: 10)
+2021-06-07 13:49:54,246 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2021-06-07 13:49:54,253 INFO o.s.b.a.l.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-06-07 13:49:54,258 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: java.sql.SQLSyntaxErrorException: User 'bd3961121424b0' has exceeded the 'max_user_connections' resource (current value: 10)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:311) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at main.Main.main(Main.java:9) [classes/:?]
+Caused by: liquibase.exception.DatabaseException: java.sql.SQLSyntaxErrorException: User 'bd3961121424b0' has exceeded the 'max_user_connections' resource (current value: 10)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:277) ~[liquibase-core-4.3.5.jar:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1858) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1795) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 19 more
+Caused by: java.sql.SQLSyntaxErrorException: User 'bd3961121424b0' has exceeded the 'max_user_connections' resource (current value: 10)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.5.jar:?]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:272) ~[liquibase-core-4.3.5.jar:?]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1858) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1795) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 19 more
+2021-06-07 13:50:44,751 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-07 13:50:44,770 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 6732 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-07 13:50:44,772 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-07 13:50:45,118 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-07 13:50:45,161 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 40ms. Found 8 JPA repository interfaces.
+2021-06-07 13:50:45,302 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2cd62003' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-07 13:50:45,304 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-07 13:50:45,425 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-06-07 13:50:45,429 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-06-07 13:50:45,430 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-07 13:50:45,430 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-07 13:50:45,489 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-07 13:50:45,489 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 698 ms
+2021-06-07 13:50:45,551 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-07 13:50:46,598 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-07 13:50:47,311 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-07 13:50:48,867 INFO l.l.c.JavaLogger [main] Reading from heroku_ae1c664fe33fbc9.DATABASECHANGELOG
+2021-06-07 13:50:49,362 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-07 13:50:49,690 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-07 13:50:49,754 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-07 13:50:49,970 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-07 13:50:50,134 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-07 13:50:50,154 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-07 13:50:50,206 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-07 13:50:50,254 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-06-07 13:50:50,548 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-07 13:50:50,552 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-07 13:50:50,720 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-07 13:50:51,011 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@324e62e2, org.springframework.security.web.context.SecurityContextPersistenceFilter@3299ee2c, org.springframework.security.web.header.HeaderWriterFilter@154fcedd, org.springframework.security.web.authentication.logout.LogoutFilter@4cce889e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68ac6e6e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@268eefe7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1018552d, org.springframework.security.web.session.SessionManagementFilter@458500d1, org.springframework.security.web.access.ExceptionTranslationFilter@44a972b4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56589f00]
+2021-06-07 13:50:51,076 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-07 13:50:51,122 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-07 13:50:51,202 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-06-07 13:50:51,215 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-07 13:50:51,221 INFO o.s.b.StartupInfoLogger [main] Started Main in 6.605 seconds (JVM running for 7.064)
+2021-06-07 13:50:56,999 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-07 13:50:56,999 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-07 13:50:57,002 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 3 ms
+2021-06-07 13:50:58,773 INFO m.s.PostService [http-nio-8080-exec-3] Возвращаем последние посты
+2021-06-07 13:50:59,108 INFO m.s.PostService [http-nio-8080-exec-3] Формирование списка постов для вывода
+2021-06-07 13:50:59,109 INFO m.s.PostService [http-nio-8080-exec-3] Формирование поста 1
+2021-06-07 13:50:59,265 INFO m.s.PostService [http-nio-8080-exec-3] Пост 1 сформирован
+2021-06-07 13:50:59,266 INFO m.s.PostService [http-nio-8080-exec-3] Формирование поста 3
+2021-06-07 13:50:59,409 INFO m.s.PostService [http-nio-8080-exec-3] Пост 3 сформирован
+2021-06-07 13:50:59,409 INFO m.s.PostService [http-nio-8080-exec-3] Формирование поста 2
+2021-06-07 13:50:59,533 INFO m.s.PostService [http-nio-8080-exec-3] Пост 2 сформирован
+2021-06-07 13:50:59,534 INFO m.s.PostService [http-nio-8080-exec-3] Формирование поста 6
+2021-06-07 13:50:59,678 INFO m.s.PostService [http-nio-8080-exec-3] Пост 6 сформирован
+2021-06-07 13:50:59,678 INFO m.s.PostService [http-nio-8080-exec-3] Вывод постов для показа
+2021-06-07 13:51:03,585 INFO m.s.AuthService [http-nio-8080-exec-2] Пользователь с почтой guestMasha@server.com, именем guest Masha и паролем $2a$12$KaLs98GTTa.9qQj2CoAAbeoKs23B64HEPOrNtlzuTqb4UNS5CIGVK вошел в систему
+2021-06-07 13:51:03,679 INFO m.s.PostService [http-nio-8080-exec-5] Возвращаем последние посты
+2021-06-07 13:51:03,943 INFO m.s.PostService [http-nio-8080-exec-5] Формирование списка постов для вывода
+2021-06-07 13:51:03,943 INFO m.s.PostService [http-nio-8080-exec-5] Формирование поста 1
+2021-06-07 13:51:04,080 INFO m.s.PostService [http-nio-8080-exec-5] Пост 1 сформирован
+2021-06-07 13:51:04,080 INFO m.s.PostService [http-nio-8080-exec-5] Формирование поста 3
+2021-06-07 13:51:04,208 INFO m.s.PostService [http-nio-8080-exec-5] Пост 3 сформирован
+2021-06-07 13:51:04,209 INFO m.s.PostService [http-nio-8080-exec-5] Формирование поста 2
+2021-06-07 13:51:04,334 INFO m.s.PostService [http-nio-8080-exec-5] Пост 2 сформирован
+2021-06-07 13:51:04,334 INFO m.s.PostService [http-nio-8080-exec-5] Формирование поста 6
+2021-06-07 13:51:04,461 INFO m.s.PostService [http-nio-8080-exec-5] Пост 6 сформирован
+2021-06-07 13:51:04,462 INFO m.s.PostService [http-nio-8080-exec-5] Вывод постов для показа
+2021-06-07 13:51:06,584 INFO m.s.PostService [http-nio-8080-exec-8] Поиск поста по id 2
+2021-06-07 13:51:06,584 INFO m.s.PostService [http-nio-8080-exec-8] Проверка авторизации
+2021-06-07 13:51:06,584 INFO m.s.PostService [http-nio-8080-exec-8] Пользователь авторизован - ищем пост по id даже (неактивные посты отобразить)
+2021-06-07 13:51:06,841 INFO m.s.PostService [http-nio-8080-exec-8] Поиск пользователя по почте guestMasha@server.com
+2021-06-07 13:51:06,841 INFO m.s.PostService [http-nio-8080-exec-8] Пользователь не модератор, происходит просмотр не своего поста
+2021-06-07 13:51:07,123 INFO m.s.PostService [http-nio-8080-exec-8] Формирование ответа для вывода поста
+2021-06-07 13:51:07,322 INFO m.s.PostService [http-nio-8080-exec-8] Ответ по посту 2 сформирован для вывода
+2021-06-07 13:51:12,916 INFO m.s.CommentService [http-nio-8080-exec-1] Проверка авторизации
+2021-06-07 13:51:12,916 INFO m.s.CommentService [http-nio-8080-exec-1] Авторизация прошла успешно
+2021-06-07 13:51:12,916 INFO m.s.CommentService [http-nio-8080-exec-1] С фронта пришел запрос - начало составления ответа
+2021-06-07 13:51:12,916 INFO m.s.CommentService [http-nio-8080-exec-1] Поиск поста в Базе данных по id 2
+2021-06-07 13:51:13,110 INFO m.s.CommentService [http-nio-8080-exec-1] Пост с id 2 найден
+2021-06-07 13:51:13,438 INFO m.s.CommentService [http-nio-8080-exec-1] Создан комментарий к посту 2
+2021-06-07 13:51:13,439 INFO m.s.CommentService [http-nio-8080-exec-1] Новый комментарий имеет id 15
+2021-06-07 13:53:21,655 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-6] Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xd00xbb0xffqy0x0d0xa80x060x080xaf0xce0xdd0xe60x8140xaa0xc20x90]0xf80xcd0xab0x8fT%0x080xd50xdb;70xf1u]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:417) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:832) [?:?]
+2021-06-08 14:09:54,553 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-08 14:09:54,578 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 9308 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-08 14:09:54,581 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-08 14:09:54,994 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-08 14:09:55,046 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 46ms. Found 8 JPA repository interfaces.
+2021-06-08 14:09:55,213 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6015a4a5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-08 14:09:55,216 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-08 14:09:55,350 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-06-08 14:09:55,356 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-06-08 14:09:55,357 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-08 14:09:55,357 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-08 14:09:55,421 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-08 14:09:55,421 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 820 ms
+2021-06-08 14:09:55,495 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-08 14:09:56,822 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-08 14:09:57,569 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-08 14:09:59,092 INFO l.l.c.JavaLogger [main] Reading from heroku_ae1c664fe33fbc9.DATABASECHANGELOG
+2021-06-08 14:09:59,514 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-08 14:09:59,837 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-08 14:09:59,897 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-08 14:10:00,089 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-08 14:10:00,259 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-08 14:10:00,289 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-08 14:10:00,368 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-08 14:10:00,429 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-06-08 14:10:00,769 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-08 14:10:00,773 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-08 14:10:00,965 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-08 14:10:01,282 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52d9a150, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a5244a1, org.springframework.security.web.header.HeaderWriterFilter@9214725, org.springframework.security.web.authentication.logout.LogoutFilter@542759f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@85eabca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5eaa6f76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@476a38d9, org.springframework.security.web.session.SessionManagementFilter@39aaa7db, org.springframework.security.web.access.ExceptionTranslationFilter@72fc6b5e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33ac7934]
+2021-06-08 14:10:01,353 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-08 14:10:01,404 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-08 14:10:01,490 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-06-08 14:10:01,503 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-08 14:10:01,511 INFO o.s.b.StartupInfoLogger [main] Started Main in 7.116 seconds (JVM running for 7.683)
+2021-06-08 14:10:08,162 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-08 14:10:08,163 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-08 14:10:08,166 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 3 ms
+2021-06-08 14:10:08,768 INFO m.s.PostService [http-nio-8080-exec-9] Возвращаем последние посты
+2021-06-08 14:10:09,099 INFO m.s.PostService [http-nio-8080-exec-9] Формирование списка постов для вывода
+2021-06-08 14:10:09,100 INFO m.s.PostService [http-nio-8080-exec-9] Формирование поста 1
+2021-06-08 14:10:09,255 INFO m.s.PostService [http-nio-8080-exec-9] Пост 1 сформирован
+2021-06-08 14:10:09,255 INFO m.s.PostService [http-nio-8080-exec-9] Формирование поста 3
+2021-06-08 14:10:09,379 INFO m.s.PostService [http-nio-8080-exec-9] Пост 3 сформирован
+2021-06-08 14:10:09,379 INFO m.s.PostService [http-nio-8080-exec-9] Формирование поста 2
+2021-06-08 14:10:09,501 INFO m.s.PostService [http-nio-8080-exec-9] Пост 2 сформирован
+2021-06-08 14:10:09,502 INFO m.s.PostService [http-nio-8080-exec-9] Формирование поста 6
+2021-06-08 14:10:09,623 INFO m.s.PostService [http-nio-8080-exec-9] Пост 6 сформирован
+2021-06-08 14:10:09,624 INFO m.s.PostService [http-nio-8080-exec-9] Вывод постов для показа
+2021-06-08 14:10:15,423 INFO m.s.AuthService [http-nio-8080-exec-10] Пользователь с почтой guestMasha@server.com, именем guest Masha и паролем $2a$12$KaLs98GTTa.9qQj2CoAAbeoKs23B64HEPOrNtlzuTqb4UNS5CIGVK вошел в систему
+2021-06-08 14:10:15,519 INFO m.s.PostService [http-nio-8080-exec-3] Возвращаем последние посты
+2021-06-08 14:10:15,778 INFO m.s.PostService [http-nio-8080-exec-3] Формирование списка постов для вывода
+2021-06-08 14:10:15,778 INFO m.s.PostService [http-nio-8080-exec-3] Формирование поста 1
+2021-06-08 14:10:15,907 INFO m.s.PostService [http-nio-8080-exec-3] Пост 1 сформирован
+2021-06-08 14:10:15,907 INFO m.s.PostService [http-nio-8080-exec-3] Формирование поста 3
+2021-06-08 14:10:16,064 INFO m.s.PostService [http-nio-8080-exec-3] Пост 3 сформирован
+2021-06-08 14:10:16,065 INFO m.s.PostService [http-nio-8080-exec-3] Формирование поста 2
+2021-06-08 14:10:16,196 INFO m.s.PostService [http-nio-8080-exec-3] Пост 2 сформирован
+2021-06-08 14:10:16,196 INFO m.s.PostService [http-nio-8080-exec-3] Формирование поста 6
+2021-06-08 14:10:16,318 INFO m.s.PostService [http-nio-8080-exec-3] Пост 6 сформирован
+2021-06-08 14:10:16,318 INFO m.s.PostService [http-nio-8080-exec-3] Вывод постов для показа
+2021-06-08 14:10:21,674 INFO m.s.AuthService [http-nio-8080-exec-6] Проверка авторизации - пользователь с почтой guestMasha@server.com найден в базе данных и авторизован
+2021-06-08 14:10:59,325 INFO m.s.PostService [http-nio-8080-exec-5] Начало авторизации
+2021-06-08 14:10:59,325 INFO m.s.PostService [http-nio-8080-exec-5] Авторизация прошла успешно
+2021-06-08 14:10:59,518 INFO m.s.PostService [http-nio-8080-exec-5] Начало создания ноого поста
+2021-06-08 14:10:59,655 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-5] SQL Error: 1062, SQLState: 23000
+2021-06-08 14:10:59,655 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-5] Duplicate entry 'тестовая публикация' for key 'title'
+2021-06-08 14:10:59,786 ERROR o.a.j.l.DirectJDKLog [http-nio-8080-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [title]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'тестовая публикация' for key 'title'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3200) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3806) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:720) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:706) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366) ~[spring-orm-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at com.sun.proxy.$Proxy114.persist(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314) ~[spring-orm-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at com.sun.proxy.$Proxy114.persist(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:554) ~[spring-data-jpa-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.data.repository.core.support.ImplementationInvocationMetadata.invoke(ImplementationInvocationMetadata.java:72) ~[spring-data-commons-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:382) ~[spring-data-commons-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:205) ~[spring-data-commons-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:550) ~[spring-data-commons-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:155) ~[spring-data-commons-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:130) ~[spring-data-commons-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367) ~[spring-tx-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118) ~[spring-tx-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178) ~[spring-data-jpa-2.3.7.RELEASE.jar:2.3.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at com.sun.proxy.$Proxy124.save(Unknown Source) ~[?:?]
+	at main.service.PostService.postNewPost(PostService.java:371) ~[classes/:?]
+	at main.controller.ApiPostController.postNewPost(ApiPostController.java:75) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:832) [?:?]
+2021-06-08 14:11:27,940 INFO m.s.PostService [http-nio-8080-exec-6] Начало авторизации
+2021-06-08 14:11:27,941 INFO m.s.PostService [http-nio-8080-exec-6] Авторизация прошла успешно
+2021-06-08 14:11:28,133 INFO m.s.PostService [http-nio-8080-exec-6] Начало создания ноого поста
+2021-06-08 14:11:28,434 INFO m.s.PostService [http-nio-8080-exec-6] Новый пост с названием тестовая публикация 2 сформирован и сохранен в базу
+2021-06-08 14:11:28,434 INFO m.s.PostService [http-nio-8080-exec-6] Проверка списка тэгов для поста (новые тэги пишем базу)
+2021-06-08 14:11:28,459 INFO m.s.PostService [http-nio-8080-exec-4] Возвращаем последние посты
+2021-06-08 14:11:28,461 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@725e9345 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,462 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@107a4e22 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,463 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@16b833d3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,463 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@61da66c9 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,464 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1e900558 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,464 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5c5953f6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,465 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@ba8c505 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,465 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@39f60697 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,466 WARN c.z.h.p.PoolBase [http-nio-8080-exec-10] HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@27d26e34 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-08 14:11:28,721 INFO m.s.PostService [http-nio-8080-exec-4] Формирование списка постов для вывода
+2021-06-08 14:11:28,721 INFO m.s.PostService [http-nio-8080-exec-4] Формирование поста 1
+2021-06-08 14:11:28,858 INFO m.s.PostService [http-nio-8080-exec-4] Пост 1 сформирован
+2021-06-08 14:11:28,858 INFO m.s.PostService [http-nio-8080-exec-4] Формирование поста 3
+2021-06-08 14:11:28,988 INFO m.s.PostService [http-nio-8080-exec-4] Пост 3 сформирован
+2021-06-08 14:11:28,989 INFO m.s.PostService [http-nio-8080-exec-4] Формирование поста 2
+2021-06-08 14:11:29,124 INFO m.s.PostService [http-nio-8080-exec-4] Пост 2 сформирован
+2021-06-08 14:11:29,124 INFO m.s.PostService [http-nio-8080-exec-4] Формирование поста 6
+2021-06-08 14:11:29,251 INFO m.s.PostService [http-nio-8080-exec-4] Пост 6 сформирован
+2021-06-08 14:11:29,251 INFO m.s.PostService [http-nio-8080-exec-4] Вывод постов для показа
+2021-06-08 14:11:40,939 INFO m.s.AuthService [http-nio-8080-exec-3] Пользователь с почтой adminPetya@server.com, именем admin Petya и паролем $2y$12$RFJDOYlbIfsyV9Qnpg/A..MCG65MYJw0928z.itt48YtMG9QhZTza вошел в систему
+2021-06-08 14:11:41,020 INFO m.s.PostService [http-nio-8080-exec-2] Возвращаем последние посты
+2021-06-08 14:11:41,341 INFO m.s.PostService [http-nio-8080-exec-2] Формирование списка постов для вывода
+2021-06-08 14:11:41,341 INFO m.s.PostService [http-nio-8080-exec-2] Формирование поста 1
+2021-06-08 14:11:41,473 INFO m.s.PostService [http-nio-8080-exec-2] Пост 1 сформирован
+2021-06-08 14:11:41,474 INFO m.s.PostService [http-nio-8080-exec-2] Формирование поста 3
+2021-06-08 14:11:41,604 INFO m.s.PostService [http-nio-8080-exec-2] Пост 3 сформирован
+2021-06-08 14:11:41,604 INFO m.s.PostService [http-nio-8080-exec-2] Формирование поста 2
+2021-06-08 14:11:41,732 INFO m.s.PostService [http-nio-8080-exec-2] Пост 2 сформирован
+2021-06-08 14:11:41,733 INFO m.s.PostService [http-nio-8080-exec-2] Формирование поста 6
+2021-06-08 14:11:41,862 INFO m.s.PostService [http-nio-8080-exec-2] Пост 6 сформирован
+2021-06-08 14:11:41,862 INFO m.s.PostService [http-nio-8080-exec-2] Вывод постов для показа
+2021-06-08 14:11:43,669 INFO m.s.AuthService [http-nio-8080-exec-4] Проверка авторизации - пользователь с почтой adminPetya@server.com найден в базе данных и авторизован
+2021-06-08 14:11:43,745 INFO m.s.PostService [http-nio-8080-exec-8] Начало проверка авторизации
+2021-06-08 14:11:43,745 INFO m.s.PostService [http-nio-8080-exec-8] Авторизация прошла успешно
+2021-06-08 14:11:43,807 INFO m.s.PostService [http-nio-8080-exec-8] Вывод постов со статусом NEW
+2021-06-08 14:11:43,997 INFO m.s.PostService [http-nio-8080-exec-8] Формирование списка постов для вывода
+2021-06-08 14:11:43,997 INFO m.s.PostService [http-nio-8080-exec-8] Формирование поста 55
+2021-06-08 14:11:44,126 INFO m.s.PostService [http-nio-8080-exec-8] Пост 55 сформирован
+2021-06-08 14:11:44,127 INFO m.s.PostService [http-nio-8080-exec-8] Формирование поста 15
+2021-06-08 14:11:44,256 INFO m.s.PostService [http-nio-8080-exec-8] Пост 15 сформирован
+2021-06-08 14:11:44,256 INFO m.s.PostService [http-nio-8080-exec-8] Формирование поста 7
+2021-06-08 14:11:44,382 INFO m.s.PostService [http-nio-8080-exec-8] Пост 7 сформирован
+2021-06-08 14:11:44,382 INFO m.s.PostService [http-nio-8080-exec-8] Формирование поста 4
+2021-06-08 14:11:44,504 INFO m.s.PostService [http-nio-8080-exec-8] Пост 4 сформирован
+2021-06-08 14:11:44,504 INFO m.s.PostService [http-nio-8080-exec-8] Вывод постов для показа
+2021-06-08 14:17:42,989 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-08 14:17:43,010 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 15312 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-08 14:17:43,012 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-08 14:17:43,376 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-08 14:17:43,420 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 41ms. Found 8 JPA repository interfaces.
+2021-06-08 14:17:43,566 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6015a4a5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-08 14:17:43,568 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-08 14:17:43,686 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-06-08 14:17:43,690 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-06-08 14:17:43,690 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-08 14:17:43,691 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-08 14:17:43,750 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-08 14:17:43,750 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 718 ms
+2021-06-08 14:17:43,812 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-08 14:17:44,826 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-08 14:17:45,519 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-08 14:17:47,019 INFO l.l.c.JavaLogger [main] Reading from heroku_ae1c664fe33fbc9.DATABASECHANGELOG
+2021-06-08 14:17:47,429 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-08 14:17:47,747 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-08 14:17:47,810 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-08 14:17:48,036 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-08 14:17:48,197 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-08 14:17:48,217 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-08 14:17:48,269 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-08 14:17:48,318 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-06-08 14:17:48,615 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-08 14:17:48,620 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-08 14:17:48,792 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-08 14:17:49,090 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56589f00, org.springframework.security.web.context.SecurityContextPersistenceFilter@35129b9e, org.springframework.security.web.header.HeaderWriterFilter@5a9a187b, org.springframework.security.web.authentication.logout.LogoutFilter@1784d711, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2297c8bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@55b7f0d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ce4b0a8, org.springframework.security.web.session.SessionManagementFilter@5eaa6f76, org.springframework.security.web.access.ExceptionTranslationFilter@4848681d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5120886f]
+2021-06-08 14:17:49,158 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-08 14:17:49,209 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-08 14:17:49,286 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-06-08 14:17:49,300 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-08 14:17:49,305 INFO o.s.b.StartupInfoLogger [main] Started Main in 6.453 seconds (JVM running for 6.909)
+2021-06-08 14:17:52,911 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-08 14:17:52,911 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-08 14:17:52,915 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
+2021-06-08 14:17:53,356 INFO m.s.PostService [http-nio-8080-exec-6] Возвращаем последние посты
+2021-06-08 14:17:53,717 INFO m.s.PostService [http-nio-8080-exec-6] Формирование списка постов для вывода
+2021-06-08 14:17:53,717 INFO m.s.PostService [http-nio-8080-exec-6] Формирование поста 1
+2021-06-08 14:17:53,865 INFO m.s.PostService [http-nio-8080-exec-6] Пост 1 сформирован
+2021-06-08 14:17:53,865 INFO m.s.PostService [http-nio-8080-exec-6] Формирование поста 3
+2021-06-08 14:17:54,006 INFO m.s.PostService [http-nio-8080-exec-6] Пост 3 сформирован
+2021-06-08 14:17:54,007 INFO m.s.PostService [http-nio-8080-exec-6] Формирование поста 2
+2021-06-08 14:17:54,138 INFO m.s.PostService [http-nio-8080-exec-6] Пост 2 сформирован
+2021-06-08 14:17:54,139 INFO m.s.PostService [http-nio-8080-exec-6] Формирование поста 6
+2021-06-08 14:17:54,278 INFO m.s.PostService [http-nio-8080-exec-6] Пост 6 сформирован
+2021-06-08 14:17:54,278 INFO m.s.PostService [http-nio-8080-exec-6] Вывод постов для показа
+2021-06-08 14:17:59,258 INFO m.s.AuthService [http-nio-8080-exec-3] Пользователь с почтой adminPetya@server.com, именем admin Petya и паролем $2y$12$RFJDOYlbIfsyV9Qnpg/A..MCG65MYJw0928z.itt48YtMG9QhZTza вошел в систему
+2021-06-08 14:17:59,354 INFO m.s.PostService [http-nio-8080-exec-10] Возвращаем последние посты
+2021-06-08 14:17:59,606 INFO m.s.PostService [http-nio-8080-exec-10] Формирование списка постов для вывода
+2021-06-08 14:17:59,607 INFO m.s.PostService [http-nio-8080-exec-10] Формирование поста 1
+2021-06-08 14:17:59,740 INFO m.s.PostService [http-nio-8080-exec-10] Пост 1 сформирован
+2021-06-08 14:17:59,740 INFO m.s.PostService [http-nio-8080-exec-10] Формирование поста 3
+2021-06-08 14:17:59,870 INFO m.s.PostService [http-nio-8080-exec-10] Пост 3 сформирован
+2021-06-08 14:17:59,870 INFO m.s.PostService [http-nio-8080-exec-10] Формирование поста 2
+2021-06-08 14:18:00,002 INFO m.s.PostService [http-nio-8080-exec-10] Пост 2 сформирован
+2021-06-08 14:18:00,003 INFO m.s.PostService [http-nio-8080-exec-10] Формирование поста 6
+2021-06-08 14:18:00,128 INFO m.s.PostService [http-nio-8080-exec-10] Пост 6 сформирован
+2021-06-08 14:18:00,128 INFO m.s.PostService [http-nio-8080-exec-10] Вывод постов для показа
+2021-06-08 14:18:01,682 INFO m.s.AuthService [http-nio-8080-exec-7] Проверка авторизации - пользователь с почтой adminPetya@server.com найден в базе данных и авторизован
+2021-06-08 14:18:01,757 INFO m.s.PostService [http-nio-8080-exec-1] Начало проверка авторизации
+2021-06-08 14:18:01,757 INFO m.s.PostService [http-nio-8080-exec-1] Авторизация прошла успешно
+2021-06-08 14:18:01,827 INFO m.s.PostService [http-nio-8080-exec-1] Вывод постов со статусом NEW
+2021-06-08 14:18:02,019 INFO m.s.PostService [http-nio-8080-exec-1] Формирование списка постов для вывода
+2021-06-08 14:18:02,020 INFO m.s.PostService [http-nio-8080-exec-1] Формирование поста 55
+2021-06-08 14:18:02,142 INFO m.s.PostService [http-nio-8080-exec-1] Пост 55 сформирован
+2021-06-08 14:18:02,142 INFO m.s.PostService [http-nio-8080-exec-1] Формирование поста 15
+2021-06-08 14:18:02,265 INFO m.s.PostService [http-nio-8080-exec-1] Пост 15 сформирован
+2021-06-08 14:18:02,265 INFO m.s.PostService [http-nio-8080-exec-1] Формирование поста 7
+2021-06-08 14:18:02,388 INFO m.s.PostService [http-nio-8080-exec-1] Пост 7 сформирован
+2021-06-08 14:18:02,388 INFO m.s.PostService [http-nio-8080-exec-1] Формирование поста 4
+2021-06-08 14:18:02,512 INFO m.s.PostService [http-nio-8080-exec-1] Пост 4 сформирован
+2021-06-08 14:18:02,512 INFO m.s.PostService [http-nio-8080-exec-1] Вывод постов для показа

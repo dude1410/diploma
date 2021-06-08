@@ -217,7 +217,7 @@ public class PostService {
             String announce = tempText.substring(0, 150);
             postTDO.setAnnounce(announce.substring(0, announce.lastIndexOf(" ")) + "...");
         } else {
-            postTDO.setAnnounce(post.getText());
+            postTDO.setAnnounce(tempText);
         }
         postTDO.setLikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 1).count());
         postTDO.setDislikeCount((int) post.getPostVotes().stream().filter(a -> a.getValue() == 0).count());
