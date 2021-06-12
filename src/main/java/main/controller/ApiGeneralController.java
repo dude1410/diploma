@@ -1,14 +1,12 @@
 package main.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import main.api.request.*;
 import main.api.response.*;
 import main.service.*;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,7 +15,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
-@Api(value = "/api", description = "Общие операции через api")
+@Tag(name = "/api", description = "Общие операции через api")
 @RequestMapping("/api")
 public class ApiGeneralController {
 
@@ -50,28 +48,28 @@ public class ApiGeneralController {
 
     @GetMapping(value = "/settings",
             produces = "application/json")
-    @ApiOperation(value = "Получение глобальных настроек блога")
+    @Operation(description = "Получение глобальных настроек блога")
     private SettingsResponse settings() {
         return settingsService.getGlobalSettings();
     }
 
     @GetMapping(value = "/init",
             produces = "application/json")
-    @ApiOperation(value = "Получение футера")
+    @Operation(description = "Получение футера")
     private InitResponse initResponse() {
         return initResponse;
     }
 
     @GetMapping(value = "/tag",
             produces = "application/json")
-    @ApiOperation(value = "Получение списка тэгов")
+    @Operation(description = "Получение списка тэгов")
     private TagResponse tagResponse(@RequestParam(required = false) String query) {
         return tagsService.getTagResponse(query);
     }
 
     @GetMapping(value = "/calendar",
             produces = "application/json")
-    @ApiOperation(value = "Показать посты в календаре")
+    @Operation(description = "Показать посты в календаре")
     private CalendarResponse calendarResponse() {
         return postService.getCalendar();
     }
@@ -79,7 +77,7 @@ public class ApiGeneralController {
     @PostMapping(value = "/image",
             consumes = "multipart/form-data",
             produces = "application/json")
-    @ApiOperation(value = "Загрузка изображений")
+    @Operation(description = "Загрузка изображений")
     private ResponseEntity postImage(HttpServletRequest servlet,
                                      @RequestParam("image") MultipartFile image) throws IOException {
         return ResponseEntity.ok(filesService.image(servlet, image));
@@ -88,7 +86,7 @@ public class ApiGeneralController {
     @PostMapping(value = "/comment",
             consumes = "application/json",
             produces = "application/json")
-    @ApiOperation(value = "Опубликовать комментарий")
+    @Operation(description = "Опубликовать комментарий")
     private FailResponse postComment(@Valid @RequestBody CommentRequest request,
                                      BindingResult error) {
         return commentService.postComment(request, error);
@@ -97,7 +95,7 @@ public class ApiGeneralController {
     @PostMapping(value = "/moderation",
             consumes = "application/json",
             produces = "application/json")
-    @ApiOperation(value = "Модерация постов")
+    @Operation(description = "Модерация постов")
     private FailResponse postModeration(@Valid @RequestBody PostModerationRequest request,
                                         BindingResult error) {
         return postService.postModeration(request, error);
@@ -105,14 +103,14 @@ public class ApiGeneralController {
 
     @GetMapping(value = "/statistics/my",
             produces = "application/json")
-    @ApiOperation(value = "Получить статистику по своим постам")
+    @Operation(description = "Получить статистику по своим постам")
     private StatisticsResponse statisticsMy() {
         return statisticsService.statisticsMy();
     }
 
     @GetMapping(value = "/statistics/all",
             produces = "application/json")
-    @ApiOperation(value = "Получить общую статистику по блогу")
+    @Operation(description = "Получить общую статистику по блогу")
     private StatisticsResponse statisticsAll() {
         return statisticsService.statisticsAll();
     }
@@ -120,7 +118,7 @@ public class ApiGeneralController {
     @PutMapping(value = "/settings",
             consumes = "application/json",
             produces = "application/json")
-    @ApiOperation(value = "Изменение настроек блога")
+    @Operation(description = "Изменение настроек блога")
     private void putSettings(@Valid @RequestBody SettingsRequest request,
                              BindingResult error) {
         settingsService.putSettings(request, error);
@@ -129,7 +127,7 @@ public class ApiGeneralController {
     @PostMapping(value = "/profile/my",
             consumes = "multipart/form-data",
             produces = "application/json")
-    @ApiOperation(value = "Редактирование профиля с загрузкой фото")
+    @Operation(description = "Редактирование профиля с загрузкой фото")
     private FailResponse postMyProfileNewPhoto(@ModelAttribute MyProfileRequest request,
                                                BindingResult error) throws IOException {
         return myProfileService.postMyProfileNewPhoto(request, error);
@@ -138,7 +136,7 @@ public class ApiGeneralController {
     @PostMapping(value = "/profile/my",
             consumes = "application/json",
             produces = "application/json")
-    @ApiOperation(value = "Редактирование профиля без загрузки фото")
+    @Operation(description = "Редактирование профиля без загрузки фото")
     private FailResponse postMyProfileNoPhoto(@Valid @RequestBody MyProfileRequestNoPhoto request,
                                               BindingResult error) throws IOException {
         return myProfileService.postMyProfileNoPhoto(request, error);

@@ -1,19 +1,20 @@
 package main.api.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import main.config.Config;
-
-import javax.validation.constraints.NotBlank;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 public class SettingsRequest {
 
     @JsonProperty("MULTIUSER_MODE")
+    @Schema(description = "многопользовательский режим", example = "true")
     private boolean multiuserMode;
 
     @JsonProperty("POST_PREMODERATION")
+    @Schema(description = "режим премодерации", example = "false")
     private boolean postPremoderation;
 
     @JsonProperty("STATISTICS_IS_PUBLIC")
+    @Schema(description = "рижим доступа к статистике блога", example = "true")
     private boolean statisticsIsPublic;
 
     public boolean isMultiuserMode() {

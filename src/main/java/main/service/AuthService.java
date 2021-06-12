@@ -2,7 +2,6 @@ package main.service;
 
 import com.github.cage.Cage;
 import com.github.cage.YCage;
-import io.swagger.annotations.ApiOperation;
 import main.api.request.ChangePasswordRequest;
 import main.api.request.LoginRequest;
 import main.api.request.RegisterRequest;

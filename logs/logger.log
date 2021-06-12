@@ -4916,3 +4916,1055 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'diplomadb'
 2021-06-08 22:43:32,400 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-06-08 22:43:32,400 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
 2021-06-08 22:43:32,404 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-09 08:24:57,184 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 08:24:57,242 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 11132 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-09 08:24:57,245 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 08:24:57,976 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 08:24:58,049 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 66ms. Found 8 JPA repository interfaces.
+2021-06-09 08:24:58,325 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2ee39e73' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 08:24:58,327 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 08:24:58,596 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-09 08:24:58,624 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-09 08:24:58,625 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 08:24:58,629 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-09 08:24:58,751 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 08:24:58,751 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1475 ms
+2021-06-09 08:24:58,893 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 08:24:59,145 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 08:24:59,479 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-09 08:24:59,704 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-09 08:24:59,786 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-09 08:24:59,791 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-09 08:24:59,792 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-09 08:24:59,800 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-09 08:24:59,867 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 08:24:59,925 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-09 08:25:00,065 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 08:25:00,179 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-09 08:25:00,726 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 08:25:00,731 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 08:25:01,023 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 08:25:01,792 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c70da80, org.springframework.security.web.context.SecurityContextPersistenceFilter@473ee461, org.springframework.security.web.header.HeaderWriterFilter@7e64b248, org.springframework.security.web.authentication.logout.LogoutFilter@716a6343, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43aa9ccd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25ea3a5f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39df2652, org.springframework.security.web.session.SessionManagementFilter@7e4f5062, org.springframework.security.web.access.ExceptionTranslationFilter@623e578b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@38de4f1d]
+2021-06-09 08:25:01,815 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 08:25:01,911 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 08:25:01,970 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-09 08:25:02,099 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-09 08:25:02,117 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-09 08:25:02,118 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 08:25:02,139 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 08:25:02,162 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 08:25:02,361 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.423 seconds (JVM running for 6.337)
+2021-06-09 08:25:20,536 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-09 08:25:20,536 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-09 08:25:20,541 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 5 ms
+2021-06-09 13:42:20,729 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 13:42:20,749 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 14352 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-09 13:42:20,751 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 13:42:21,223 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 13:42:21,266 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 39ms. Found 8 JPA repository interfaces.
+2021-06-09 13:42:21,420 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@677ce519' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 13:42:21,422 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 13:42:21,544 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-06-09 13:42:21,549 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-06-09 13:42:21,549 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 13:42:21,549 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-09 13:42:21,608 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 13:42:21,608 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 838 ms
+2021-06-09 13:42:21,674 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 13:42:21,746 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 13:42:21,883 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-09 13:42:22,021 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-09 13:42:22,069 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-09 13:42:22,074 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-09 13:42:22,075 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-09 13:42:22,080 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-09 13:42:22,117 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 13:42:22,136 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-09 13:42:22,190 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 13:42:22,237 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-09 13:42:22,541 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 13:42:22,546 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 13:42:22,719 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 13:42:23,167 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8be84bf, org.springframework.security.web.context.SecurityContextPersistenceFilter@790bd0e, org.springframework.security.web.header.HeaderWriterFilter@5b1e5366, org.springframework.security.web.authentication.logout.LogoutFilter@565b77ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@626a4e0a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@423e35f0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d5e0621, org.springframework.security.web.session.SessionManagementFilter@386cc1c4, org.springframework.security.web.access.ExceptionTranslationFilter@68226b59, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1925b113]
+2021-06-09 13:42:23,180 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 13:42:23,244 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 13:42:23,287 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-09 13:42:23,359 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-06-09 13:42:23,372 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-09 13:42:23,372 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 13:42:23,380 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 13:42:23,396 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 13:42:23,560 INFO o.s.b.StartupInfoLogger [main] Started Main in 2.962 seconds (JVM running for 3.427)
+2021-06-09 13:42:27,799 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-09 13:42:27,831 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 7632 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-09 13:42:27,833 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-09 13:42:28,445 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-09 13:42:28,503 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 53ms. Found 8 JPA repository interfaces.
+2021-06-09 13:42:28,741 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59018eed' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 13:42:28,745 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-09 13:42:28,967 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-09 13:42:28,984 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-09 13:42:28,984 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-09 13:42:28,985 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-09 13:42:29,076 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-09 13:42:29,076 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1218 ms
+2021-06-09 13:42:29,184 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-09 13:42:29,319 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-09 13:42:29,536 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-09 13:42:29,729 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-09 13:42:29,799 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-09 13:42:29,804 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-09 13:42:29,805 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-09 13:42:29,812 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-09 13:42:29,865 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-09 13:42:29,893 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-09 13:42:29,969 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-09 13:42:30,038 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-09 13:42:30,454 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-09 13:42:30,459 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-09 13:42:30,708 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-09 13:42:31,404 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24e63b9f, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e5dc02d, org.springframework.security.web.header.HeaderWriterFilter@414a3c7d, org.springframework.security.web.authentication.logout.LogoutFilter@5930a229, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c93f349, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71702d3f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31eb5ed6, org.springframework.security.web.session.SessionManagementFilter@aad1270, org.springframework.security.web.access.ExceptionTranslationFilter@126f428e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@48b53f3d]
+2021-06-09 13:42:31,427 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-09 13:42:31,517 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-09 13:42:31,568 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-09 13:42:31,675 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-09 13:42:31,699 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-09 13:42:31,700 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-09 13:42:31,714 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-09 13:42:31,742 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-09 13:42:31,939 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.32 seconds (JVM running for 4.85)
+2021-06-10 09:32:02,176 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-10 09:32:02,220 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 1348 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-10 09:32:02,223 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-10 09:32:02,907 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-10 09:32:02,974 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60ms. Found 8 JPA repository interfaces.
+2021-06-10 09:32:03,233 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2ee39e73' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 09:32:03,236 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 09:32:03,468 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-10 09:32:03,484 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-10 09:32:03,497 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-10 09:32:03,498 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-10 09:32:03,588 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-10 09:32:03,588 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1338 ms
+2021-06-10 09:32:03,723 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-10 09:32:03,876 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-10 09:32:04,117 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 09:32:04,333 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-10 09:32:04,399 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 09:32:04,404 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 09:32:04,404 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-10 09:32:04,412 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 09:32:04,474 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-10 09:32:04,519 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-10 09:32:04,622 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-10 09:32:04,704 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-10 09:32:05,140 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-10 09:32:05,145 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-10 09:32:05,410 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-10 09:32:06,113 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@722a2ba2, org.springframework.security.web.context.SecurityContextPersistenceFilter@208bde64, org.springframework.security.web.header.HeaderWriterFilter@4c1dc246, org.springframework.security.web.authentication.logout.LogoutFilter@347c7b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@453c10c2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@489ec791, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@788cb7b0, org.springframework.security.web.session.SessionManagementFilter@2a0c76d6, org.springframework.security.web.access.ExceptionTranslationFilter@2087181d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18a8a40e]
+2021-06-10 09:32:06,138 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-10 09:32:06,234 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-10 09:32:06,280 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-10 09:32:06,379 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-10 09:32:06,407 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-10 09:32:06,408 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-10 09:32:06,425 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-10 09:32:06,447 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-10 09:32:06,639 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.652 seconds (JVM running for 5.305)
+2021-06-10 09:32:29,400 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-10 09:32:29,401 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-10 09:32:29,405 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-10 09:32:37,517 INFO m.s.PostService [http-nio-8888-exec-6] Возвращаем последние посты
+2021-06-10 09:32:37,535 INFO m.s.PostService [http-nio-8888-exec-6] Формирование списка постов для вывода
+2021-06-10 09:32:37,535 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 1
+2021-06-10 09:32:37,575 INFO m.s.PostService [http-nio-8888-exec-6] Пост 1 сформирован
+2021-06-10 09:32:37,575 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 3
+2021-06-10 09:32:37,578 INFO m.s.PostService [http-nio-8888-exec-6] Пост 3 сформирован
+2021-06-10 09:32:37,578 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 2
+2021-06-10 09:32:37,580 INFO m.s.PostService [http-nio-8888-exec-6] Пост 2 сформирован
+2021-06-10 09:32:37,580 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 6
+2021-06-10 09:32:37,581 INFO m.s.PostService [http-nio-8888-exec-6] Пост 6 сформирован
+2021-06-10 09:32:37,581 INFO m.s.PostService [http-nio-8888-exec-6] Вывод постов для показа
+2021-06-10 09:32:44,160 INFO m.s.AuthService [http-nio-8888-exec-4] Пользователь с почтой adminPetya@server.com, именем admin Petya и паролем $2y$12$RFJDOYlbIfsyV9Qnpg/A..MCG65MYJw0928z.itt48YtMG9QhZTza вошел в систему
+2021-06-10 09:32:44,194 INFO m.s.PostService [http-nio-8888-exec-6] Возвращаем последние посты
+2021-06-10 09:32:44,198 INFO m.s.PostService [http-nio-8888-exec-6] Формирование списка постов для вывода
+2021-06-10 09:32:44,198 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 1
+2021-06-10 09:32:44,200 INFO m.s.PostService [http-nio-8888-exec-6] Пост 1 сформирован
+2021-06-10 09:32:44,201 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 3
+2021-06-10 09:32:44,204 INFO m.s.PostService [http-nio-8888-exec-6] Пост 3 сформирован
+2021-06-10 09:32:44,204 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 2
+2021-06-10 09:32:44,206 INFO m.s.PostService [http-nio-8888-exec-6] Пост 2 сформирован
+2021-06-10 09:32:44,206 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 6
+2021-06-10 09:32:44,207 INFO m.s.PostService [http-nio-8888-exec-6] Пост 6 сформирован
+2021-06-10 09:32:44,208 INFO m.s.PostService [http-nio-8888-exec-6] Вывод постов для показа
+2021-06-10 09:32:49,538 INFO m.s.AuthService [http-nio-8888-exec-7] Проверка авторизации - пользователь с почтой adminPetya@server.com найден в базе данных и авторизован
+2021-06-10 09:33:03,185 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8888-exec-8] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/json;charset=UTF-8' not supported]
+2021-06-10 09:34:19,615 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8888-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/json;charset=UTF-8' not supported]
+2021-06-10 09:34:31,772 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8888-exec-8] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/json;charset=UTF-8' not supported]
+2021-06-10 09:34:57,978 INFO m.s.AuthService [http-nio-8888-exec-10] Проверка авторизации - пользователь с почтой adminPetya@server.com найден в базе данных и авторизован
+2021-06-10 09:34:58,251 INFO m.s.PostService [http-nio-8888-exec-5] Возвращаем последние посты
+2021-06-10 09:34:58,257 INFO m.s.PostService [http-nio-8888-exec-5] Формирование списка постов для вывода
+2021-06-10 09:34:58,257 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 1
+2021-06-10 09:34:58,259 INFO m.s.PostService [http-nio-8888-exec-5] Пост 1 сформирован
+2021-06-10 09:34:58,259 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 3
+2021-06-10 09:34:58,262 INFO m.s.PostService [http-nio-8888-exec-5] Пост 3 сформирован
+2021-06-10 09:34:58,262 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 2
+2021-06-10 09:34:58,264 INFO m.s.PostService [http-nio-8888-exec-5] Пост 2 сформирован
+2021-06-10 09:34:58,264 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 6
+2021-06-10 09:34:58,265 INFO m.s.PostService [http-nio-8888-exec-5] Пост 6 сформирован
+2021-06-10 09:34:58,265 INFO m.s.PostService [http-nio-8888-exec-5] Вывод постов для показа
+2021-06-10 21:00:16,293 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-10 21:00:16,326 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 11372 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-10 21:00:16,328 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-10 21:00:16,940 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-10 21:00:17,001 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 55ms. Found 8 JPA repository interfaces.
+2021-06-10 21:00:17,277 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@73608eb0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 21:00:17,281 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 21:00:17,505 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-10 21:00:17,518 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-10 21:00:17,518 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-10 21:00:17,519 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-10 21:00:17,611 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-10 21:00:17,611 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1259 ms
+2021-06-10 21:00:17,726 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-10 21:00:17,863 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-10 21:00:18,083 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 21:00:18,301 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-10 21:00:18,363 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 21:00:18,370 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 21:00:18,371 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-10 21:00:18,379 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 21:00:18,432 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-10 21:00:18,460 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-10 21:00:18,538 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-10 21:00:18,609 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-10 21:00:19,003 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-10 21:00:19,008 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-10 21:00:19,247 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-10 21:00:19,898 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@282831ea, org.springframework.security.web.context.SecurityContextPersistenceFilter@30a34f07, org.springframework.security.web.header.HeaderWriterFilter@43aa9ccd, org.springframework.security.web.authentication.logout.LogoutFilter@4f578fc2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f9d1785, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42ae0fcf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@118932fe, org.springframework.security.web.session.SessionManagementFilter@708ddfd3, org.springframework.security.web.access.ExceptionTranslationFilter@473ee461, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@24e63b9f]
+2021-06-10 21:00:19,919 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-10 21:00:20,015 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-10 21:00:20,060 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-10 21:00:20,170 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-10 21:00:20,190 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-10 21:00:20,192 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-10 21:00:20,213 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-10 21:00:20,241 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-10 21:00:20,413 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.286 seconds (JVM running for 4.818)
+2021-06-10 21:00:38,269 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-10 21:00:38,269 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-10 21:00:38,273 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-10 22:36:00,647 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-10 22:36:00,679 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 8168 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-10 22:36:00,682 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-10 22:36:01,286 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-10 22:36:01,345 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 54ms. Found 8 JPA repository interfaces.
+2021-06-10 22:36:01,580 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@110e9982' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 22:36:01,583 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 22:36:01,800 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-10 22:36:01,814 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-10 22:36:01,815 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-10 22:36:01,815 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-10 22:36:01,903 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-10 22:36:01,903 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1197 ms
+2021-06-10 22:36:02,013 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-10 22:36:02,147 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-10 22:36:02,365 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 22:36:02,560 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-10 22:36:02,623 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 22:36:02,629 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 22:36:02,630 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-10 22:36:02,639 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 22:36:02,689 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-10 22:36:02,719 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-10 22:36:02,800 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-10 22:36:02,869 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-10 22:36:03,284 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-10 22:36:03,289 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-10 22:36:03,549 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-10 22:36:04,271 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52a9c251, org.springframework.security.web.context.SecurityContextPersistenceFilter@43aa9ccd, org.springframework.security.web.header.HeaderWriterFilter@7e4f5062, org.springframework.security.web.authentication.logout.LogoutFilter@564b221e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@708ddfd3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5225f612, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5eace68f, org.springframework.security.web.session.SessionManagementFilter@473ee461, org.springframework.security.web.access.ExceptionTranslationFilter@7e64b248, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7b59f3aa]
+2021-06-10 22:36:04,293 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-10 22:36:04,391 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-10 22:36:04,443 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-10 22:36:04,545 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-10 22:36:04,564 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-10 22:36:04,564 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-10 22:36:04,576 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-10 22:36:04,601 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-10 22:36:04,779 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.309 seconds (JVM running for 4.857)
+2021-06-10 22:36:05,652 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-10 22:36:05,653 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-10 22:36:05,656 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 3 ms
+2021-06-10 22:54:19,903 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-10 22:54:19,934 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 2700 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-10 22:54:19,937 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-10 22:54:20,556 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-10 22:54:20,613 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 52ms. Found 8 JPA repository interfaces.
+2021-06-10 22:54:20,846 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@76973a6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 22:54:20,849 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 22:54:21,073 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-10 22:54:21,087 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-10 22:54:21,088 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-10 22:54:21,089 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-10 22:54:21,180 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-10 22:54:21,180 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1219 ms
+2021-06-10 22:54:21,297 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-10 22:54:21,439 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-10 22:54:21,687 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 22:54:21,898 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-10 22:54:21,961 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 22:54:21,967 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 22:54:21,968 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-10 22:54:21,976 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 22:54:22,029 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-10 22:54:22,060 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-10 22:54:22,146 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-10 22:54:22,216 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-10 22:54:22,623 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-10 22:54:22,628 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-10 22:54:22,875 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-10 22:54:23,554 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@577e2b91, org.springframework.security.web.context.SecurityContextPersistenceFilter@11f8d64, org.springframework.security.web.header.HeaderWriterFilter@76b5b1e2, org.springframework.security.web.authentication.logout.LogoutFilter@6e5dc02d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62a193e0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12bb3666, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@68a06914, org.springframework.security.web.session.SessionManagementFilter@7fe1a856, org.springframework.security.web.access.ExceptionTranslationFilter@c4f6d5b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7056cda8]
+2021-06-10 22:54:23,575 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-10 22:54:23,664 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-10 22:54:23,716 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-10 22:54:23,800 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-10 22:54:23,819 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-10 22:54:23,819 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-10 22:54:23,832 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-10 22:54:23,855 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-10 22:54:24,030 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.298 seconds (JVM running for 4.796)
+2021-06-10 22:54:43,801 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-10 22:54:43,801 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-10 22:54:43,804 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 3 ms
+2021-06-10 22:57:32,474 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-10 22:57:32,505 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 13752 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-10 22:57:32,508 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-10 22:57:33,111 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-10 22:57:33,171 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 54ms. Found 8 JPA repository interfaces.
+2021-06-10 22:57:33,414 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59018eed' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 22:57:33,418 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 22:57:33,627 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-10 22:57:33,641 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-10 22:57:33,642 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-10 22:57:33,642 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-10 22:57:33,738 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-10 22:57:33,738 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1207 ms
+2021-06-10 22:57:33,863 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-10 22:57:34,011 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-10 22:57:34,238 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 22:57:34,437 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-10 22:57:34,497 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 22:57:34,502 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-10 22:57:34,502 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-10 22:57:34,510 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-10 22:57:34,561 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-10 22:57:34,591 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-10 22:57:34,672 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-10 22:57:34,743 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-10 22:57:35,142 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-10 22:57:35,147 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-10 22:57:35,383 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-10 22:57:36,067 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68a06914, org.springframework.security.web.context.SecurityContextPersistenceFilter@208bde64, org.springframework.security.web.header.HeaderWriterFilter@4c1dc246, org.springframework.security.web.authentication.logout.LogoutFilter@347c7b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@453c10c2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@489ec791, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a59a8fe, org.springframework.security.web.session.SessionManagementFilter@2a0c76d6, org.springframework.security.web.access.ExceptionTranslationFilter@2087181d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2fbbdca]
+2021-06-10 22:57:36,091 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-10 22:57:36,182 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-10 22:57:36,231 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-10 22:57:36,323 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-10 22:57:36,341 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-10 22:57:36,342 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-10 22:57:36,368 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-10 22:57:36,389 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-10 22:57:36,557 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.247 seconds (JVM running for 4.79)
+2021-06-10 22:57:42,061 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-10 22:57:42,062 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-10 22:57:42,066 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-12 12:28:23,806 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 12:28:23,843 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 13428 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 12:28:23,846 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 12:28:24,516 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 12:28:24,594 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 69ms. Found 8 JPA repository interfaces.
+2021-06-12 12:28:24,872 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2ee39e73' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 12:28:24,875 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 12:28:25,130 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 12:28:25,146 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 12:28:25,146 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 12:28:25,147 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 12:28:25,249 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 12:28:25,249 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1377 ms
+2021-06-12 12:28:25,387 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 12:28:25,542 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 12:28:25,787 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 12:28:26,002 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 12:28:26,065 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 12:28:26,073 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 12:28:26,074 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 12:28:26,081 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 12:28:26,140 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 12:28:26,181 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 12:28:26,288 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 12:28:26,377 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 12:28:26,820 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 12:28:26,825 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 12:28:27,096 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 12:28:27,876 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10164e94, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e64b248, org.springframework.security.web.header.HeaderWriterFilter@201a84e1, org.springframework.security.web.authentication.logout.LogoutFilter@51a4472d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e4f5062, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30a34f07, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24e63b9f, org.springframework.security.web.session.SessionManagementFilter@623e578b, org.springframework.security.web.access.ExceptionTranslationFilter@347c7b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b1381fc]
+2021-06-12 12:28:27,897 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 12:28:28,004 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 12:28:28,053 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 12:28:28,162 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 12:28:28,181 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 12:28:28,182 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-12 12:28:28,196 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-12 12:28:28,236 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-12 12:28:28,428 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.807 seconds (JVM running for 5.414)
+2021-06-12 12:28:33,325 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 12:28:33,325 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 12:28:33,329 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-12 12:28:33,870 INFO m.s.PostService [http-nio-8888-exec-2] Возвращаем последние посты
+2021-06-12 12:28:33,890 INFO m.s.PostService [http-nio-8888-exec-2] Формирование списка постов для вывода
+2021-06-12 12:28:33,890 INFO m.s.PostService [http-nio-8888-exec-2] Формирование поста 1
+2021-06-12 12:28:33,928 INFO m.s.PostService [http-nio-8888-exec-2] Пост 1 сформирован
+2021-06-12 12:28:33,928 INFO m.s.PostService [http-nio-8888-exec-2] Формирование поста 3
+2021-06-12 12:28:33,931 INFO m.s.PostService [http-nio-8888-exec-2] Пост 3 сформирован
+2021-06-12 12:28:33,932 INFO m.s.PostService [http-nio-8888-exec-2] Формирование поста 2
+2021-06-12 12:28:33,934 INFO m.s.PostService [http-nio-8888-exec-2] Пост 2 сформирован
+2021-06-12 12:28:33,934 INFO m.s.PostService [http-nio-8888-exec-2] Формирование поста 6
+2021-06-12 12:28:33,936 INFO m.s.PostService [http-nio-8888-exec-2] Пост 6 сформирован
+2021-06-12 12:28:33,936 INFO m.s.PostService [http-nio-8888-exec-2] Вывод постов для показа
+2021-06-12 12:28:36,118 INFO m.s.PostService [http-nio-8888-exec-8] Возвращаем последние посты
+2021-06-12 12:28:36,122 INFO m.s.PostService [http-nio-8888-exec-8] Формирование списка постов для вывода
+2021-06-12 12:28:36,122 INFO m.s.PostService [http-nio-8888-exec-8] Формирование поста 1
+2021-06-12 12:28:36,125 INFO m.s.PostService [http-nio-8888-exec-8] Пост 1 сформирован
+2021-06-12 12:28:36,125 INFO m.s.PostService [http-nio-8888-exec-8] Формирование поста 3
+2021-06-12 12:28:36,129 INFO m.s.PostService [http-nio-8888-exec-8] Пост 3 сформирован
+2021-06-12 12:28:36,129 INFO m.s.PostService [http-nio-8888-exec-8] Формирование поста 2
+2021-06-12 12:28:36,131 INFO m.s.PostService [http-nio-8888-exec-8] Пост 2 сформирован
+2021-06-12 12:28:36,131 INFO m.s.PostService [http-nio-8888-exec-8] Формирование поста 6
+2021-06-12 12:28:36,132 INFO m.s.PostService [http-nio-8888-exec-8] Пост 6 сформирован
+2021-06-12 12:28:36,132 INFO m.s.PostService [http-nio-8888-exec-8] Вывод постов для показа
+2021-06-12 13:09:08,628 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 13:09:08,662 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 12164 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 13:09:08,665 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 13:09:09,308 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 13:09:09,369 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 57ms. Found 8 JPA repository interfaces.
+2021-06-12 13:09:09,607 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@38a4e2b0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 13:09:09,607 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 13:09:09,841 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 13:09:09,857 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 13:09:09,857 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 13:09:09,857 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 13:09:09,976 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 13:09:09,976 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1284 ms
+2021-06-12 13:09:10,112 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 13:09:10,250 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 13:09:10,467 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 13:09:10,678 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 13:09:10,746 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 13:09:10,752 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 13:09:10,753 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 13:09:10,761 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 13:09:10,816 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 13:09:10,847 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 13:09:10,926 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 13:09:10,998 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 13:09:11,417 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 13:09:11,422 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 13:09:11,651 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 13:09:12,271 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ae5eeee, org.springframework.security.web.context.SecurityContextPersistenceFilter@2044a11b, org.springframework.security.web.header.HeaderWriterFilter@4398d, org.springframework.security.web.authentication.logout.LogoutFilter@f758e05, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d9db780, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@426fb1c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54da9644, org.springframework.security.web.session.SessionManagementFilter@50061d56, org.springframework.security.web.access.ExceptionTranslationFilter@5ac25491, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@eb7d4ba]
+2021-06-12 13:09:12,296 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-12 13:09:12,406 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 13:09:12,468 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 13:09:12,578 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 13:09:12,609 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 13:09:12,609 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-06-12 13:09:12,625 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-06-12 13:09:12,656 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-06-12 13:09:12,843 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.399 seconds (JVM running for 4.922)
+2021-06-12 13:09:14,000 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 13:09:14,000 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-2] Initializing Servlet 'dispatcherServlet'
+2021-06-12 13:09:14,004 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-2] Completed initialization in 4 ms
+2021-06-12 13:18:17,546 INFO m.s.AuthService [http-nio-8888-exec-8] Удаление из базы данных всех капчей старше заданного параметра
+2021-06-12 13:18:17,610 INFO m.s.AuthService [http-nio-8888-exec-8] Новая капча сгенерирована длиной 3 символов/-а
+2021-06-12 13:18:18,126 INFO m.s.AuthService [http-nio-8888-exec-8] Перевод капчи в строку
+2021-06-12 13:18:18,141 INFO m.s.AuthService [http-nio-8888-exec-8] Капча получена
+2021-06-12 13:18:54,443 ERROR m.s.AuthService [http-nio-8888-exec-7] Errors during registration = '[Field error in object 'changePasswordRequest' on field 'password': rejected value [string]; codes [Email.changePasswordRequest.password,Email.password,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [changePasswordRequest.password,password]; arguments []; default message [password],[Ljavax.validation.constraints.Pattern$Flag;@3a945209,.*]; default message [Адрес почты указан неверно.]]'
+2021-06-12 13:18:55,908 ERROR m.s.AuthService [http-nio-8888-exec-9] Errors during registration = '[Field error in object 'changePasswordRequest' on field 'password': rejected value [string]; codes [Email.changePasswordRequest.password,Email.password,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [changePasswordRequest.password,password]; arguments []; default message [password],[Ljavax.validation.constraints.Pattern$Flag;@3a945209,.*]; default message [Адрес почты указан неверно.]]'
+2021-06-12 13:19:35,983 INFO m.s.PostService [http-nio-8888-exec-6] Возвращаем последние посты
+2021-06-12 13:19:35,997 INFO m.s.PostService [http-nio-8888-exec-6] Формирование списка постов для вывода
+2021-06-12 13:19:35,998 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 1
+2021-06-12 13:19:36,027 INFO m.s.PostService [http-nio-8888-exec-6] Пост 1 сформирован
+2021-06-12 13:19:36,027 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 3
+2021-06-12 13:19:36,030 INFO m.s.PostService [http-nio-8888-exec-6] Пост 3 сформирован
+2021-06-12 13:19:36,030 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 2
+2021-06-12 13:19:36,031 INFO m.s.PostService [http-nio-8888-exec-6] Пост 2 сформирован
+2021-06-12 13:19:36,032 INFO m.s.PostService [http-nio-8888-exec-6] Формирование поста 6
+2021-06-12 13:19:36,033 INFO m.s.PostService [http-nio-8888-exec-6] Пост 6 сформирован
+2021-06-12 13:19:36,033 INFO m.s.PostService [http-nio-8888-exec-6] Вывод постов для показа
+2021-06-12 16:16:25,047 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 16:16:25,081 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 7924 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 16:16:25,084 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 16:16:25,591 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 16:16:25,649 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 53ms. Found 8 JPA repository interfaces.
+2021-06-12 16:16:25,859 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@25f723b0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:16:25,862 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:16:26,071 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 16:16:26,081 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:16:26,082 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 16:16:26,082 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 16:16:26,180 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 16:16:26,180 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1070 ms
+2021-06-12 16:16:26,317 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 16:16:26,457 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 16:16:26,693 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:16:26,926 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 16:16:26,991 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:16:26,996 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:16:26,997 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 16:16:27,003 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:16:27,062 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 16:16:27,093 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 16:16:27,172 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 16:16:27,243 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 16:16:27,639 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 16:16:27,644 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 16:16:27,937 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 16:16:28,376 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fb1bffd, org.springframework.security.web.context.SecurityContextPersistenceFilter@121fe002, org.springframework.security.web.header.HeaderWriterFilter@5c088d72, org.springframework.security.web.authentication.logout.LogoutFilter@28ec92c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2778a7c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@198d55de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@427c9a13, org.springframework.security.web.session.SessionManagementFilter@45bde54d, org.springframework.security.web.access.ExceptionTranslationFilter@529b8e41, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7ee6d5fd]
+2021-06-12 16:16:28,466 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 16:16:28,866 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 16:16:29,036 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:16:29,058 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 16:16:29,068 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.192 seconds (JVM running for 4.71)
+2021-06-12 16:16:31,113 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 16:16:31,113 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 16:16:31,118 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-12 16:16:31,737 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-8] Init duration for springdoc-openapi is: 230 ms
+2021-06-12 16:21:40,524 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 16:21:40,557 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 6264 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 16:21:40,560 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 16:21:41,070 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 16:21:41,127 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 52ms. Found 8 JPA repository interfaces.
+2021-06-12 16:21:41,354 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@40fa8766' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:21:41,357 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:21:41,577 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 16:21:41,587 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:21:41,588 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 16:21:41,588 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 16:21:41,697 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 16:21:41,698 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1112 ms
+2021-06-12 16:21:41,826 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 16:21:41,950 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 16:21:42,200 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:21:42,450 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 16:21:42,517 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:21:42,523 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:21:42,524 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 16:21:42,532 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:21:42,585 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 16:21:42,617 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 16:21:42,699 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 16:21:42,769 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 16:21:43,176 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 16:21:43,181 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 16:21:43,486 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 16:21:43,976 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31620971, org.springframework.security.web.context.SecurityContextPersistenceFilter@31aec04a, org.springframework.security.web.header.HeaderWriterFilter@3fc92211, org.springframework.security.web.authentication.logout.LogoutFilter@3debeb5e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e5f5ddf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@ab90b8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@794cd751, org.springframework.security.web.session.SessionManagementFilter@117bfeb8, org.springframework.security.web.access.ExceptionTranslationFilter@50c442a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@36c8e1c6]
+2021-06-12 16:21:44,063 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 16:21:44,449 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 16:21:44,627 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:21:44,651 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 16:21:44,659 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.312 seconds (JVM running for 4.816)
+2021-06-12 16:21:50,302 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 16:21:50,302 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 16:21:50,306 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-12 16:21:50,903 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-7] Init duration for springdoc-openapi is: 228 ms
+2021-06-12 16:22:33,327 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 16:22:33,361 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 10384 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 16:22:33,364 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 16:22:33,880 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 16:22:33,938 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 54ms. Found 8 JPA repository interfaces.
+2021-06-12 16:22:34,156 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2b0e9f30' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:22:34,159 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:22:34,377 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 16:22:34,386 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:22:34,386 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 16:22:34,387 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 16:22:34,496 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 16:22:34,497 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1107 ms
+2021-06-12 16:22:34,606 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 16:22:34,742 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 16:22:34,968 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:22:35,181 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 16:22:35,246 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:22:35,251 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:22:35,252 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 16:22:35,260 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:22:35,317 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 16:22:35,348 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 16:22:35,432 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 16:22:35,500 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 16:22:35,902 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 16:22:35,909 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 16:22:36,174 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 16:22:36,662 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61f62b80, org.springframework.security.web.context.SecurityContextPersistenceFilter@6018a6a2, org.springframework.security.web.header.HeaderWriterFilter@7fcc8d9f, org.springframework.security.web.authentication.logout.LogoutFilter@730a140b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f15d346, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cb42eb2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@387bbd7a, org.springframework.security.web.session.SessionManagementFilter@11c68269, org.springframework.security.web.access.ExceptionTranslationFilter@3debeb5e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31f5580b]
+2021-06-12 16:22:36,751 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 16:22:37,172 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 16:22:37,335 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:22:37,360 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 16:22:37,367 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.21 seconds (JVM running for 4.732)
+2021-06-12 16:22:41,080 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 16:22:41,081 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 16:22:41,084 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 3 ms
+2021-06-12 16:22:41,685 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-7] Init duration for springdoc-openapi is: 228 ms
+2021-06-12 16:24:51,121 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 16:24:51,156 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 8980 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 16:24:51,159 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 16:24:51,687 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 16:24:51,747 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 56ms. Found 8 JPA repository interfaces.
+2021-06-12 16:24:51,979 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@67774e29' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:24:51,981 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:24:52,191 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 16:24:52,200 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:24:52,201 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 16:24:52,201 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 16:24:52,307 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 16:24:52,307 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1122 ms
+2021-06-12 16:24:52,426 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 16:24:52,561 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 16:24:52,799 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:24:53,008 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 16:24:53,075 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:24:53,081 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:24:53,082 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 16:24:53,089 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:24:53,146 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 16:24:53,180 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 16:24:53,259 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 16:24:53,331 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 16:24:53,742 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 16:24:53,747 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 16:24:54,069 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 16:24:54,568 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@597f2d3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@18b8518b, org.springframework.security.web.header.HeaderWriterFilter@5e5f5ddf, org.springframework.security.web.authentication.logout.LogoutFilter@6018a6a2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63fe055, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c65c6f0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7746330a, org.springframework.security.web.session.SessionManagementFilter@532782f5, org.springframework.security.web.access.ExceptionTranslationFilter@31aec04a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7597ae32]
+2021-06-12 16:24:54,658 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 16:24:55,104 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 16:24:55,264 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:24:55,288 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 16:24:55,295 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.349 seconds (JVM running for 4.89)
+2021-06-12 16:24:56,642 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 16:24:56,643 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 16:24:56,646 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 3 ms
+2021-06-12 16:24:57,254 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-7] Init duration for springdoc-openapi is: 229 ms
+2021-06-12 16:25:45,396 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 16:25:45,430 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 4776 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 16:25:45,432 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 16:25:45,959 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 16:25:46,014 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 51ms. Found 8 JPA repository interfaces.
+2021-06-12 16:25:46,228 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@663f237a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:25:46,232 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:25:46,448 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 16:25:46,457 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:25:46,458 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 16:25:46,458 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 16:25:46,568 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 16:25:46,568 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1109 ms
+2021-06-12 16:25:46,689 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 16:25:46,820 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 16:25:47,046 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:25:47,284 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 16:25:47,350 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:25:47,355 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:25:47,355 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 16:25:47,362 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:25:47,418 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 16:25:47,450 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 16:25:47,533 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 16:25:47,605 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 16:25:48,017 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 16:25:48,022 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 16:25:48,326 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 16:25:48,829 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@615f61ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@14501070, org.springframework.security.web.header.HeaderWriterFilter@3ef7064b, org.springframework.security.web.authentication.logout.LogoutFilter@1227ea21, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a577b99, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63fe055, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c5de17c, org.springframework.security.web.session.SessionManagementFilter@7def08fc, org.springframework.security.web.access.ExceptionTranslationFilter@7c144349, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e641005]
+2021-06-12 16:25:48,916 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 16:25:49,343 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 16:25:49,530 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:25:49,560 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 16:25:49,567 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.337 seconds (JVM running for 4.844)
+2021-06-12 16:25:51,449 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 16:25:51,449 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 16:25:51,452 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 3 ms
+2021-06-12 16:25:52,051 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-7] Init duration for springdoc-openapi is: 222 ms
+2021-06-12 16:29:35,520 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 16:29:35,554 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 4832 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 16:29:35,556 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 16:29:36,082 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 16:29:36,142 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 55ms. Found 8 JPA repository interfaces.
+2021-06-12 16:29:36,373 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@b46e103' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:29:36,376 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 16:29:36,590 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 16:29:36,599 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:29:36,599 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 16:29:36,600 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 16:29:36,721 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 16:29:36,721 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1138 ms
+2021-06-12 16:29:36,841 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 16:29:36,977 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 16:29:37,209 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:29:37,453 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 16:29:37,518 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:29:37,523 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 16:29:37,523 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 16:29:37,529 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 16:29:37,585 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 16:29:37,620 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 16:29:37,709 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 16:29:37,780 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 16:29:38,199 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 16:29:38,204 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 16:29:38,497 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 16:29:39,010 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@655008a2, org.springframework.security.web.context.SecurityContextPersistenceFilter@5cb42eb2, org.springframework.security.web.header.HeaderWriterFilter@7f2d4ffc, org.springframework.security.web.authentication.logout.LogoutFilter@2ca4b010, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28806954, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17524c36, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@424461ad, org.springframework.security.web.session.SessionManagementFilter@1ee37c7a, org.springframework.security.web.access.ExceptionTranslationFilter@5abf9a76, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@387bbd7a]
+2021-06-12 16:29:39,103 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 16:29:39,532 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 16:29:39,715 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 16:29:39,742 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 16:29:39,752 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.401 seconds (JVM running for 4.927)
+2021-06-12 16:29:41,792 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 16:29:41,792 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 16:29:41,796 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-12 16:29:42,417 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-7] Init duration for springdoc-openapi is: 253 ms
+2021-06-12 17:01:03,049 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 17:01:03,085 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 8780 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 17:01:03,085 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 17:01:03,637 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 17:01:03,700 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 55ms. Found 8 JPA repository interfaces.
+2021-06-12 17:01:03,934 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@10947c4e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 17:01:03,934 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 17:01:04,153 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 17:01:04,153 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 17:01:04,153 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 17:01:04,153 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 17:01:04,266 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 17:01:04,266 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1148 ms
+2021-06-12 17:01:04,360 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 17:01:04,516 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 17:01:04,751 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 17:01:04,954 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 17:01:05,032 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 17:01:05,032 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 17:01:05,032 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 17:01:05,032 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 17:01:05,094 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 17:01:05,126 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 17:01:05,204 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 17:01:05,266 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 17:01:05,688 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 17:01:05,688 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 17:01:05,985 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 17:01:06,485 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ccfd2cb, org.springframework.security.web.context.SecurityContextPersistenceFilter@7def08fc, org.springframework.security.web.header.HeaderWriterFilter@7c144349, org.springframework.security.web.authentication.logout.LogoutFilter@ab90b8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14501070, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@117bfeb8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36c8e1c6, org.springframework.security.web.session.SessionManagementFilter@3ef7064b, org.springframework.security.web.access.ExceptionTranslationFilter@7cc966a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1639ec7a]
+2021-06-12 17:01:06,579 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 17:01:07,008 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 17:01:07,180 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 17:01:07,211 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 17:01:07,211 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.356 seconds (JVM running for 4.858)
+2021-06-12 17:01:10,412 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 17:01:10,412 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 17:01:10,416 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-12 17:01:11,036 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-7] Init duration for springdoc-openapi is: 241 ms
+2021-06-12 19:37:49,863 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 19:37:49,898 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 8564 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 19:37:49,900 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 19:37:50,403 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 19:37:50,460 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 52ms. Found 8 JPA repository interfaces.
+2021-06-12 19:37:50,674 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3667faa8' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 19:37:50,677 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 19:37:50,895 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 19:37:50,906 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 19:37:50,907 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 19:37:50,907 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 19:37:51,017 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 19:37:51,017 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1091 ms
+2021-06-12 19:37:51,149 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 19:37:51,281 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 19:37:51,505 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 19:37:51,723 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 19:37:51,788 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 19:37:51,794 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 19:37:51,794 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 19:37:51,803 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 19:37:51,854 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 19:37:51,885 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 19:37:51,967 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 19:37:52,035 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 19:37:52,438 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 19:37:52,444 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 19:37:52,716 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 19:37:53,241 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56a8b19f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1227ea21, org.springframework.security.web.header.HeaderWriterFilter@63fe055, org.springframework.security.web.authentication.logout.LogoutFilter@24e0bdb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3debeb5e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f15d346, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5927473a, org.springframework.security.web.session.SessionManagementFilter@123fd460, org.springframework.security.web.access.ExceptionTranslationFilter@18b8518b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@438a2337]
+2021-06-12 19:37:53,328 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 19:37:53,776 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 19:37:53,950 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 19:37:53,976 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 19:37:53,984 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.297 seconds (JVM running for 4.809)
+2021-06-12 19:38:02,331 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 19:38:02,331 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 19:38:02,335 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-12 19:38:02,963 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-7] Init duration for springdoc-openapi is: 246 ms
+2021-06-12 19:42:21,761 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 19:42:21,794 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 3468 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 19:42:21,797 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 19:42:22,330 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 19:42:22,389 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 54ms. Found 8 JPA repository interfaces.
+2021-06-12 19:42:22,621 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2b0e9f30' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 19:42:22,623 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 19:42:22,847 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 19:42:22,859 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 19:42:22,860 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 19:42:22,861 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 19:42:22,972 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 19:42:22,973 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1150 ms
+2021-06-12 19:42:23,103 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 19:42:23,248 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 19:42:23,500 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 19:42:23,731 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 19:42:23,792 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 19:42:23,797 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 19:42:23,798 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 19:42:23,805 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 19:42:23,860 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 19:42:23,894 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 19:42:23,976 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 19:42:24,046 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 19:42:24,519 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 19:42:24,525 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 19:42:24,851 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 19:42:25,339 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@664c411d, org.springframework.security.web.context.SecurityContextPersistenceFilter@38293d23, org.springframework.security.web.header.HeaderWriterFilter@7fb70e94, org.springframework.security.web.authentication.logout.LogoutFilter@2100b770, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4973dacf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@466fd19b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7641d70, org.springframework.security.web.session.SessionManagementFilter@4e132a9b, org.springframework.security.web.access.ExceptionTranslationFilter@3ae5cbb9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7066c00a]
+2021-06-12 19:42:25,437 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 19:42:25,843 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 19:42:26,016 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 19:42:26,039 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 19:42:26,048 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.462 seconds (JVM running for 4.992)
+2021-06-12 20:14:35,097 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 20:14:35,131 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 9376 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 20:14:35,134 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 20:14:35,669 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 20:14:35,728 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 55ms. Found 8 JPA repository interfaces.
+2021-06-12 20:14:35,962 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3138953b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 20:14:35,965 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 20:14:36,198 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 20:14:36,208 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 20:14:36,208 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 20:14:36,209 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 20:14:36,311 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 20:14:36,311 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1149 ms
+2021-06-12 20:14:36,448 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 20:14:36,594 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 20:14:36,836 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 20:14:37,047 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 20:14:37,109 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 20:14:37,114 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 20:14:37,115 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 20:14:37,123 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 20:14:37,177 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 20:14:37,208 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 20:14:37,288 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 20:14:37,361 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 20:14:37,774 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 20:14:37,779 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 20:14:38,092 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 20:14:38,534 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d267575, org.springframework.security.web.context.SecurityContextPersistenceFilter@688884e, org.springframework.security.web.header.HeaderWriterFilter@640a80aa, org.springframework.security.web.authentication.logout.LogoutFilter@4973dacf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e0bae92, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7315264e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e512d7f, org.springframework.security.web.session.SessionManagementFilter@7410c197, org.springframework.security.web.access.ExceptionTranslationFilter@50572c04, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@597f2d3f]
+2021-06-12 20:14:38,618 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 20:14:39,024 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 20:14:39,187 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 20:14:39,208 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 20:14:39,215 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.297 seconds (JVM running for 4.806)
+2021-06-12 20:14:45,128 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 20:14:45,128 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 20:14:45,131 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 3 ms
+2021-06-12 20:14:45,768 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-7] Init duration for springdoc-openapi is: 257 ms
+2021-06-12 20:15:00,220 INFO m.s.PostService [http-nio-8888-exec-5] Возвращаем последние посты
+2021-06-12 20:15:00,239 INFO m.s.PostService [http-nio-8888-exec-5] Формирование списка постов для вывода
+2021-06-12 20:15:00,239 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 1
+2021-06-12 20:15:00,274 INFO m.s.PostService [http-nio-8888-exec-5] Пост 1 сформирован
+2021-06-12 20:15:00,274 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 3
+2021-06-12 20:15:00,277 INFO m.s.PostService [http-nio-8888-exec-5] Пост 3 сформирован
+2021-06-12 20:15:00,277 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 2
+2021-06-12 20:15:00,279 INFO m.s.PostService [http-nio-8888-exec-5] Пост 2 сформирован
+2021-06-12 20:15:00,279 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 6
+2021-06-12 20:15:00,280 INFO m.s.PostService [http-nio-8888-exec-5] Пост 6 сформирован
+2021-06-12 20:15:00,281 INFO m.s.PostService [http-nio-8888-exec-5] Вывод постов для показа
+2021-06-12 20:15:14,677 INFO m.s.AuthService [http-nio-8888-exec-8] Удаление из базы данных всех капчей старше заданного параметра
+2021-06-12 20:15:14,702 INFO m.s.AuthService [http-nio-8888-exec-8] Новая капча сгенерирована длиной 3 символов/-а
+2021-06-12 20:15:14,782 INFO m.s.AuthService [http-nio-8888-exec-8] Перевод капчи в строку
+2021-06-12 20:15:14,793 INFO m.s.AuthService [http-nio-8888-exec-8] Капча получена
+2021-06-12 20:15:28,471 INFO m.s.AuthService [http-nio-8888-exec-9] Пользователь с почтой adminPetya@server.com, именем admin Petya и паролем $2y$12$RFJDOYlbIfsyV9Qnpg/A..MCG65MYJw0928z.itt48YtMG9QhZTza вошел в систему
+2021-06-12 20:15:28,506 INFO m.s.PostService [http-nio-8888-exec-4] Возвращаем последние посты
+2021-06-12 20:15:28,510 INFO m.s.PostService [http-nio-8888-exec-4] Формирование списка постов для вывода
+2021-06-12 20:15:28,510 INFO m.s.PostService [http-nio-8888-exec-4] Формирование поста 1
+2021-06-12 20:15:28,513 INFO m.s.PostService [http-nio-8888-exec-4] Пост 1 сформирован
+2021-06-12 20:15:28,513 INFO m.s.PostService [http-nio-8888-exec-4] Формирование поста 3
+2021-06-12 20:15:28,516 INFO m.s.PostService [http-nio-8888-exec-4] Пост 3 сформирован
+2021-06-12 20:15:28,516 INFO m.s.PostService [http-nio-8888-exec-4] Формирование поста 2
+2021-06-12 20:15:28,519 INFO m.s.PostService [http-nio-8888-exec-4] Пост 2 сформирован
+2021-06-12 20:15:28,519 INFO m.s.PostService [http-nio-8888-exec-4] Формирование поста 6
+2021-06-12 20:15:28,521 INFO m.s.PostService [http-nio-8888-exec-4] Пост 6 сформирован
+2021-06-12 20:15:28,521 INFO m.s.PostService [http-nio-8888-exec-4] Вывод постов для показа
+2021-06-12 20:15:36,488 INFO m.s.PostService [http-nio-8888-exec-3] Возвращаем самые обсуждаемые посты
+2021-06-12 20:15:36,492 INFO m.s.PostService [http-nio-8888-exec-3] Формирование списка постов для вывода
+2021-06-12 20:15:36,492 INFO m.s.PostService [http-nio-8888-exec-3] Формирование поста 1
+2021-06-12 20:15:36,494 INFO m.s.PostService [http-nio-8888-exec-3] Пост 1 сформирован
+2021-06-12 20:15:36,494 INFO m.s.PostService [http-nio-8888-exec-3] Формирование поста 3
+2021-06-12 20:15:36,497 INFO m.s.PostService [http-nio-8888-exec-3] Пост 3 сформирован
+2021-06-12 20:15:36,497 INFO m.s.PostService [http-nio-8888-exec-3] Формирование поста 2
+2021-06-12 20:15:36,498 INFO m.s.PostService [http-nio-8888-exec-3] Пост 2 сформирован
+2021-06-12 20:15:36,498 INFO m.s.PostService [http-nio-8888-exec-3] Формирование поста 6
+2021-06-12 20:15:36,499 INFO m.s.PostService [http-nio-8888-exec-3] Пост 6 сформирован
+2021-06-12 20:15:36,499 INFO m.s.PostService [http-nio-8888-exec-3] Вывод постов для показа
+2021-06-12 20:15:38,530 INFO m.s.PostService [http-nio-8888-exec-9] Возвращаем лучшие по лайкам посты
+2021-06-12 20:15:38,534 INFO m.s.PostService [http-nio-8888-exec-9] Формирование списка постов для вывода
+2021-06-12 20:15:38,534 INFO m.s.PostService [http-nio-8888-exec-9] Формирование поста 1
+2021-06-12 20:15:38,536 INFO m.s.PostService [http-nio-8888-exec-9] Пост 1 сформирован
+2021-06-12 20:15:38,536 INFO m.s.PostService [http-nio-8888-exec-9] Формирование поста 2
+2021-06-12 20:15:38,538 INFO m.s.PostService [http-nio-8888-exec-9] Пост 2 сформирован
+2021-06-12 20:15:38,538 INFO m.s.PostService [http-nio-8888-exec-9] Формирование поста 3
+2021-06-12 20:15:38,539 INFO m.s.PostService [http-nio-8888-exec-9] Пост 3 сформирован
+2021-06-12 20:15:38,539 INFO m.s.PostService [http-nio-8888-exec-9] Формирование поста 6
+2021-06-12 20:15:38,540 INFO m.s.PostService [http-nio-8888-exec-9] Пост 6 сформирован
+2021-06-12 20:15:38,540 INFO m.s.PostService [http-nio-8888-exec-9] Вывод постов для показа
+2021-06-12 20:15:40,517 INFO m.s.PostService [http-nio-8888-exec-10] Возвращаем старые посты
+2021-06-12 20:15:40,520 INFO m.s.PostService [http-nio-8888-exec-10] Формирование списка постов для вывода
+2021-06-12 20:15:40,520 INFO m.s.PostService [http-nio-8888-exec-10] Формирование поста 6
+2021-06-12 20:15:40,521 INFO m.s.PostService [http-nio-8888-exec-10] Пост 6 сформирован
+2021-06-12 20:15:40,521 INFO m.s.PostService [http-nio-8888-exec-10] Формирование поста 2
+2021-06-12 20:15:40,523 INFO m.s.PostService [http-nio-8888-exec-10] Пост 2 сформирован
+2021-06-12 20:15:40,523 INFO m.s.PostService [http-nio-8888-exec-10] Формирование поста 3
+2021-06-12 20:15:40,524 INFO m.s.PostService [http-nio-8888-exec-10] Пост 3 сформирован
+2021-06-12 20:15:40,524 INFO m.s.PostService [http-nio-8888-exec-10] Формирование поста 1
+2021-06-12 20:15:40,526 INFO m.s.PostService [http-nio-8888-exec-10] Пост 1 сформирован
+2021-06-12 20:15:40,526 INFO m.s.PostService [http-nio-8888-exec-10] Вывод постов для показа
+2021-06-12 20:15:47,279 INFO m.s.AuthService [http-nio-8888-exec-5] Проверка авторизации - пользователь с почтой adminPetya@server.com найден в базе данных и авторизован
+2021-06-12 20:16:19,772 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8888-exec-7] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/json;charset=UTF-8' not supported]
+2021-06-12 20:16:45,447 INFO m.s.PostService [http-nio-8888-exec-1] Возвращаем последние посты
+2021-06-12 20:16:45,450 INFO m.s.PostService [http-nio-8888-exec-1] Формирование списка постов для вывода
+2021-06-12 20:16:45,451 INFO m.s.PostService [http-nio-8888-exec-1] Формирование поста 1
+2021-06-12 20:16:45,452 INFO m.s.PostService [http-nio-8888-exec-1] Пост 1 сформирован
+2021-06-12 20:16:45,453 INFO m.s.PostService [http-nio-8888-exec-1] Формирование поста 3
+2021-06-12 20:16:45,454 INFO m.s.PostService [http-nio-8888-exec-1] Пост 3 сформирован
+2021-06-12 20:16:45,454 INFO m.s.PostService [http-nio-8888-exec-1] Формирование поста 2
+2021-06-12 20:16:45,456 INFO m.s.PostService [http-nio-8888-exec-1] Пост 2 сформирован
+2021-06-12 20:16:45,456 INFO m.s.PostService [http-nio-8888-exec-1] Формирование поста 6
+2021-06-12 20:16:45,457 INFO m.s.PostService [http-nio-8888-exec-1] Пост 6 сформирован
+2021-06-12 20:16:45,457 INFO m.s.PostService [http-nio-8888-exec-1] Вывод постов для показа
+2021-06-12 20:16:47,210 INFO m.s.PostService [http-nio-8888-exec-8] Поиск поста по id 1
+2021-06-12 20:16:47,210 INFO m.s.PostService [http-nio-8888-exec-8] Проверка авторизации
+2021-06-12 20:16:47,210 INFO m.s.PostService [http-nio-8888-exec-8] Пользователь авторизован - ищем пост по id даже (неактивные посты отобразить)
+2021-06-12 20:16:47,213 INFO m.s.PostService [http-nio-8888-exec-8] Поиск пользователя по почте adminPetya@server.com
+2021-06-12 20:16:47,213 INFO m.s.PostService [http-nio-8888-exec-8] Формирование ответа для вывода поста
+2021-06-12 20:16:47,217 INFO m.s.PostService [http-nio-8888-exec-8] Ответ по посту 1 сформирован для вывода
+2021-06-12 20:22:17,321 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 20:22:17,354 INFO o.s.b.StartupInfoLogger [main] Starting Main on Computer with PID 6916 (C:\Users\Dude\IdeaProjects\diploma\target\classes started by Dude in C:\Users\Dude\IdeaProjects\diploma)
+2021-06-12 20:22:17,356 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-12 20:22:17,871 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 20:22:17,930 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 53ms. Found 8 JPA repository interfaces.
+2021-06-12 20:22:18,151 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3138953b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 20:22:18,154 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 20:22:18,376 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-06-12 20:22:18,386 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-06-12 20:22:18,387 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-12 20:22:18,387 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 20:22:18,500 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-12 20:22:18,500 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1117 ms
+2021-06-12 20:22:18,620 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-12 20:22:18,768 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-12 20:22:18,989 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 20:22:19,215 INFO l.l.c.JavaLogger [main] Reading from diplomaDB.DATABASECHANGELOG
+2021-06-12 20:22:19,279 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 20:22:19,284 INFO l.l.c.JavaLogger [main] Successfully acquired change log lock
+2021-06-12 20:22:19,285 WARN l.l.c.JavaLogger [main] Skipping auto-registration
+2021-06-12 20:22:19,293 INFO l.l.c.JavaLogger [main] Successfully released change log lock
+2021-06-12 20:22:19,346 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 20:22:19,376 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 20:22:19,455 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 20:22:19,528 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-12 20:22:19,940 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 20:22:19,946 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 20:22:20,247 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 20:22:20,678 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2914f916, org.springframework.security.web.context.SecurityContextPersistenceFilter@11c68269, org.springframework.security.web.header.HeaderWriterFilter@3debeb5e, org.springframework.security.web.authentication.logout.LogoutFilter@17524c36, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6018a6a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ee37c7a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2140de63, org.springframework.security.web.session.SessionManagementFilter@7fcc8d9f, org.springframework.security.web.access.ExceptionTranslationFilter@1227ea21, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5da08e9a]
+2021-06-12 20:22:20,755 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-12 20:22:21,167 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2021-06-12 20:22:21,329 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-06-12 20:22:21,355 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path ''
+2021-06-12 20:22:21,362 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.22 seconds (JVM running for 4.731)
+2021-06-12 20:22:25,781 INFO o.a.j.l.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 20:22:25,781 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-06-12 20:22:25,785 INFO o.s.w.s.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-06-12 20:22:26,410 INFO o.s.a.AbstractOpenApiResource [http-nio-8888-exec-8] Init duration for springdoc-openapi is: 253 ms
+2021-06-12 20:24:31,998 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8888-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `java.util.HashSet<java.lang.Object>` out of VALUE_STRING token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.util.HashSet<java.lang.Object>` out of VALUE_STRING token
+ at [Source: (PushbackInputStream); line: 1, column: 88] (through reference chain: main.api.request.NewPostRequest["tags"])]
+2021-06-12 20:28:20,442 INFO m.s.PostService [http-nio-8888-exec-10] Возвращаем последние посты
+2021-06-12 20:28:20,466 INFO m.s.PostService [http-nio-8888-exec-10] Формирование списка постов для вывода
+2021-06-12 20:28:20,467 INFO m.s.PostService [http-nio-8888-exec-10] Формирование поста 1
+2021-06-12 20:28:20,501 INFO m.s.PostService [http-nio-8888-exec-10] Пост 1 сформирован
+2021-06-12 20:28:20,501 INFO m.s.PostService [http-nio-8888-exec-10] Формирование поста 3
+2021-06-12 20:28:20,504 INFO m.s.PostService [http-nio-8888-exec-10] Пост 3 сформирован
+2021-06-12 20:28:20,504 INFO m.s.PostService [http-nio-8888-exec-10] Формирование поста 2
+2021-06-12 20:28:20,506 INFO m.s.PostService [http-nio-8888-exec-10] Пост 2 сформирован
+2021-06-12 20:28:20,506 INFO m.s.PostService [http-nio-8888-exec-10] Формирование поста 6
+2021-06-12 20:28:20,508 INFO m.s.PostService [http-nio-8888-exec-10] Пост 6 сформирован
+2021-06-12 20:28:20,508 INFO m.s.PostService [http-nio-8888-exec-10] Вывод постов для показа
+2021-06-12 20:28:41,509 INFO m.s.AuthService [http-nio-8888-exec-9] Пользователь с почтой adminPetya@server.com, именем admin Petya и паролем $2y$12$RFJDOYlbIfsyV9Qnpg/A..MCG65MYJw0928z.itt48YtMG9QhZTza вошел в систему
+2021-06-12 20:28:41,542 INFO m.s.PostService [http-nio-8888-exec-8] Возвращаем последние посты
+2021-06-12 20:28:41,546 INFO m.s.PostService [http-nio-8888-exec-8] Формирование списка постов для вывода
+2021-06-12 20:28:41,546 INFO m.s.PostService [http-nio-8888-exec-8] Формирование поста 1
+2021-06-12 20:28:41,549 INFO m.s.PostService [http-nio-8888-exec-8] Пост 1 сформирован
+2021-06-12 20:28:41,549 INFO m.s.PostService [http-nio-8888-exec-8] Формирование поста 3
+2021-06-12 20:28:41,552 INFO m.s.PostService [http-nio-8888-exec-8] Пост 3 сформирован
+2021-06-12 20:28:41,552 INFO m.s.PostService [http-nio-8888-exec-8] Формирование поста 2
+2021-06-12 20:28:41,554 INFO m.s.PostService [http-nio-8888-exec-8] Пост 2 сформирован
+2021-06-12 20:28:41,554 INFO m.s.PostService [http-nio-8888-exec-8] Формирование поста 6
+2021-06-12 20:28:41,556 INFO m.s.PostService [http-nio-8888-exec-8] Пост 6 сформирован
+2021-06-12 20:28:41,556 INFO m.s.PostService [http-nio-8888-exec-8] Вывод постов для показа
+2021-06-12 20:28:46,837 INFO m.s.AuthService [http-nio-8888-exec-1] Проверка авторизации - пользователь с почтой adminPetya@server.com найден в базе данных и авторизован
+2021-06-12 20:28:46,845 INFO m.s.AuthService [http-nio-8888-exec-3] Проверка авторизации - пользователь с почтой adminPetya@server.com найден в базе данных и авторизован
+2021-06-12 20:29:17,169 ERROR m.s.PostService [http-nio-8888-exec-7] Errors during logging = '[Field error in object 'newPostRequest' on field 'text': rejected value [Олеся мур мур Олеся мур мур Олеся мур мур]; codes [Size.newPostRequest.text,Size.text,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [newPostRequest.text,text]; arguments []; default message [text],2147483647,50]; default message [Длина названия поста от 3 до 255 символов]]'
+2021-06-12 20:31:01,277 INFO m.s.PostService [http-nio-8888-exec-9] Начало авторизации
+2021-06-12 20:31:01,277 INFO m.s.PostService [http-nio-8888-exec-9] Авторизация прошла успешно
+2021-06-12 20:31:01,279 INFO m.s.PostService [http-nio-8888-exec-9] Начало создания ноого поста
+2021-06-12 20:31:01,305 INFO m.s.PostService [http-nio-8888-exec-9] Новый пост с названием мы пишем новый пост сформирован и сохранен в базу
+2021-06-12 20:31:01,306 INFO m.s.PostService [http-nio-8888-exec-9] Проверка списка тэгов для поста (новые тэги пишем базу)
+2021-06-12 20:31:01,326 INFO m.s.PostService [http-nio-8888-exec-2] Возвращаем последние посты
+2021-06-12 20:31:01,330 INFO m.s.PostService [http-nio-8888-exec-2] Формирование списка постов для вывода
+2021-06-12 20:31:01,331 INFO m.s.PostService [http-nio-8888-exec-2] Формирование поста 1
+2021-06-12 20:31:01,334 INFO m.s.PostService [http-nio-8888-exec-2] Пост 1 сформирован
+2021-06-12 20:31:01,334 INFO m.s.PostService [http-nio-8888-exec-2] Формирование поста 3
+2021-06-12 20:31:01,337 INFO m.s.PostService [http-nio-8888-exec-2] Пост 3 сформирован
+2021-06-12 20:31:01,338 INFO m.s.PostService [http-nio-8888-exec-2] Формирование поста 2
+2021-06-12 20:31:01,339 INFO m.s.PostService [http-nio-8888-exec-2] Пост 2 сформирован
+2021-06-12 20:31:01,339 INFO m.s.PostService [http-nio-8888-exec-2] Формирование поста 6
+2021-06-12 20:31:01,340 INFO m.s.PostService [http-nio-8888-exec-2] Пост 6 сформирован
+2021-06-12 20:31:01,340 INFO m.s.PostService [http-nio-8888-exec-2] Вывод постов для показа
+2021-06-12 20:31:11,936 INFO m.s.PostService [http-nio-8888-exec-4] Начало авторизации
+2021-06-12 20:31:11,937 INFO m.s.PostService [http-nio-8888-exec-4] Авторизация прошла успешно
+2021-06-12 20:31:11,938 INFO m.s.PostService [http-nio-8888-exec-4] Вывод на экран неактивных постов пользователя admin Petya
+2021-06-12 20:31:11,940 INFO m.s.PostService [http-nio-8888-exec-4] Формирование списка постов для вывода
+2021-06-12 20:31:11,940 INFO m.s.PostService [http-nio-8888-exec-4] Вывод постов для показа
+2021-06-12 20:31:15,644 INFO m.s.AuthService [http-nio-8888-exec-1] Проверка авторизации - пользователь с почтой adminPetya@server.com найден в базе данных и авторизован
+2021-06-12 20:31:15,656 INFO m.s.PostService [http-nio-8888-exec-5] Начало проверка авторизации
+2021-06-12 20:31:15,656 INFO m.s.PostService [http-nio-8888-exec-5] Авторизация прошла успешно
+2021-06-12 20:31:15,657 INFO m.s.PostService [http-nio-8888-exec-5] Вывод постов со статусом NEW
+2021-06-12 20:31:15,659 INFO m.s.PostService [http-nio-8888-exec-5] Формирование списка постов для вывода
+2021-06-12 20:31:15,659 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 8
+2021-06-12 20:31:15,660 INFO m.s.PostService [http-nio-8888-exec-5] Пост 8 сформирован
+2021-06-12 20:31:15,660 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 7
+2021-06-12 20:31:15,661 INFO m.s.PostService [http-nio-8888-exec-5] Пост 7 сформирован
+2021-06-12 20:31:15,661 INFO m.s.PostService [http-nio-8888-exec-5] Формирование поста 4
+2021-06-12 20:31:15,663 INFO m.s.PostService [http-nio-8888-exec-5] Пост 4 сформирован
+2021-06-12 20:31:15,663 INFO m.s.PostService [http-nio-8888-exec-5] Вывод постов для показа
+2021-06-12 20:31:20,266 INFO m.s.PostService [http-nio-8888-exec-9] Начало авторизации
+2021-06-12 20:31:20,267 INFO m.s.PostService [http-nio-8888-exec-9] Авторизация прошла успешно
+2021-06-12 20:31:20,269 INFO m.s.PostService [http-nio-8888-exec-9] Пост №8 прошел модерацию и получил статус ACCEPTED
+2021-06-12 20:31:22,709 INFO m.s.PostService [http-nio-8888-exec-7] Возвращаем последние посты
+2021-06-12 20:31:22,713 INFO m.s.PostService [http-nio-8888-exec-7] Формирование списка постов для вывода
+2021-06-12 20:31:22,713 INFO m.s.PostService [http-nio-8888-exec-7] Формирование поста 8
+2021-06-12 20:31:22,714 INFO m.s.PostService [http-nio-8888-exec-7] Пост 8 сформирован
+2021-06-12 20:31:22,714 INFO m.s.PostService [http-nio-8888-exec-7] Формирование поста 1
+2021-06-12 20:31:22,716 INFO m.s.PostService [http-nio-8888-exec-7] Пост 1 сформирован
+2021-06-12 20:31:22,716 INFO m.s.PostService [http-nio-8888-exec-7] Формирование поста 3
+2021-06-12 20:31:22,718 INFO m.s.PostService [http-nio-8888-exec-7] Пост 3 сформирован
+2021-06-12 20:31:22,718 INFO m.s.PostService [http-nio-8888-exec-7] Формирование поста 2
+2021-06-12 20:31:22,720 INFO m.s.PostService [http-nio-8888-exec-7] Пост 2 сформирован
+2021-06-12 20:31:22,720 INFO m.s.PostService [http-nio-8888-exec-7] Формирование поста 6
+2021-06-12 20:31:22,721 INFO m.s.PostService [http-nio-8888-exec-7] Пост 6 сформирован
+2021-06-12 20:31:22,721 INFO m.s.PostService [http-nio-8888-exec-7] Вывод постов для показа

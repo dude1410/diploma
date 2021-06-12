@@ -1,7 +1,7 @@
 package main.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import main.api.request.LikeDislikeRequest;
 import main.api.request.NewPostRequest;
 import main.api.response.FailResponse;
@@ -15,7 +15,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/post")
-@Api(value = "/api/auth", description = "Операции с постами")
+@Tag(name = "/api/post", description = "Операции с постами")
 public class ApiPostController {
 
     private final PostService postService;
@@ -26,7 +26,7 @@ public class ApiPostController {
 
 
     @GetMapping(produces = "application/json")
-    @ApiOperation(value = "Получение всех постов")
+    @Operation(description = "Получение всех постов")
     private PostResponse getAllPostResponse(@RequestParam("limit") int limit,
                                             @RequestParam("offset") int offset,
                                             @RequestParam("mode") String mode){
@@ -35,7 +35,7 @@ public class ApiPostController {
 
     @GetMapping(value = "/search",
             produces = "application/json")
-    @ApiOperation(value = "Поиск постов по названию или тексту")
+    @Operation(description = "Поиск постов по названию или тексту")
     private PostResponse getSearchPostResponse(@RequestParam("limit") int limit,
                                             @RequestParam("offset") int offset,
                                             @RequestParam("query") String query){
@@ -44,7 +44,7 @@ public class ApiPostController {
 
     @GetMapping(value = "/byDate",
             produces = "application/json")
-    @ApiOperation(value = "Поиск постов по дате")
+    @Operation(description = "Поиск постов по дате")
     private PostResponse getSearchByDatePostResponse(@RequestParam("limit") int limit,
                                                @RequestParam("offset") int offset,
                                                @RequestParam("date") String date){
@@ -53,7 +53,7 @@ public class ApiPostController {
 
     @GetMapping(value = "/byTag",
             produces = "application/json")
-    @ApiOperation(value = "Поиск постов по тэгу")
+    @Operation(description = "Поиск постов по тэгу")
     private PostResponse getSearchByTagPostResponse(@RequestParam("limit") int limit,
                                                      @RequestParam("offset") int offset,
                                                      @RequestParam("tag") String tag){
@@ -62,14 +62,14 @@ public class ApiPostController {
 
     @GetMapping(value = "/{id}",
             produces = "application/json")
-    @ApiOperation(value = "Поличть пост из БД по id")
+    @Operation(description = "Поличть пост из БД по id")
     private PostResponseId getPostById(@PathVariable int id){
         return postService.getPostById(id);
     }
 
     @GetMapping(value = "/moderation",
             produces = "application/json")
-    @ApiOperation(value = "Получение постов для подерации")
+    @Operation(description = "Получение постов для подерации")
     private PostResponse getPostModeration(@RequestParam("limit") int limit,
                                            @RequestParam("offset") int offset,
                                            @RequestParam("status") String status){
@@ -78,16 +78,16 @@ public class ApiPostController {
 
     @GetMapping(value = "/my",
             produces = "application/json")
-    @ApiOperation(value = "Получение своих постов")
+    @Operation(description = "Получение своих постов")
     private PostResponse getMyPostsResponse (@RequestParam("limit") int limit,
                                              @RequestParam("offset") int offset,
                                              @RequestParam("status") String status) {
         return postService.getMyPostsResponse(limit, offset, status);
     }
 
-    @PostMapping(consumes = "multipart/form-data",
+    @PostMapping(consumes = "application/json",
             produces = "application/json")
-    @ApiOperation(value = "Создание нового поста")
+    @Operation(description = "Создание нового поста")
     private FailResponse postNewPost (@Valid @RequestBody NewPostRequest request,
                                       BindingResult error) {
         return postService.postNewPost(request, error);
@@ -96,7 +96,7 @@ public class ApiPostController {
     @PutMapping(value = "/{id}",
             consumes = "multipart/form-data",
             produces = "application/json")
-    @ApiOperation(value = "Редактирование поста по id")
+    @Operation(description = "Редактирование поста по id")
     private FailResponse putPost (@PathVariable int id, @Valid @RequestBody NewPostRequest request,
                                   BindingResult error){
         return postService.putPost(id, request, error);
@@ -105,7 +105,7 @@ public class ApiPostController {
     @PostMapping(value = "/like",
             consumes = "multipart/form-data",
             produces = "application/json")
-    @ApiOperation(value = "Поставить посту лайк")
+    @Operation(description = "Поставить посту лайк")
     private FailResponse postLike (@Valid @RequestBody LikeDislikeRequest request,
                                    BindingResult error) {
         return postService.postLike(request, error);
@@ -114,7 +114,7 @@ public class ApiPostController {
     @PostMapping(value = "/dislike",
             consumes = "multipart/form-data",
             produces = "application/json")
-    @ApiOperation(value = "Поставить посту дизлайк")
+    @Operation(description = "Поставить посту дизлайк")
     private FailResponse postDislike (@Valid @RequestBody LikeDislikeRequest request,
                                       BindingResult error) {
         return postService.postDislike(request, error);

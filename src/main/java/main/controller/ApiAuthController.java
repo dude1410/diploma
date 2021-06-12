@@ -1,7 +1,7 @@
 package main.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import main.api.request.ChangePasswordRequest;
 import main.api.request.LoginRequest;
 import main.api.request.RegisterRequest;
@@ -20,7 +20,7 @@ import java.security.Principal;
 
 @RestController
 @RequestMapping("/api/auth")
-@Api(value = "/api/auth", description = "Операции с профилем")
+@Tag(name = "/api/auth", description = "Операции с профилем")
 public class ApiAuthController {
 
 	private final AuthService authService;
@@ -33,7 +33,7 @@ public class ApiAuthController {
 	@PostMapping(value = "/login",
 			consumes = "application/json",
 			produces = "application/json")
-	@ApiOperation(value = "Вход в учетную запись")
+	@Operation(description = "Вход в учетную запись")
 	public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest,
 											   BindingResult error) {
 		return authService.login(loginRequest, error);
@@ -41,14 +41,14 @@ public class ApiAuthController {
 
 	@GetMapping(value = "/logout",
 			produces = "application/json")
-	@ApiOperation(value = "Выход из учетной записи")
+	@Operation(description = "Выход из учетной записи")
 	public ResponseEntity<LogoutResponse> logout() {
 		return authService.logout();
 	}
 
 	@GetMapping(value = "/check",
 			produces = "application/json")
-	@ApiOperation(value = "Проверка авторизации")
+	@Operation(description = "Проверка авторизации")
 	public ResponseEntity<LoginResponse> check(Principal principal) throws IOException {
 		if (principal == null) {
 			return ResponseEntity.ok(new LoginResponse());
@@ -58,7 +58,7 @@ public class ApiAuthController {
 
 	@GetMapping(value = "/captcha",
 			produces = "application/json")
-	@ApiOperation(value = "Генерация капчи")
+	@Operation(description = "Генерация капчи")
 	private CaptchaResponse captchaResponse() throws IOException {
 		return authService.getCaptcha();
 	}
@@ -66,7 +66,7 @@ public class ApiAuthController {
 	@PostMapping(value = "/register",
 			consumes = "application/json",
 			produces = "application/json")
-	@ApiOperation(value = "Регистрация на сайте")
+	@Operation(description = "Регистрация на сайте")
 	private FailResponse register(@Valid @RequestBody RegisterRequest request,
 								  BindingResult error) throws IOException {
 		return authService.register(request, error);
@@ -75,7 +75,7 @@ public class ApiAuthController {
 	@PostMapping(value = "/restore",
 			consumes = "application/json",
 			produces = "application/json")
-	@ApiOperation(value = "Ссылка на восстановление пароля")
+	@Operation(description = "Ссылка на восстановление пароля")
 	private FailResponse restorePassword (@Valid @RequestBody RestorePasswordRequest request,
 										  BindingResult error) throws MessagingException {
 		return authService.restorePassword(request, error);
@@ -84,7 +84,7 @@ public class ApiAuthController {
 	@PostMapping(value = "/password",
 			consumes = "application/json",
 			produces = "application/json")
-	@ApiOperation(value = "Восстановление пароля")
+	@Operation(description = "Восстановление пароля")
 	private FailResponse changePassword (@Valid @RequestBody ChangePasswordRequest request,
 										 BindingResult error) {
 		return authService.changePassword(request,error);
