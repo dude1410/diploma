@@ -186,7 +186,7 @@ public class AuthService {
             logger.error("Ошибка регистрации - " + request.getName() + "неверный формат ввода имени пользователя");
             errors.put("name", "Имя указано неверно");
         }
-        logger.info("Имя пользователя введено кооректно - продолжение регистрации");
+        logger.info("Имя пользователя введено корректно - продолжение регистрации");
         if (request.getPassword().length() < MIN_PASSWORD_LENGTH) {
             logger.error("Ошибка регистрации - Пароль короче 6-ти символов");
             errors.put("password", "Пароль короче 6-ти символов");
